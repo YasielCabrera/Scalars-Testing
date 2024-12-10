@@ -1,0 +1,215 @@
+{
+    "id": "dspot/testing",
+    "name": "Scalar testing",
+    "extension": ".dspt",
+    "description": "Scalars testing",
+    "author": {
+        "name": "Dspot",
+        "website": ""
+    },
+    "specifications": [
+        {
+            "version": 1,
+            "changeLog": [],
+            "state": {
+                "global": {
+                    "schema": "type ScalarTestingState {\n  booleans: [BooleanFieldType!]!\n  numbers: [NumberFieldType!]!\n  amounts: [AmountFieldType!]!\n  strings: [StringFieldType!]!\n  urls: [URLFieldType!]!\n  countries: [CountryFieldType!]!\n}\n\ntype BooleanFieldType {\n  id: ID!\n  boolean: Boolean!\n}\n\ntype NumberFieldType {\n  id: ID!\n  integer: Int\n  float: Float\n  bigInt: Int\n}\n\ntype AmountFieldType {\n  id: ID!\n  money: Amount_Money\n  percentage: Amount_Percentage\n  tokens: Amount_Tokens\n}\n\ntype StringFieldType {\n  id: ID!\n  string: String!\n}\n\ntype URLFieldType {\n  id: ID!\n  url: URL!\n}\n\ntype CountryFieldType {\n  id: ID!\n  country: String!\n}",
+                    "initialValue": "{\n  \"booleans\": [],\n  \"numbers\": [],\n  \"amounts\": [],\n  \"strings\": [],\n  \"urls\": [],\n  \"countries\": []\n}",
+                    "examples": []
+                },
+                "local": {
+                    "schema": "",
+                    "initialValue": "",
+                    "examples": []
+                }
+            },
+            "modules": [
+                {
+                    "id": "Gkut0aTGkZsDuTpCvgINOU63Lf0=",
+                    "name": "boolean_testing",
+                    "description": "",
+                    "operations": [
+                        {
+                            "id": "KqOmjvImn+naB9vEJOfMf+4Q3S4=",
+                            "name": "ADD_BOOLEAN",
+                            "description": "",
+                            "schema": "input AddBooleanInput {\n  id: ID!\n  boolean: Boolean!\n}",
+                            "template": "",
+                            "reducer": "",
+                            "errors": [],
+                            "examples": [],
+                            "scope": "global"
+                        },
+                        {
+                            "id": "77bv0im4X2Ddid7uvYii00k02Do=",
+                            "name": "REMOVE_BOOLEAN",
+                            "description": "",
+                            "schema": "input RemoveBooleanInput {\n  id: ID!\n}",
+                            "template": "",
+                            "reducer": "",
+                            "errors": [],
+                            "examples": [],
+                            "scope": "global"
+                        }
+                    ]
+                },
+                {
+                    "id": "IrqedqgCTh3wBl4czELPCsQhATM=",
+                    "name": "numbers_testing",
+                    "description": "",
+                    "operations": [
+                        {
+                            "id": "dLV3mRv49aD8WQiJR+5g9B6h3TU=",
+                            "name": "ADD_NUMBER",
+                            "description": "",
+                            "schema": "input AddNumberInput {\n  id: ID!\n  integer: Int\n  float: Float\n  bigInt: Int\n}",
+                            "template": "",
+                            "reducer": "",
+                            "errors": [],
+                            "examples": [],
+                            "scope": "global"
+                        },
+                        {
+                            "id": "50pi07Ebwm350n/2yQJrL8vFb1c=",
+                            "name": "REMOVE_NUMBER",
+                            "description": "",
+                            "schema": "input RemoveNumberInput {\n   id: ID!\n}",
+                            "template": "",
+                            "reducer": "",
+                            "errors": [],
+                            "examples": [],
+                            "scope": "global"
+                        }
+                    ]
+                },
+                {
+                    "id": "ht+mrGQRB1kl0EJQd5pbXyFSXdE=",
+                    "name": "amount_testing",
+                    "description": "",
+                    "operations": [
+                        {
+                            "id": "8HOsUiUmZenvxPH2ieqhNCrl+FQ=",
+                            "name": "ADD_AMOUNT",
+                            "description": "",
+                            "schema": "input AddAmountInput {\n  id: ID!\n  money: Amount_Money\n  percentage: Amount_Percentage\n  tokens: Amount_Tokens\n}",
+                            "template": "",
+                            "reducer": "",
+                            "errors": [],
+                            "examples": [],
+                            "scope": "global"
+                        },
+                        {
+                            "id": "YL2pI8Pu71oledtsYRAkiME4y18=",
+                            "name": "REMOVE_AMOUNT",
+                            "description": "",
+                            "schema": "input RemoveAmountInput {\n  id: ID!\n}",
+                            "template": "",
+                            "reducer": "",
+                            "errors": [],
+                            "examples": [],
+                            "scope": "global"
+                        }
+                    ]
+                },
+                {
+                    "id": "2Id6ePZZ7xmtatXjOWEItcgbVOM=",
+                    "name": "string_testing",
+                    "description": "",
+                    "operations": [
+                        {
+                            "id": "4lBWsr+j4Le/VHzVuYz+kRFcwsE=",
+                            "name": "ADD_STRING",
+                            "description": "",
+                            "schema": "input AddStringInput {\n  id: ID!\n  string: String!\n}",
+                            "template": "",
+                            "reducer": "",
+                            "errors": [],
+                            "examples": [],
+                            "scope": "global"
+                        },
+                        {
+                            "id": "nnVDvcRPwynxD3xuM9FauAUFhV4=",
+                            "name": "REMOVE_STRING",
+                            "description": "",
+                            "schema": "input RemoveStringInput {\n  id: ID!\n}",
+                            "template": "",
+                            "reducer": "",
+                            "errors": [],
+                            "examples": [],
+                            "scope": "global"
+                        }
+                    ]
+                },
+                {
+                    "id": "4p2bMfWN3ZNeSCdWaLP/WUImvkY=",
+                    "name": "url_testing",
+                    "description": "",
+                    "operations": [
+                        {
+                            "id": "nDTncU8oEzdZTPAFcNE6xw1wvl4=",
+                            "name": "ADD_URL",
+                            "description": "",
+                            "schema": "input AddUrlInput {\n  id: ID!\n  url: URL!\n}",
+                            "template": "",
+                            "reducer": "",
+                            "errors": [],
+                            "examples": [],
+                            "scope": "global"
+                        },
+                        {
+                            "id": "Kct9OcRzr1JDLbZMHFRq9MDlFuA=",
+                            "name": "REMOVE_URL",
+                            "description": "",
+                            "schema": "input RemoveUrlInput {\n  id: ID!\n}",
+                            "template": "",
+                            "reducer": "",
+                            "errors": [],
+                            "examples": [],
+                            "scope": "global"
+                        }
+                    ]
+                },
+                {
+                    "id": "Ugzw/UObVI1qDp4s1JPL4AY3VAE=",
+                    "name": "country_testing",
+                    "description": "",
+                    "operations": [
+                        {
+                            "id": "QmaobTqwE8h/UrOEv/KRxG8gjUc=",
+                            "name": "ADD_COUNTRY",
+                            "description": "",
+                            "schema": "input AddCountryInput {\n  id: ID!\n  country: String!\n}",
+                            "template": "",
+                            "reducer": "",
+                            "errors": [],
+                            "examples": [],
+                            "scope": "global"
+                        },
+                        {
+                            "id": "+RvrZy72YrNAIeK8tkYc4MAzz2A=",
+                            "name": "ADD_COUNTRIES",
+                            "description": "",
+                            "schema": "input AddCountriesInput {\n  id: ID!\n  country: [String!]!\n}",
+                            "template": "",
+                            "reducer": "",
+                            "errors": [],
+                            "examples": [],
+                            "scope": "global"
+                        },
+                        {
+                            "id": "4KgZ87vesJVQSfuFDh7DJQ8RQKU=",
+                            "name": "REMOVE_COUNTRY",
+                            "description": "",
+                            "schema": "input RemoveCountryInput {\n id: ID!\n}",
+                            "template": "",
+                            "reducer": "",
+                            "errors": [],
+                            "examples": [],
+                            "scope": "global"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

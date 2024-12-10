@@ -1,0 +1,131 @@
+scalar Amount_Tokens
+scalar EthereumAddress
+scalar Amount_Percentage
+scalar EmailAddress
+scalar Date
+scalar DateTime
+scalar URL
+scalar Amount_Money
+scalar OLabel
+scalar Currency
+scalar PHID
+scalar OID
+type ScalarTestingState {
+  booleans: [BooleanFieldType!]!
+  numbers: [NumberFieldType!]!
+  amounts: [AmountFieldType!]!
+  strings: [StringFieldType!]!
+  urls: [URLFieldType!]!
+  countries: [CountryFieldType!]!
+}
+
+type BooleanFieldType {
+  id: ID!
+  boolean: Boolean!
+}
+
+type NumberFieldType {
+  id: ID!
+  integer: Int
+  float: Float
+  bigInt: Int
+}
+
+type AmountFieldType {
+  id: ID!
+  money: Amount_Money
+  percentage: Amount_Percentage
+  tokens: Amount_Tokens
+}
+
+type StringFieldType {
+  id: ID!
+  string: String!
+}
+
+type URLFieldType {
+  id: ID!
+  url: URL!
+}
+
+type CountryFieldType {
+  id: ID!
+  country: String!
+}
+
+
+
+# boolean_testing
+
+input AddBooleanInput {
+  id: ID!
+  boolean: Boolean!
+}
+
+input RemoveBooleanInput {
+  id: ID!
+}
+
+# numbers_testing
+
+input AddNumberInput {
+  id: ID!
+  integer: Int
+  float: Float
+  bigInt: Int
+}
+
+input RemoveNumberInput {
+   id: ID!
+}
+
+# amount_testing
+
+input AddAmountInput {
+  id: ID!
+  money: Amount_Money
+  percentage: Amount_Percentage
+  tokens: Amount_Tokens
+}
+
+input RemoveAmountInput {
+  id: ID!
+}
+
+# string_testing
+
+input AddStringInput {
+  id: ID!
+  string: String!
+}
+
+input RemoveStringInput {
+  id: ID!
+}
+
+# url_testing
+
+input AddUrlInput {
+  id: ID!
+  url: URL!
+}
+
+input RemoveUrlInput {
+  id: ID!
+}
+
+# country_testing
+
+input AddCountryInput {
+  id: ID!
+  country: String!
+}
+
+input AddCountriesInput {
+  id: ID!
+  country: [String!]!
+}
+
+input RemoveCountryInput {
+ id: ID!
+}
