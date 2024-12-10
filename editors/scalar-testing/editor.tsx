@@ -18,6 +18,7 @@ import { Accordion } from "./components/accordion";
 import { StringForm } from "./components/forms/string-form";
 import { URLForm } from "./components/forms/url-form";
 import { NumberForm } from "./components/forms/number-form";
+import { PlaygroundForm } from "./components/forms/playground-form";
 
 export type IProps = EditorProps<
   ScalarTestingState,
@@ -54,18 +55,16 @@ export default function Editor({ dispatch, document }: IProps) {
         <Accordion
           className="w-full space-y-2"
           collapsible
-          defaultValue="3"
+          defaultValue="playground"
           type="single"
         >
+          <PlaygroundForm />
           <BooleanForm
             booleansState={state.booleans}
             onAddBoolean={onAddBoolean}
           />
-
           <StringForm onAddString={onAddString} stringsState={state.strings} />
-
           <NumberForm numbersState={state.numbers} onAddNumber={onAddNumber} />
-
           <URLForm onAddUrl={onAddUrl} urlsState={state.urls} />
         </Accordion>
       </div>
