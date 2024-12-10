@@ -8,11 +8,11 @@ import { ScalarTestingStringTestingOperations } from "../../gen/string-testing/o
 
 export const reducer: ScalarTestingStringTestingOperations = {
   addStringOperation(state, action, dispatch) {
-    // TODO: Implement "addStringOperation" reducer
-    throw new Error('Reducer "addStringOperation" not yet implemented');
+    state.strings.push(action.input);
   },
   removeStringOperation(state, action, dispatch) {
-    // TODO: Implement "removeStringOperation" reducer
-    throw new Error('Reducer "removeStringOperation" not yet implemented');
+    state.strings = state.strings.filter(
+      (string) => string.id !== action.input.id,
+    );
   },
 };

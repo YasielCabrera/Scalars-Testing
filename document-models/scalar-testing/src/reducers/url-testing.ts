@@ -8,11 +8,9 @@ import { ScalarTestingUrlTestingOperations } from "../../gen/url-testing/operati
 
 export const reducer: ScalarTestingUrlTestingOperations = {
   addUrlOperation(state, action, dispatch) {
-    // TODO: Implement "addUrlOperation" reducer
-    throw new Error('Reducer "addUrlOperation" not yet implemented');
+    state.urls.push(action.input);
   },
   removeUrlOperation(state, action, dispatch) {
-    // TODO: Implement "removeUrlOperation" reducer
-    throw new Error('Reducer "removeUrlOperation" not yet implemented');
+    state.urls = state.urls.filter((url) => url.id !== action.input.id);
   },
 };

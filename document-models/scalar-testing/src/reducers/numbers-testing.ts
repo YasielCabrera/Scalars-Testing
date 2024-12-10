@@ -8,11 +8,16 @@ import { ScalarTestingNumbersTestingOperations } from "../../gen/numbers-testing
 
 export const reducer: ScalarTestingNumbersTestingOperations = {
   addNumberOperation(state, action, dispatch) {
-    // TODO: Implement "addNumberOperation" reducer
-    throw new Error('Reducer "addNumberOperation" not yet implemented');
+    state.numbers.push({
+      ...action.input,
+      bigInt: action.input.bigInt ?? null,
+      float: action.input.float ?? null,
+      integer: action.input.integer ?? null,
+    });
   },
   removeNumberOperation(state, action, dispatch) {
-    // TODO: Implement "removeNumberOperation" reducer
-    throw new Error('Reducer "removeNumberOperation" not yet implemented');
+    state.numbers = state.numbers.filter(
+      (number) => number.id !== action.input.id,
+    );
   },
 };

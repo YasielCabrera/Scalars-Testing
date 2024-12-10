@@ -6,18 +6,18 @@ import {
   ScalarTestingLocalState,
   actions,
   AddBooleanInput,
+  AddStringInput,
+  AddUrlInput,
+  AddNumberInput,
 } from "../../document-models/scalar-testing";
 import { utils as documentModelUtils } from "document-model/document";
-import { Button } from "@powerhousedao/design-system";
-import {
-  BooleanField,
-  Form,
-  IdField,
-} from "@powerhousedao/design-system/scalars";
 import { State } from "./components/state";
 import { BooleanForm } from "./components/forms/boolean-form";
 import { useCallback } from "react";
 import { Accordion } from "./components/accordion";
+import { StringForm } from "./components/forms/string-form";
+import { URLForm } from "./components/forms/url-form";
+import { NumberForm } from "./components/forms/number-form";
 
 export type IProps = EditorProps<
   ScalarTestingState,
@@ -32,6 +32,18 @@ export default function Editor({ dispatch, document }: IProps) {
 
   const onAddBoolean = useCallback((data: AddBooleanInput) => {
     dispatch(actions.addBoolean(data));
+  }, []);
+
+  const onAddString = useCallback((data: AddStringInput) => {
+    dispatch(actions.addString(data));
+  }, []);
+
+  const onAddUrl = useCallback((data: AddUrlInput) => {
+    dispatch(actions.addUrl(data));
+  }, []);
+
+  const onAddNumber = useCallback((data: AddNumberInput) => {
+    dispatch(actions.addNumber(data));
   }, []);
 
   return (
@@ -49,6 +61,12 @@ export default function Editor({ dispatch, document }: IProps) {
             booleansState={state.booleans}
             onAddBoolean={onAddBoolean}
           />
+
+          <StringForm onAddString={onAddString} stringsState={state.strings} />
+
+          <NumberForm numbersState={state.numbers} onAddNumber={onAddNumber} />
+
+          <URLForm onAddUrl={onAddUrl} urlsState={state.urls} />
         </Accordion>
       </div>
     </div>
