@@ -36,8 +36,9 @@ export function NumberForm({ onAddNumber, numbersState }: NumberFormProps) {
       >
         <IdField />
         <NumberField label="Integer" name="integer" />
-        <NumberField label="Float" name="float" numericType="PositiveFloat" />
-        <NumberField label="BigInt" name="bigInt" numericType="BigInt" />
+        <NumberField label="Float" name="float" numericType="Float" />
+        {/* TODO: BigInt is not supported yet */}
+        <NumberField label="BigInt" name="bigInt" />
 
         <Button className="w-full mt-2" size="small">
           Add

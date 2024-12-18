@@ -17,6 +17,7 @@ type ScalarTestingState {
   strings: [StringFieldType!]!
   urls: [URLFieldType!]!
   countries: [CountryFieldType!]!
+  enums: [EnumFieldType!]!
 }
 
 type BooleanFieldType {
@@ -51,6 +52,12 @@ type URLFieldType {
 type CountryFieldType {
   id: ID!
   country: String!
+}
+
+type EnumFieldType {
+  id: ID!
+  enum: String
+  enumMultiple: [String]
 }
 
 
@@ -128,4 +135,16 @@ input AddCountriesInput {
 
 input RemoveCountryInput {
  id: ID!
+}
+
+# enum_testing
+
+input AddEnumInput {
+  id: ID!
+  enum: String
+  enumMultiple: [String]
+}
+
+input RemoveEnumInput {
+  id: ID!
 }

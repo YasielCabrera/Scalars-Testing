@@ -9,6 +9,8 @@ import {
   AddStringInput,
   AddUrlInput,
   AddNumberInput,
+  AddEnumInput,
+  AddCountryInput,
 } from "../../document-models/scalar-testing";
 import { utils as documentModelUtils } from "document-model/document";
 import { State } from "./components/state";
@@ -19,6 +21,8 @@ import { StringForm } from "./components/forms/string-form";
 import { URLForm } from "./components/forms/url-form";
 import { NumberForm } from "./components/forms/number-form";
 import { PlaygroundForm } from "./components/forms/playground-form";
+import { EnumForm } from "./components/forms/enum-form";
+import { CountryForm } from "./components/forms/country-form";
 
 export type IProps = EditorProps<
   ScalarTestingState,
@@ -47,6 +51,14 @@ export default function Editor({ dispatch, document }: IProps) {
     dispatch(actions.addNumber(data));
   }, []);
 
+  const onAddEnum = useCallback((data: AddEnumInput) => {
+    dispatch(actions.addEnum(data));
+  }, []);
+
+  const onAddCountry = useCallback((data: AddCountryInput) => {
+    dispatch(actions.addCountry(data));
+  }, []);
+
   return (
     <div>
       <State state={state} />
@@ -66,6 +78,11 @@ export default function Editor({ dispatch, document }: IProps) {
           <StringForm onAddString={onAddString} stringsState={state.strings} />
           <NumberForm numbersState={state.numbers} onAddNumber={onAddNumber} />
           <URLForm onAddUrl={onAddUrl} urlsState={state.urls} />
+          <EnumForm enumsState={state.enums} onAddEnum={onAddEnum} />
+          <CountryForm
+            countriesState={state.countries}
+            onAddCountry={onAddCountry}
+          />
         </Accordion>
       </div>
     </div>

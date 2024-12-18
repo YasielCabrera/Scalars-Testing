@@ -8,15 +8,18 @@ import { ScalarTestingCountryTestingOperations } from "../../gen/country-testing
 
 export const reducer: ScalarTestingCountryTestingOperations = {
   addCountryOperation(state, action, dispatch) {
-    // TODO: Implement "addCountryOperation" reducer
-    throw new Error('Reducer "addCountryOperation" not yet implemented');
+    state.countries.push({
+      ...action.input,
+      country: action.input.country,
+    });
   },
   addCountriesOperation(state, action, dispatch) {
     // TODO: Implement "addCountriesOperation" reducer
     throw new Error('Reducer "addCountriesOperation" not yet implemented');
   },
   removeCountryOperation(state, action, dispatch) {
-    // TODO: Implement "removeCountryOperation" reducer
-    throw new Error('Reducer "removeCountryOperation" not yet implemented');
+    state.countries = state.countries.filter(
+      (country) => country.id !== action.input.id,
+    );
   },
 };
