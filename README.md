@@ -70,10 +70,10 @@ If the Connect App is set up to [bundle this library](https://github.com/powerho
 
 ## Available NPM commands
 
--   `generate`: Updates the generated code according to the JSON spec and GraphQL schema.
--   `lint`: Checks for errors with ESLint and TypeScript checking.
--   `format`: Formats the code using Prettier.
--   `build`: Builds the library project using Vite.
--   `storybook`: Starts Storybook in development mode.
--   `build-storybook`: Builds Storybook.
--   `test`: Runs Jest for testing.
+- `generate`: Updates the generated code according to the JSON spec and GraphQL schema.
+- `lint`: Checks for errors with ESLint and TypeScript checking.
+- `format`: Formats the code using Prettier.
+- `build`: Builds the library project using Vite.
+- `storybook`: Starts Storybook in development mode.
+- `build-storybook`: Builds Storybook.
+- `test`: Runs Jest for testing.
