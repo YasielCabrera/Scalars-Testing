@@ -32,7 +32,6 @@ export function URLForm({ onAddUrl, urlsState }: URLFormProps) {
           label="Url"
           name="url"
           required
-          showIcon
         />
 
         <Button className="w-full mt-2" size="small">
