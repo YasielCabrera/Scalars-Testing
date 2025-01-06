@@ -8,6 +8,9 @@ import { ScalarTestingEnumTestingOperations } from "../../gen/enum-testing/opera
 
 export const reducer: ScalarTestingEnumTestingOperations = {
   addEnumOperation(state, action, dispatch) {
+    if (!Array.isArray(state.enums)) {
+      state.enums = [];
+    }
     state.enums.push({
       ...action.input,
       enum: action.input.enum ?? null,
