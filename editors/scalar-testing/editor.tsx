@@ -11,6 +11,7 @@ import {
   AddNumberInput,
   AddEnumInput,
   AddCountryInput,
+  AddCurrencyInput,
 } from "../../document-models/scalar-testing";
 import { utils as documentModelUtils } from "document-model/document";
 import { State } from "./components/state";
@@ -23,6 +24,7 @@ import { NumberForm } from "./components/forms/number-form";
 import { PlaygroundForm } from "./components/forms/playground-form";
 import { EnumForm } from "./components/forms/enum-form";
 import { CountryForm } from "./components/forms/country-form";
+import { CurrencyForm } from "./components/forms/currency-form";
 
 export type IProps = EditorProps<
   ScalarTestingState,
@@ -59,6 +61,10 @@ export default function Editor({ dispatch, document }: IProps) {
     dispatch(actions.addCountry(data));
   }, []);
 
+  const onAddCurrency = useCallback((data: AddCurrencyInput) => {
+    dispatch(actions.addCurrency(data));
+  }, []);
+
   return (
     <div>
       <State state={state} />
@@ -82,6 +88,10 @@ export default function Editor({ dispatch, document }: IProps) {
           <CountryForm
             countriesState={state.countries}
             onAddCountry={onAddCountry}
+          />
+          <CurrencyForm
+            currenciesState={state.currency}
+            onAddCurrency={onAddCurrency}
           />
         </Accordion>
       </div>
