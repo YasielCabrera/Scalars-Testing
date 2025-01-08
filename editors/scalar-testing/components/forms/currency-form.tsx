@@ -35,7 +35,12 @@ export function CurrencyForm({
         resetOnSuccessfulSubmit
       >
         <IdField />
-        <CurrencyCodeField label="Currency field" name="currency" required />
+        <CurrencyCodeField
+          label="Currency field"
+          name="currency"
+          placeholder="Select a currency"
+          required
+        />
 
         <Button className="w-full mt-2" size="small">
           Add
