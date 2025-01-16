@@ -25,6 +25,7 @@ import { PlaygroundForm } from "./components/forms/playground-form";
 import { EnumForm } from "./components/forms/enum-form";
 import { CountryForm } from "./components/forms/country-form";
 import { CurrencyForm } from "./components/forms/currency-form";
+import { AmountForm } from "./components/forms/amount-form";
 
 export type IProps = EditorProps<
   ScalarTestingState,
@@ -77,6 +78,11 @@ export default function Editor({ dispatch, document }: IProps) {
           type="single"
         >
           <PlaygroundForm />
+          <AmountForm
+            amountMoneyState={state.amountMoney}
+            amountPercentageState={state.amountPercentage}
+            amountTokensState={state.amountTokens}
+          />
           <BooleanForm
             booleansState={state.booleans}
             onAddBoolean={onAddBoolean}

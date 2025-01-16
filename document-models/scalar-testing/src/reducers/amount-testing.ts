@@ -7,12 +7,33 @@
 import { ScalarTestingAmountTestingOperations } from "../../gen/amount-testing/operations";
 
 export const reducer: ScalarTestingAmountTestingOperations = {
-  addAmountOperation(state, action, dispatch) {
-    // TODO: Implement "addAmountOperation" reducer
-    throw new Error('Reducer "addAmountOperation" not yet implemented');
+  addAmountMoneyOperation(state, action, dispatch) {
+    if (!Array.isArray(state.amountMoney)) {
+      state.amountMoney = [];
+    }
+    state.amountMoney.push({
+      id: action.input.id,
+      value: action.input.value,
+    });
   },
-  removeAmountOperation(state, action, dispatch) {
-    // TODO: Implement "removeAmountOperation" reducer
-    throw new Error('Reducer "removeAmountOperation" not yet implemented');
+
+  addAmountPercentageOperation(state, action, dispatch) {
+    if (!Array.isArray(state.amountPercentage)) {
+      state.amountPercentage = [];
+    }
+    state.amountPercentage.push({
+      id: action.input.id,
+      value: action.input.value,
+    });
+  },
+
+  addAmountTokensOperation(state, action, dispatch) {
+    if (!Array.isArray(state.amountTokens)) {
+      state.amountTokens = [];
+    }
+    state.amountTokens.push({
+      id: action.input.id,
+      value: action.input.value,
+    });
   },
 };

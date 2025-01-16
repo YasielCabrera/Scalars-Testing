@@ -13,13 +13,14 @@ scalar OID
 type ScalarTestingState {
   booleans: [BooleanFieldType!]!
   numbers: [NumberFieldType!]!
-  amounts: [AmountFieldType!]!
   strings: [StringFieldType!]!
   urls: [URLFieldType!]!
   countries: [CountryFieldType!]!
   currency: [CurrencyFieldType!]!
   enums: [EnumFieldType!]!
-  
+  amountMoney: [AmountFieldMoneyType!]!
+  amountPercentage: [AmountFieldPercentageType!]!
+  amountTokens: [AmountFieldTokenType!]!
 }
 
 type BooleanFieldType {
@@ -32,13 +33,6 @@ type NumberFieldType {
   integer: Int
   float: Float
   bigInt: Int
-}
-
-type AmountFieldType {
-  id: ID!
-  money: Amount_Money
-  percentage: Amount_Percentage
-  tokens: Amount_Tokens
 }
 
 type StringFieldType {
@@ -67,6 +61,21 @@ type EnumFieldType {
   enumMultiple: [String]
 }
 
+type AmountFieldMoneyType {
+  id: ID!
+  value: Amount_Money!
+}
+
+type AmountFieldPercentageType {
+  id: ID!
+  value: Amount_Percentage!
+}
+
+type AmountFieldTokenType {
+  id: ID!
+  value: Amount_Tokens!
+}
+
 
 
 # boolean_testing
@@ -91,19 +100,6 @@ input AddNumberInput {
 
 input RemoveNumberInput {
    id: ID!
-}
-
-# amount_testing
-
-input AddAmountInput {
-  id: ID!
-  money: Amount_Money
-  percentage: Amount_Percentage
-  tokens: Amount_Tokens
-}
-
-input RemoveAmountInput {
-  id: ID!
 }
 
 # string_testing
@@ -165,4 +161,21 @@ input AddCurrencyInput {
 
 input RemoveCurrencyInput {
   id: ID!
+}
+
+# amount_testing
+
+input AddAmountMoneyInput {
+  id: ID!
+  value: Amount_Money!
+}
+
+input AddAmountPercentageInput {
+  id: ID!
+  value: Amount_Percentage!
+}
+
+input AddAmountTokensInput {
+  id: ID!
+  value: Amount_Tokens!
 }
