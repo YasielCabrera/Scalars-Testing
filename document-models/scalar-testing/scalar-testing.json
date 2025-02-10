@@ -13,8 +13,8 @@
             "changeLog": [],
             "state": {
                 "global": {
-                    "schema": "type ScalarTestingState {\n  booleans: [BooleanFieldType!]!\n  numbers: [NumberFieldType!]!\n  strings: [StringFieldType!]!\n  urls: [URLFieldType!]!\n  countries: [CountryFieldType!]!\n  currency: [CurrencyFieldType!]!\n  enums: [EnumFieldType!]!\n  amountMoney: [AmountFieldMoneyType!]!\n  amountPercentage: [AmountFieldPercentageType!]!\n  amountTokens: [AmountFieldTokenType!]!\n}\n\ntype BooleanFieldType {\n  id: ID!\n  boolean: Boolean!\n}\n\ntype NumberFieldType {\n  id: ID!\n  integer: Int\n  float: Float\n  bigInt: Int\n}\n\ntype StringFieldType {\n  id: ID!\n  string: String!\n}\n\ntype URLFieldType {\n  id: ID!\n  url: URL!\n}\n\ntype CountryFieldType {\n  id: ID!\n  country: String!\n}\n\ntype CurrencyFieldType {\n  id: ID!\n  currency: Currency!\n}\n\ntype EnumFieldType {\n  id: ID!\n  enum: String\n  enumMultiple: [String]\n}\n\ntype AmountFieldMoneyType {\n  id: ID!\n  value: Amount_Money!\n}\n\ntype AmountFieldPercentageType {\n  id: ID!\n  value: Amount_Percentage!\n}\n\ntype AmountFieldTokenType {\n  id: ID!\n  value: Amount_Tokens!\n}",
-                    "initialValue": "{\n  \"booleans\": [],\n  \"numbers\": [],\n  \"strings\": [],\n  \"urls\": [],\n  \"countries\": [],\n  \"currency\": [],\n  \"enums\": [],\n  \"amountMoney\": [],\n  \"amountPercentage\": [],\n  \"amountTokens\": []\n}",
+                    "schema": "type ScalarTestingState {\n  booleans: [BooleanFieldType!]!\n  numbers: [NumberFieldType!]!\n  strings: [StringFieldType!]!\n  urls: [URLFieldType!]!\n  countries: [CountryFieldType!]!\n  currency: [CurrencyFieldType!]!\n  enums: [EnumFieldType!]!\n  amountMoney: [AmountFieldMoneyType!]!\n  amountPercentage: [AmountFieldPercentageType!]!\n  amountTokens: [AmountFieldTokenType!]!\n  date: [DateFieldType!]!\n  phids: [PHIDFieldType!]!\n}\n\ntype BooleanFieldType {\n  id: ID!\n  boolean: Boolean!\n}\n\ntype NumberFieldType {\n  id: ID!\n  integer: Int\n  float: Float\n  bigInt: Int\n}\n\ntype StringFieldType {\n  id: ID!\n  string: String!\n}\n\ntype URLFieldType {\n  id: ID!\n  url: URL!\n}\n\ntype CountryFieldType {\n  id: ID!\n  country: String!\n}\n\ntype CurrencyFieldType {\n  id: ID!\n  currency: Currency!\n}\n\ntype EnumFieldType {\n  id: ID!\n  enum: String\n  enumMultiple: [String]\n}\n\ntype AmountFieldMoneyType {\n  id: ID!\n  value: Amount_Money!\n}\n\ntype AmountFieldPercentageType {\n  id: ID!\n  value: Amount_Percentage!\n}\n\ntype AmountFieldTokenType {\n  id: ID!\n  value: Amount_Tokens!\n}\n\ntype DateFieldType {\n  id: ID!\n  value: Date!\n}\n\ntype PHIDFieldType {\n  id: ID!\n  phid: String!\n}",
+                    "initialValue": "{\n  \"booleans\": [],\n  \"numbers\": [],\n  \"strings\": [],\n  \"urls\": [],\n  \"countries\": [],\n  \"currency\": [],\n  \"enums\": [],\n  \"amountMoney\": [],\n  \"amountPercentage\": [],\n  \"amountTokens\": [],\n  \"date\": [],\n  \"phids\": []\n}",
                     "examples": []
                 },
                 "local": {
@@ -270,6 +270,71 @@
                             "name": "ADD_AMOUNT_TOKENS",
                             "description": "",
                             "schema": "input AddAmountTokensInput {\n  id: ID!\n  value: Amount_Tokens!\n}",
+                            "template": "",
+                            "reducer": "",
+                            "errors": [],
+                            "examples": [],
+                            "scope": "global"
+                        }
+                    ]
+                },
+                {
+                    "id": "HajaO6z34eLfpTK6KgkZdsEIf5s=",
+                    "name": "add_date_picker_value",
+                    "description": "",
+                    "operations": [
+                        {
+                            "id": "LKwQ6bF9OK3t0mXxKFB7/VpBsX0=",
+                            "name": "ADD_DATE_PICKER_VALUE",
+                            "description": "",
+                            "schema": "input AddDatePickerValueInput {\n id: ID!\n  value: Date!\n}",
+                            "template": "",
+                            "reducer": "",
+                            "errors": [],
+                            "examples": [],
+                            "scope": "global"
+                        }
+                    ]
+                },
+                {
+                    "id": "1WaLZfxa1Atlx/37/x50CMLInh4=",
+                    "name": "remove_date_picker_value",
+                    "description": "",
+                    "operations": [
+                        {
+                            "id": "t7acLghXoOo2QRSkm4/oBHUKRQw=",
+                            "name": "REMOVE_DATE_PICKER_VALUE",
+                            "description": "",
+                            "schema": "input RemoveDatePickerValueInput {\n  id: ID!\n}",
+                            "template": "",
+                            "reducer": "",
+                            "errors": [],
+                            "examples": [],
+                            "scope": "global"
+                        }
+                    ]
+                },
+                {
+                    "id": "itiTHNKkJR/BZObiwwS4CAWC90U=",
+                    "name": "phid_testing",
+                    "description": "",
+                    "operations": [
+                        {
+                            "id": "E40PPxNzOtBJCxIl2Yk/S1zSIjg=",
+                            "name": "ADD_PHID",
+                            "description": "",
+                            "schema": "input AddPhidInput {\n  id: ID!\n  phid: String!\n}",
+                            "template": "",
+                            "reducer": "",
+                            "errors": [],
+                            "examples": [],
+                            "scope": "global"
+                        },
+                        {
+                            "id": "kNhn0VVagy0ysXW6zxzfc7BFtW4=",
+                            "name": "REMOVE_PHID",
+                            "description": "",
+                            "schema": "input RemovePhidInput {\n  id: ID!\n}",
                             "template": "",
                             "reducer": "",
                             "errors": [],
