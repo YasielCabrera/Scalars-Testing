@@ -1,0 +1,59 @@
+{
+    "id": "dspot/sidebar-testing",
+    "name": "SidebarTesting",
+    "extension": ".sidebar",
+    "description": "Sidebar testing on Connect",
+    "author": {
+        "name": "Yasiel Cabrera",
+        "website": ""
+    },
+    "specifications": [
+        {
+            "version": 1,
+            "changeLog": [],
+            "state": {
+                "global": {
+                    "schema": "type SidebarTestingState {\n  nodes: [SidebarNode!]!\n}\n\ntype SidebarNode {\n  id: ID!\n  title: String!\n  icon: String\n  expandedIcon: String\n  children: [SidebarNode!]!\n}",
+                    "initialValue": "{\n  \"nodes\": []\n}",
+                    "examples": []
+                },
+                "local": {
+                    "schema": "",
+                    "initialValue": "",
+                    "examples": []
+                }
+            },
+            "modules": [
+                {
+                    "id": "vw0rjjnOOSr9G23/0qLxHQFetc4=",
+                    "name": "sidebar_testing",
+                    "description": "",
+                    "operations": [
+                        {
+                            "id": "L8YqDZnM3NusKreIF58aOk8Aalg=",
+                            "name": "ADD_NODE",
+                            "description": "",
+                            "schema": "input AddNodeInput {\n  id: ID!\n  title: String!\n  icon: String\n  expandedIcon: String\n  parentId: ID\n}",
+                            "template": "",
+                            "reducer": "",
+                            "errors": [],
+                            "examples": [],
+                            "scope": "global"
+                        },
+                        {
+                            "id": "LCtjE6M6/dryZrEhVGWS1mLs/Gs=",
+                            "name": "REMOVE_NODE",
+                            "description": "",
+                            "schema": "input RemoveNodeInput {\n  id: ID!\n}",
+                            "template": "",
+                            "reducer": "",
+                            "errors": [],
+                            "examples": [],
+                            "scope": "global"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

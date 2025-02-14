@@ -1,0 +1,39 @@
+scalar Amount_Tokens
+scalar EthereumAddress
+scalar Amount_Percentage
+scalar EmailAddress
+scalar Date
+scalar DateTime
+scalar URL
+scalar Amount_Money
+scalar OLabel
+scalar Currency
+scalar PHID
+scalar OID
+type SidebarTestingState {
+  nodes: [SidebarNode!]!
+}
+
+type SidebarNode {
+  id: ID!
+  title: String!
+  icon: String
+  expandedIcon: String
+  children: [SidebarNode!]!
+}
+
+
+
+# sidebar_testing
+
+input AddNodeInput {
+  id: ID!
+  title: String!
+  icon: String
+  expandedIcon: String
+  parentId: ID
+}
+
+input RemoveNodeInput {
+  id: ID!
+}
