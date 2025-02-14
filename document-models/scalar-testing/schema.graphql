@@ -21,6 +21,8 @@ type ScalarTestingState {
   amountMoney: [AmountFieldMoneyType!]!
   amountPercentage: [AmountFieldPercentageType!]!
   amountTokens: [AmountFieldTokenType!]!
+  date: [DateFieldType!]!
+  phids: [PHIDFieldType!]!
 }
 
 type BooleanFieldType {
@@ -74,6 +76,16 @@ type AmountFieldPercentageType {
 type AmountFieldTokenType {
   id: ID!
   value: Amount_Tokens!
+}
+
+type DateFieldType {
+  id: ID!
+  value: Date!
+}
+
+type PHIDFieldType {
+  id: ID!
+  phid: String!
 }
 
 
@@ -178,4 +190,28 @@ input AddAmountPercentageInput {
 input AddAmountTokensInput {
   id: ID!
   value: Amount_Tokens!
+}
+
+# add_date_picker_value
+
+input AddDatePickerValueInput {
+ id: ID!
+  value: Date!
+}
+
+# remove_date_picker_value
+
+input RemoveDatePickerValueInput {
+  id: ID!
+}
+
+# phid_testing
+
+input AddPhidInput {
+  id: ID!
+  phid: String!
+}
+
+input RemovePhidInput {
+  id: ID!
 }

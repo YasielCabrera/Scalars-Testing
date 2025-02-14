@@ -12,8 +12,9 @@ import {
   AddEnumInput,
   AddCountryInput,
   AddCurrencyInput,
+  AddDatePickerValueInput,
+  AddPhidInput,
 } from "../../document-models/scalar-testing";
-import { utils as documentModelUtils } from "document-model/document";
 import { State } from "./components/state";
 import { BooleanForm } from "./components/forms/boolean-form";
 import { useCallback } from "react";
@@ -26,6 +27,8 @@ import { EnumForm } from "./components/forms/enum-form";
 import { CountryForm } from "./components/forms/country-form";
 import { CurrencyForm } from "./components/forms/currency-form";
 import { AmountForm } from "./components/forms/amount-form";
+import { DatePickerForm } from "./components/forms/date-picker-form";
+import { PhidForm } from "./components/forms/phid-form";
 
 export type IProps = EditorProps<
   ScalarTestingState,
@@ -66,6 +69,14 @@ export default function Editor({ dispatch, document }: IProps) {
     dispatch(actions.addCurrency(data));
   }, []);
 
+  const onAddDate = useCallback((data: AddDatePickerValueInput) => {
+    dispatch(actions.addDatePickerValue(data));
+  }, []);
+
+  const onAddPhid = useCallback((data: AddPhidInput) => {
+    dispatch(actions.addPhid(data));
+  }, []);
+
   return (
     <div>
       <State state={state} />
@@ -99,6 +110,8 @@ export default function Editor({ dispatch, document }: IProps) {
             currenciesState={state.currency}
             onAddCurrency={onAddCurrency}
           />
+          <DatePickerForm dateState={state.date} onAddDate={onAddDate} />
+          <PhidForm onAddPhid={onAddPhid} phidsState={state.phids} />
         </Accordion>
       </div>
     </div>

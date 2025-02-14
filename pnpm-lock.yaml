@@ -34,8 +34,8 @@ importers:
         specifier: ^0.27.0
         version: 0.27.0(bufferutil@4.0.9)(graphql@16.10.0)(typescript@5.7.2)(utf-8-validate@5.0.10)(zod@3.24.1)
       '@powerhousedao/config':
-        specifier: 1.6.0
-        version: 1.6.0(@types/node@22.10.5)
+        specifier: 1.15.0
+        version: 1.15.0(@types/node@22.10.5)
       '@powerhousedao/connect':
         specifier: 1.0.0-dev.185
         version: 1.0.0-dev.185(@powerhousedao/design-system@1.22.5-canary.34(@tanstack/query-core@5.62.16)(@types/react@18.3.18)(bufferutil@4.0.9)(graphql@16.10.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(tailwindcss@3.4.17)(typescript@5.7.2)(utf-8-validate@5.0.10))(@powerhousedao/scalars@1.16.0(graphql@16.10.0)(zod@3.24.1))(@types/node@22.10.5)(document-model-libs@1.125.1(@codemirror/language@6.10.8)(@codemirror/state@6.5.0)(@codemirror/view@6.36.1)(@types/react@18.3.18)(graphql@16.10.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
@@ -1966,11 +1966,11 @@ packages:
     resolution: {integrity: sha512-2VuXrJ7orZSrJY8tNirQaLnGCnITI3NLfIXZi97sz1BsUqSfozJgD5sd4x5CMo8CB7FAW2WARTUb7148BZS8Fg==}
     hasBin: true
 
+  '@powerhousedao/config@1.15.0':
+    resolution: {integrity: sha512-zyq93Y/P46qHuJC3GzNz6Ap9n5TQmob7YgQjEOuBlyBe3i16xOgv84TMR/+m7cSpC5JQxpNfDVW7Nd4a4YG6aA==}
+
   '@powerhousedao/config@1.5.0':
     resolution: {integrity: sha512-toXg7WNrxp4iCpQx0vURm8CADWetiHpRNlvMfqhhdM39EYuA4RvnwgT1TykcY3/lVc0wp1+ZUwgtslKNuaoOkA==}
-
-  '@powerhousedao/config@1.6.0':
-    resolution: {integrity: sha512-MDmfezvhovk7Ud/CxX8Rk+0+zGNhgAMVe7ih8abWtikUbHeRGa21S4pE9l4W+qfH8EKFachDloS0as5G+mnHig==}
 
   '@powerhousedao/connect@1.0.0-dev.185':
     resolution: {integrity: sha512-nloER7EvQLaMFZtwxroX5LsVfuMiqN+1cwprhLpSXXEmHQM+sPyeBI+bjAvPWSyHlSLHv3a1yPLwG9OiLFj90A==}
@@ -9101,6 +9101,12 @@ snapshots:
       - utf-8-validate
       - zod
 
+  '@powerhousedao/config@1.15.0(@types/node@22.10.5)':
+    dependencies:
+      '@microsoft/api-extractor': 7.49.0(@types/node@22.10.5)
+    transitivePeerDependencies:
+      - '@types/node'
+
   '@powerhousedao/config@1.5.0(@types/node@20.17.12)':
     dependencies:
       '@microsoft/api-extractor': 7.49.0(@types/node@20.17.12)
@@ -9108,12 +9114,6 @@ snapshots:
       - '@types/node'
 
   '@powerhousedao/config@1.5.0(@types/node@22.10.5)':
-    dependencies:
-      '@microsoft/api-extractor': 7.49.0(@types/node@22.10.5)
-    transitivePeerDependencies:
-      - '@types/node'
-
-  '@powerhousedao/config@1.6.0(@types/node@22.10.5)':
     dependencies:
       '@microsoft/api-extractor': 7.49.0(@types/node@22.10.5)
     transitivePeerDependencies:
