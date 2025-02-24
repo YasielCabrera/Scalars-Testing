@@ -1,43 +1,48 @@
 /* eslint-disable react/jsx-max-depth */
-import { Button } from "@powerhousedao/design-system";
+import { Button, IconName } from "@powerhousedao/design-system";
 import { Form, IdField, PHIDField } from "@powerhousedao/design-system/scalars";
 import {
   AddPhidInput,
   ScalarTestingState,
 } from "document-models/scalar-testing";
-import { useCallback } from "react";
+import React, { useCallback } from "react";
 import { FormWrapper } from "../form-wrapper";
 import { State } from "../state";
 
-interface PHIDItem {
+interface IdAutocompleteOption {
+  icon?: IconName | React.ReactElement;
   title?: string;
   path?: string;
-  phid: string;
+  value: string;
   description?: string;
 }
 
-const mockedOptions: PHIDItem[] = [
+const mockedOptions: IdAutocompleteOption[] = [
   {
+    icon: "PowerhouseLogoSmall",
     title: "Document A",
     path: "projects/finance/document-a",
-    phid: "phd:baefc2a4-f9a0-4950-8161-fd8d8cc7dea7:main:public",
+    value: "phd:baefc2a4-f9a0-4950-8161-fd8d8cc7dea7:main:public",
     description: "Financial report for Q1 2024",
   },
   {
+    icon: "PowerhouseLogoSmall",
     title: "Document B",
     path: "projects/legal/document-b",
-    phid: "phd:baefc2a4-f9a0-4950-8161-fd8d8cc6cdb8:main:public",
+    value: "phd:baefc2a4-f9a0-4950-8161-fd8d8cc6cdb8:main:public",
     description: "Legal compliance documentation",
   },
   {
+    icon: "PowerhouseLogoSmall",
     title: "Document C",
     path: "projects/operations/document-c",
-    phid: "phd:baefc2a4-f9a0-4950-8161-fd8d8cc5efc9:main:public",
+    value: "phd:baefc2a4-f9a0-4950-8161-fd8d8cc5efc9:main:public",
     description: "Operational guidelines and procedures",
   },
 ];
 
-const fetchOptions = async (): Promise<PHIDItem[]> => {
+// Async versions
+const fetchOptions = async (): Promise<IdAutocompleteOption[]> => {
   // Simulate 2s network delay
   await new Promise((resolve) => setTimeout(resolve, 2000));
 
@@ -50,11 +55,22 @@ const fetchOptions = async (): Promise<PHIDItem[]> => {
 };
 
 const fetchSelectedOption = async (
-  phid: string,
-): Promise<PHIDItem | undefined> => {
+  value: string,
+): Promise<IdAutocompleteOption | undefined> => {
   // Simulate 2s network delay
   await new Promise((resolve) => setTimeout(resolve, 2000));
-  return mockedOptions.find((option) => option.phid === phid);
+  return mockedOptions.find((option) => option.value === value);
+};
+
+// Sync versions
+const fetchOptionsSync = (): IdAutocompleteOption[] => {
+  return mockedOptions;
+};
+
+const fetchSelectedOptionSync = (
+  value: string,
+): IdAutocompleteOption | undefined => {
+  return mockedOptions.find((option) => option.value === value);
 };
 
 interface PhidFormProps {
@@ -71,7 +87,7 @@ export function PhidForm({ onAddPhid, phidsState }: PhidFormProps) {
     <FormWrapper title="Add Phid">
       <State state={phidsState} />
 
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 min-h-[380px]">
         <Form
           defaultValues={{ phid: "" }}
           onSubmit={onSubmit}
@@ -81,10 +97,12 @@ export function PhidForm({ onAddPhid, phidsState }: PhidFormProps) {
           <PHIDField
             fetchOptionsCallback={fetchOptions}
             fetchSelectedOptionCallback={fetchSelectedOption}
+            // fetchOptionsCallback={fetchOptionsSync} // To test sync behavior uncomment this
+            // fetchSelectedOptionCallback={fetchSelectedOptionSync} // To test sync behavior uncomment this
             label="PHID field"
             name="phid"
             placeholder="phd:"
-            variant="withIdTitleAndDescription"
+            variant="withValueTitleAndDescription"
           />
           <Button className="w-full mt-2" size="small">
             Add
