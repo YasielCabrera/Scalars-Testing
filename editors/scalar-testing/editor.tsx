@@ -14,7 +14,6 @@ import {
   AddCurrencyInput,
   AddDatePickerValueInput,
   AddPhidInput,
-  AddValueDropdownInput,
 } from "../../document-models/scalar-testing";
 import { State } from "./components/state";
 import { BooleanForm } from "./components/forms/boolean-form";
@@ -30,7 +29,14 @@ import { CurrencyForm } from "./components/forms/currency-form";
 import { AmountForm } from "./components/forms/amount-form";
 import { DatePickerForm } from "./components/forms/date-picker-form";
 import { PhidForm } from "./components/forms/phid-form";
-import { DropDownForm } from "./components/forms/dropdown-form";
+import {
+  Dropdown,
+  DropdownContent,
+  DropdownItem,
+  DropdownTrigger,
+} from "@powerhousedao/design-system/scalars";
+import { Icon } from "@powerhousedao/design-system";
+import { FormWrapper } from "./components/form-wrapper";
 
 export type IProps = EditorProps<
   ScalarTestingState,
@@ -79,10 +85,6 @@ export default function Editor({ dispatch, document }: IProps) {
     dispatch(actions.addPhid(data));
   }, []);
 
-  const onAddValueDropdown = useCallback((data: AddValueDropdownInput) => {
-    dispatch(actions.addValueDropdown(data));
-  }, []);
-
   return (
     <div>
       <State state={state} />
@@ -118,10 +120,28 @@ export default function Editor({ dispatch, document }: IProps) {
           />
           <DatePickerForm dateState={state.date} onAddDate={onAddDate} />
           <PhidForm onAddPhid={onAddPhid} phidsState={state.phids} />
-          <DropDownForm
-            onAddValueDropdown={onAddValueDropdown}
-            valueDropdownState={state.dropdown}
-          />
+          <FormWrapper title="Add Value Dropdown">
+            <Dropdown>
+              <DropdownTrigger className="w-[284px]">
+                <Icon name="DownloadFile" />
+                Export as
+              </DropdownTrigger>
+              <DropdownContent className="w-[284px]">
+                <DropdownItem>
+                  <Icon name="ExportZip" />
+                  <span>Powerhouse Invoice</span>
+                </DropdownItem>
+                <DropdownItem>
+                  <Icon name="ExportUbl" />
+                  <span>UBL file</span>
+                </DropdownItem>
+                <DropdownItem>
+                  <Icon name="ExportPdf" />
+                  <span>PDF file</span>
+                </DropdownItem>
+              </DropdownContent>
+            </Dropdown>
+          </FormWrapper>
         </Accordion>
       </div>
     </div>
