@@ -23,6 +23,7 @@ type ScalarTestingState {
   amountTokens: [AmountFieldTokenType!]!
   date: [DateFieldType!]!
   phids: [PHIDFieldType!]!
+  dropdown: [DropDown!]!
 }
 
 type BooleanFieldType {
@@ -61,6 +62,10 @@ type EnumFieldType {
   id: ID!
   enum: String
   enumMultiple: [String]
+}
+type DropDown {
+  id: ID!
+  value: String
 }
 
 type AmountFieldMoneyType {
@@ -214,4 +219,11 @@ input AddPhidInput {
 
 input RemovePhidInput {
   id: ID!
+}
+
+# drop_down
+
+input AddValueDropdownInput {
+  id: ID!
+  value: String!
 }

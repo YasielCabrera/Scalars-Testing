@@ -14,6 +14,7 @@ import {
   AddCurrencyInput,
   AddDatePickerValueInput,
   AddPhidInput,
+  AddValueDropdownInput,
 } from "../../document-models/scalar-testing";
 import { State } from "./components/state";
 import { BooleanForm } from "./components/forms/boolean-form";
@@ -29,6 +30,7 @@ import { CurrencyForm } from "./components/forms/currency-form";
 import { AmountForm } from "./components/forms/amount-form";
 import { DatePickerForm } from "./components/forms/date-picker-form";
 import { PhidForm } from "./components/forms/phid-form";
+import { DropDownForm } from "./components/forms/dropdown-form";
 
 export type IProps = EditorProps<
   ScalarTestingState,
@@ -77,6 +79,10 @@ export default function Editor({ dispatch, document }: IProps) {
     dispatch(actions.addPhid(data));
   }, []);
 
+  const onAddValueDropdown = useCallback((data: AddValueDropdownInput) => {
+    dispatch(actions.addValueDropdown(data));
+  }, []);
+
   return (
     <div>
       <State state={state} />
@@ -112,6 +118,10 @@ export default function Editor({ dispatch, document }: IProps) {
           />
           <DatePickerForm dateState={state.date} onAddDate={onAddDate} />
           <PhidForm onAddPhid={onAddPhid} phidsState={state.phids} />
+          <DropDownForm
+            onAddValueDropdown={onAddValueDropdown}
+            valueDropdownState={state.dropdown}
+          />
         </Accordion>
       </div>
     </div>
