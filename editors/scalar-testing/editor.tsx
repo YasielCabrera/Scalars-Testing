@@ -29,6 +29,14 @@ import { CurrencyForm } from "./components/forms/currency-form";
 import { AmountForm } from "./components/forms/amount-form";
 import { DatePickerForm } from "./components/forms/date-picker-form";
 import { PhidForm } from "./components/forms/phid-form";
+import {
+  Dropdown,
+  DropdownContent,
+  DropdownItem,
+  DropdownTrigger,
+} from "@powerhousedao/design-system/scalars";
+import { Icon } from "@powerhousedao/design-system";
+import { FormWrapper } from "./components/form-wrapper";
 
 export type IProps = EditorProps<
   ScalarTestingState,
@@ -112,6 +120,28 @@ export default function Editor({ dispatch, document }: IProps) {
           />
           <DatePickerForm dateState={state.date} onAddDate={onAddDate} />
           <PhidForm onAddPhid={onAddPhid} phidsState={state.phids} />
+          <FormWrapper title="Add Value Dropdown">
+            <Dropdown>
+              <DropdownTrigger className="w-[284px]">
+                <Icon name="DownloadFile" />
+                Export as
+              </DropdownTrigger>
+              <DropdownContent className="w-[284px]">
+                <DropdownItem>
+                  <Icon name="ExportZip" />
+                  <span>Powerhouse Invoice</span>
+                </DropdownItem>
+                <DropdownItem>
+                  <Icon name="ExportUbl" />
+                  <span>UBL file</span>
+                </DropdownItem>
+                <DropdownItem>
+                  <Icon name="ExportPdf" />
+                  <span>PDF file</span>
+                </DropdownItem>
+              </DropdownContent>
+            </Dropdown>
+          </FormWrapper>
         </Accordion>
       </div>
     </div>
