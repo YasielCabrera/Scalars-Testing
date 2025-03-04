@@ -17,7 +17,7 @@ interface IdAutocompleteOption {
   description?: string;
 }
 
-export const mockedOptions: IdAutocompleteOption[] = [
+const mockedOptions: IdAutocompleteOption[] = [
   {
     icon: "PowerhouseLogoSmall",
     title: "Document A",
@@ -106,27 +106,6 @@ export const mockedOptions: IdAutocompleteOption[] = [
   },
   {
     icon: "PowerhouseLogoSmall",
-    title: "API Documentation v3",
-    path: "projects/tech/api-docs-v3",
-    value: "phd:baefc2a4-f9a0-4950-8161-fd8d8cb83fec:main:public",
-    description: "Complete API reference guide and integration documentation",
-  },
-  {
-    icon: "PowerhouseLogoSmall",
-    title: "Customer Feedback Analysis",
-    path: "projects/product/customer-feedback",
-    value: "phd:baefc2a4-f9a0-4950-8161-fd8d8cb72fed:main:public",
-    description: "Analysis of customer feedback and satisfaction metrics",
-  },
-  {
-    icon: "PowerhouseLogoSmall",
-    title: "Project Management Guide",
-    path: "projects/operations/pm-guide",
-    value: "phd:baefc2a4-f9a0-4950-8161-fd8d8cb61fee:main:public",
-    description: "Best practices and methodologies for project management",
-  },
-  {
-    icon: "PowerhouseLogoSmall",
     title: "Benefits Package 2024",
     path: "projects/hr/benefits-2024",
     value: "phd:baefc2a4-f9a0-4950-8161-fd8d8cb50fef:main:public",
@@ -136,7 +115,7 @@ export const mockedOptions: IdAutocompleteOption[] = [
     icon: "PowerhouseLogoSmall",
     title: "Risk Assessment Report",
     path: "projects/security/risk-assessment",
-    value: "phd:baefc2a4-f9a0-4950-8161-fd8d8cb4fff0:main:public",
+    value: "phd://security.powerhouse.io/baefc2a4-f9a0-4950-8161-fd8d8cb4fff0",
     description:
       "Comprehensive security risk analysis and mitigation strategies",
   },
@@ -144,64 +123,120 @@ export const mockedOptions: IdAutocompleteOption[] = [
     icon: "PowerhouseLogoSmall",
     title: "Inventory Management Plan",
     path: "projects/operations/inventory-2024",
-    value: "phd:baefc2a4-f9a0-4950-8161-fd8d8cb3eff1:main:public",
+    value: "phd://ops.powerhouse.io/baefc2a4-f9a0-4950-8161-fd8d8cb3eff1",
     description: "Strategic plan for inventory control and optimization",
   },
   {
     icon: "PowerhouseLogoSmall",
     title: "Digital Marketing Report",
     path: "projects/marketing/digital-report",
-    value: "phd:baefc2a4-f9a0-4950-8161-fd8d8cb2dff2:main:public",
+    value: "phd://marketing.powerhouse.io/baefc2a4-f9a0-4950-8161-fd8d8cb2dff2",
     description: "Analysis of digital marketing campaigns and ROI",
   },
   {
     icon: "PowerhouseLogoSmall",
     title: "Market Research Analysis",
     path: "projects/research/market-analysis",
-    value: "phd:baefc2a4-f9a0-4950-8161-fd8d8cb1cff3:main:public",
+    value: "phd://research.powerhouse.io/baefc2a4-f9a0-4950-8161-fd8d8cb1cff3",
     description: "Comprehensive market trends and competitor analysis",
   },
   {
     icon: "PowerhouseLogoSmall",
     title: "User Experience Report",
     path: "projects/product/ux-research",
-    value: "phd:baefc2a4-f9a0-4950-8161-fd8d8cb0bff4:main:public",
+    value: "phd://product.powerhouse.io/baefc2a4-f9a0-4950-8161-fd8d8cb0bff4",
     description: "Findings from user experience research and testing",
   },
   {
     icon: "PowerhouseLogoSmall",
     title: "Social Media Strategy",
     path: "projects/marketing/social-2024",
-    value: "phd:baefc2a4-f9a0-4950-8161-fd8d8caafff5:main:public",
+    value: "phd://social.powerhouse.io/baefc2a4-f9a0-4950-8161-fd8d8caafff5",
     description: "Strategic plan for social media engagement and growth",
   },
   {
     icon: "PowerhouseLogoSmall",
     title: "Infrastructure Upgrade Plan",
     path: "projects/tech/infrastructure-2024",
-    value: "phd:baefc2a4-f9a0-4950-8161-fd8d8ca9eff6:main:public",
+    value: "phd://infra.powerhouse.io/baefc2a4-f9a0-4950-8161-fd8d8ca9eff6",
     description: "Technical roadmap for infrastructure improvements",
   },
   {
     icon: "PowerhouseLogoSmall",
     title: "Sustainability Report 2024",
     path: "projects/operations/sustainability",
-    value: "phd:baefc2a4-f9a0-4950-8161-fd8d8ca8eff7:main:public",
+    value:
+      "phd://sustainability.powerhouse.io/baefc2a4-f9a0-4950-8161-fd8d8ca8eff7",
     description: "Annual environmental impact and sustainability initiatives",
   },
   {
     icon: "PowerhouseLogoSmall",
-    title: "Data Privacy Guidelines",
-    path: "projects/legal/privacy-guidelines",
-    value: "phd:baefc2a4-f9a0-4950-8161-fd8d8ca7eff8:main:public",
-    description:
-      "Comprehensive guide to data protection and privacy compliance",
+    title: "Cloud Architecture Design",
+    path: "projects/tech/cloud-architecture",
+    value: "phd://cloud.powerhouse.io/baefc2a4-f9a0-4950-8161-fd8d8ca7eff8",
+    description: "Cloud infrastructure architecture and design specifications",
+  },
+  {
+    icon: "PowerhouseLogoSmall",
+    title: "Data Analytics Dashboard",
+    path: "projects/analytics/dashboard",
+    value: "phd://analytics.powerhouse.io/baefc2a4-f9a0-4950-8161-fd8d8ca6eff9",
+    description: "Business intelligence and data analytics platform",
+  },
+  {
+    icon: "PowerhouseLogoSmall",
+    title: "DevOps Pipeline Documentation",
+    path: "projects/tech/devops-pipeline",
+    value: "phd://devops.powerhouse.io/baefc2a4-f9a0-4950-8161-fd8d8ca5effa",
+    description: "CI/CD pipeline and deployment procedures",
+  },
+  {
+    icon: "PowerhouseLogoSmall",
+    title: "API Gateway Specification",
+    path: "projects/tech/api-gateway",
+    value: "phd://api.powerhouse.io/baefc2a4-f9a0-4950-8161-fd8d8ca4effb",
+    description: "API gateway configuration and routing documentation",
   },
 ];
 
-// Async versions
-export const fetchOptions = async (
+const filterOptions = (
+  options: IdAutocompleteOption[],
   userInput: string,
+  context?: Record<string, unknown>,
+) => {
+  const normalizedInput = userInput.toLowerCase();
+  const allowUris = context?.allowUris as boolean;
+  const allowedScopes = Array.isArray(context?.allowedScopes)
+    ? context.allowedScopes
+    : [];
+
+  return options.filter((opt) => {
+    const isUrl = opt.value.startsWith("phd://");
+
+    if (!isUrl && !allowUris) {
+      return false;
+    }
+
+    if (!isUrl && allowedScopes.length > 0) {
+      const scope = opt.value.split(":").pop();
+      if (scope && !allowedScopes.includes(scope)) {
+        return false;
+      }
+    }
+
+    return (
+      opt.title?.toLowerCase().includes(normalizedInput) ||
+      opt.path?.toLowerCase().includes(normalizedInput) ||
+      opt.value.toLowerCase().includes(normalizedInput) ||
+      opt.description?.toLowerCase().includes(normalizedInput)
+    );
+  });
+};
+
+// Async versions
+const fetchOptions = async (
+  userInput: string,
+  context?: Record<string, unknown>,
 ): Promise<IdAutocompleteOption[]> => {
   // Simulate 2s network delay
   await new Promise((resolve) => setTimeout(resolve, 2000));
@@ -211,19 +246,10 @@ export const fetchOptions = async (
     throw new Error();
   }
 
-  const normalizedInput = userInput.toLowerCase();
-  return normalizedInput === ""
-    ? mockedOptions
-    : mockedOptions.filter(
-        (option) =>
-          option.title?.toLowerCase().includes(normalizedInput) ||
-          option.path?.toLowerCase().includes(normalizedInput) ||
-          option.value.toLowerCase().includes(normalizedInput) ||
-          option.description?.toLowerCase().includes(normalizedInput),
-      );
+  return filterOptions(mockedOptions, userInput, context);
 };
 
-export const fetchSelectedOption = async (
+const fetchSelectedOption = async (
   value: string,
 ): Promise<IdAutocompleteOption | undefined> => {
   // Simulate 2s network delay
@@ -232,20 +258,14 @@ export const fetchSelectedOption = async (
 };
 
 // Sync versions
-export const fetchOptionsSync = (userInput: string): IdAutocompleteOption[] => {
-  const normalizedInput = userInput.toLowerCase();
-  return normalizedInput === ""
-    ? mockedOptions
-    : mockedOptions.filter(
-        (option) =>
-          option.title?.toLowerCase().includes(normalizedInput) ||
-          option.path?.toLowerCase().includes(normalizedInput) ||
-          option.value.toLowerCase().includes(normalizedInput) ||
-          option.description?.toLowerCase().includes(normalizedInput),
-      );
+const fetchOptionsSync = (
+  userInput: string,
+  context?: Record<string, unknown>,
+): IdAutocompleteOption[] => {
+  return filterOptions(mockedOptions, userInput, context);
 };
 
-export const fetchSelectedOptionSync = (
+const fetchSelectedOptionSync = (
   value: string,
 ): IdAutocompleteOption | undefined => {
   return mockedOptions.find((option) => option.value === value);
@@ -273,10 +293,11 @@ export function PhidForm({ onAddPhid, phidsState }: PhidFormProps) {
         >
           <IdField />
           <PHIDField
-            // fetchOptionsCallback={fetchOptions} // Async version
-            // fetchSelectedOptionCallback={fetchSelectedOption} // Async version
+            allowUris
             fetchOptionsCallback={fetchOptionsSync} // Sync version
             fetchSelectedOptionCallback={fetchSelectedOptionSync} // Sync version
+            // fetchOptionsCallback={fetchOptions} // Async version
+            // fetchSelectedOptionCallback={fetchSelectedOption} // Async version
             label="PHID field"
             name="phid"
             placeholder="phd:"
