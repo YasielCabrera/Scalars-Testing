@@ -23,6 +23,7 @@ type ScalarTestingState {
   amountTokens: [AmountFieldTokenType!]!
   date: [DateFieldType!]!
   phids: [PHIDFieldType!]!
+  aids: [AIDFieldType!]!
   dropdown: [DropDown!]!
 }
 
@@ -91,6 +92,11 @@ type DateFieldType {
 type PHIDFieldType {
   id: ID!
   phid: String!
+}
+
+type AIDFieldType {
+  id: ID!
+  aid: String!
 }
 
 
@@ -226,4 +232,15 @@ input RemovePhidInput {
 input AddValueDropdownInput {
   id: ID!
   value: String!
+}
+
+# aid_testing
+
+input AddAidInput {
+  id: ID!
+  aid: String!
+}
+
+input RemoveAidInput {
+  id: ID!
 }
