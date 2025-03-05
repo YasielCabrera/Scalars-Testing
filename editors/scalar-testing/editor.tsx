@@ -14,6 +14,7 @@ import {
   AddCurrencyInput,
   AddDatePickerValueInput,
   AddPhidInput,
+  AddAidInput,
 } from "../../document-models/scalar-testing";
 import { State } from "./components/state";
 import { BooleanForm } from "./components/forms/boolean-form";
@@ -29,6 +30,7 @@ import { CurrencyForm } from "./components/forms/currency-form";
 import { AmountForm } from "./components/forms/amount-form";
 import { DatePickerForm } from "./components/forms/date-picker-form";
 import { PhidForm } from "./components/forms/phid-form";
+import { AidForm } from "./components/forms/aid-form";
 import {
   Dropdown,
   DropdownContent,
@@ -85,6 +87,10 @@ export default function Editor({ dispatch, document }: IProps) {
     dispatch(actions.addPhid(data));
   }, []);
 
+  const onAddAid = useCallback((data: AddAidInput) => {
+    dispatch(actions.addAid(data));
+  }, []);
+
   return (
     <div>
       <State state={state} />
@@ -120,6 +126,7 @@ export default function Editor({ dispatch, document }: IProps) {
           />
           <DatePickerForm dateState={state.date} onAddDate={onAddDate} />
           <PhidForm onAddPhid={onAddPhid} phidsState={state.phids} />
+          <AidForm aidsState={state.aids} onAddAid={onAddAid} />
           <FormWrapper title="Add Value Dropdown">
             <Dropdown>
               <DropdownTrigger className="w-[284px]">
