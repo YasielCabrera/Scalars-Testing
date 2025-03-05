@@ -14,6 +14,6 @@ export const reducer: ScalarTestingPhidTestingOperations = {
     });
   },
   removePhidOperation(state, action, dispatch) {
-    state.phids = state.phids.filter((phid) => phid?.id !== action.input.id);
+    state.phids = state.phids.filter((phid) => phid.id !== action.input.id);
   },
 };

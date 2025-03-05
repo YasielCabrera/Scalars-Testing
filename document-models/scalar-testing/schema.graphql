@@ -91,12 +91,12 @@ type DateFieldType {
 
 type PHIDFieldType {
   id: ID!
-  phid: String!
+  phid: String
 }
 
 type AIDFieldType {
   id: ID!
-  aid: String!
+  aid: String
 }
 
 
@@ -220,7 +220,7 @@ input RemoveDatePickerValueInput {
 
 input AddPhidInput {
   id: ID!
-  phid: String!
+  phid: String
 }
 
 input RemovePhidInput {
@@ -238,7 +238,7 @@ input AddValueDropdownInput {
 
 input AddAidInput {
   id: ID!
-  aid: String!
+  aid: String
 }
 
 input RemoveAidInput {

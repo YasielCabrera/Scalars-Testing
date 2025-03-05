@@ -271,6 +271,10 @@ const fetchSelectedOptionSync = (
   return mockedOptions.find((option) => option.value === value);
 };
 
+const onBlur = () => {
+  console.log("onBlur");
+};
+
 interface PhidFormProps {
   readonly onAddPhid: (data: AddPhidInput) => void;
   readonly phidsState: ScalarTestingState["phids"];
@@ -300,6 +304,7 @@ export function PhidForm({ onAddPhid, phidsState }: PhidFormProps) {
             // fetchSelectedOptionCallback={fetchSelectedOption} // Async version
             label="PHID field"
             name="phid"
+            onBlur={onBlur}
             placeholder="phd:"
             variant="withValueTitleAndDescription"
           />
