@@ -25,6 +25,7 @@ type ScalarTestingState {
   aids: [AIDFieldType!]!
   dropdown: [DropDown!]!
   date: [DateFieldType!]!
+  time: [TimeFieldType!]!
 }
 
 type BooleanFieldType {
@@ -93,9 +94,13 @@ type AIDFieldType {
   id: ID!
   aid: String!
 }
-type DateFieldType{
+type DateFieldType {
   id: ID!
   date: String!
+}
+type TimeFieldType {
+  id: ID!
+  time: String!
 }
 
 
@@ -239,5 +244,16 @@ input AddDateInput {
 }
 
 input RemoveDateInput {
+  id: ID!
+}
+
+# time_testing
+
+input AddTimeInput {
+  id: ID!
+  time: String!
+}
+
+input RemoveTimeInput {
   id: ID!
 }
