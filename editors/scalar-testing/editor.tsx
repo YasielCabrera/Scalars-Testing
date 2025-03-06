@@ -16,6 +16,7 @@ import {
   AddAidInput,
   AddDateInput,
   AddTimeInput,
+  AddDateTimeInput,
 } from "../../document-models/scalar-testing";
 import { State } from "./components/state";
 import { BooleanForm } from "./components/forms/boolean-form";
@@ -41,6 +42,7 @@ import { Icon } from "@powerhousedao/design-system";
 import { FormWrapper } from "./components/form-wrapper";
 import { DateForm } from "./components/forms/date-form";
 import { TimeForm } from "./components/forms/time-form";
+import { DateTimeForm } from "./components/forms/date-time-form";
 
 export type IProps = EditorProps<
   ScalarTestingState,
@@ -96,6 +98,10 @@ export default function Editor({ dispatch, document }: IProps) {
     dispatch(actions.addTime(data));
   }, []);
 
+  const onAddDateTime = useCallback((data: AddDateTimeInput) => {
+    dispatch(actions.addDateTime(data));
+  }, []);
+
   return (
     <div>
       <State state={state} />
@@ -133,6 +139,10 @@ export default function Editor({ dispatch, document }: IProps) {
           <AidForm aidsState={state.aids} onAddAid={onAddAid} />
           <DateForm datesState={state.date} onAddDate={onAddDate} />
           <TimeForm onAddTime={onAddTime} timesState={state.time} />
+          <DateTimeForm
+            dateTimesState={state.datetime}
+            onAddDateTime={onAddDateTime}
+          />
           <FormWrapper title="Add Value Dropdown">
             <Dropdown>
               <DropdownTrigger className="w-[284px]">
