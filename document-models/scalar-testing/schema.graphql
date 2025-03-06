@@ -21,10 +21,10 @@ type ScalarTestingState {
   amountMoney: [AmountFieldMoneyType!]!
   amountPercentage: [AmountFieldPercentageType!]!
   amountTokens: [AmountFieldTokenType!]!
-  date: [DateFieldType!]!
   phids: [PHIDFieldType!]!
   aids: [AIDFieldType!]!
   dropdown: [DropDown!]!
+  date: [DateFieldType!]!
 }
 
 type BooleanFieldType {
@@ -84,11 +84,6 @@ type AmountFieldTokenType {
   value: Amount_Tokens!
 }
 
-type DateFieldType {
-  id: ID!
-  value: Date!
-}
-
 type PHIDFieldType {
   id: ID!
   phid: String!
@@ -97,6 +92,10 @@ type PHIDFieldType {
 type AIDFieldType {
   id: ID!
   aid: String!
+}
+type DateFieldType{
+  id: ID!
+  date: String!
 }
 
 
@@ -203,19 +202,6 @@ input AddAmountTokensInput {
   value: Amount_Tokens!
 }
 
-# add_date_picker_value
-
-input AddDatePickerValueInput {
- id: ID!
-  value: Date!
-}
-
-# remove_date_picker_value
-
-input RemoveDatePickerValueInput {
-  id: ID!
-}
-
 # phid_testing
 
 input AddPhidInput {
@@ -242,5 +228,16 @@ input AddAidInput {
 }
 
 input RemoveAidInput {
+  id: ID!
+}
+
+# date_field_module
+
+input AddDateInput {
+  id: ID!
+  date: String!
+}
+
+input RemoveDateInput {
   id: ID!
 }

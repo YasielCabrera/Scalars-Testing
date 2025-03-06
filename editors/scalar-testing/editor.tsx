@@ -12,9 +12,9 @@ import {
   AddEnumInput,
   AddCountryInput,
   AddCurrencyInput,
-  AddDatePickerValueInput,
   AddPhidInput,
   AddAidInput,
+  AddDateInput,
 } from "../../document-models/scalar-testing";
 import { State } from "./components/state";
 import { BooleanForm } from "./components/forms/boolean-form";
@@ -28,7 +28,6 @@ import { EnumForm } from "./components/forms/enum-form";
 import { CountryForm } from "./components/forms/country-form";
 import { CurrencyForm } from "./components/forms/currency-form";
 import { AmountForm } from "./components/forms/amount-form";
-import { DatePickerForm } from "./components/forms/date-picker-form";
 import { PhidForm } from "./components/forms/phid-form";
 import { AidForm } from "./components/forms/aid-form";
 import {
@@ -39,6 +38,7 @@ import {
 } from "@powerhousedao/design-system/scalars";
 import { Icon } from "@powerhousedao/design-system";
 import { FormWrapper } from "./components/form-wrapper";
+import { DateForm } from "./components/forms/date-form";
 
 export type IProps = EditorProps<
   ScalarTestingState,
@@ -79,16 +79,15 @@ export default function Editor({ dispatch, document }: IProps) {
     dispatch(actions.addCurrency(data));
   }, []);
 
-  const onAddDate = useCallback((data: AddDatePickerValueInput) => {
-    dispatch(actions.addDatePickerValue(data));
-  }, []);
-
   const onAddPhid = useCallback((data: AddPhidInput) => {
     dispatch(actions.addPhid(data));
   }, []);
 
   const onAddAid = useCallback((data: AddAidInput) => {
     dispatch(actions.addAid(data));
+  }, []);
+  const onAddDate = useCallback((data: AddDateInput): void => {
+    dispatch(actions.addDate(data));
   }, []);
 
   return (
@@ -124,9 +123,9 @@ export default function Editor({ dispatch, document }: IProps) {
             currenciesState={state.currency}
             onAddCurrency={onAddCurrency}
           />
-          <DatePickerForm dateState={state.date} onAddDate={onAddDate} />
           <PhidForm onAddPhid={onAddPhid} phidsState={state.phids} />
           <AidForm aidsState={state.aids} onAddAid={onAddAid} />
+          <DateForm datesState={state.date} onAddDate={onAddDate} />
           <FormWrapper title="Add Value Dropdown">
             <Dropdown>
               <DropdownTrigger className="w-[284px]">
