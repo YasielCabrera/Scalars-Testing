@@ -14,6 +14,6 @@ export const reducer: ScalarTestingAidTestingOperations = {
     });
   },
   removeAidOperation(state, action, dispatch) {
-    state.aids = state.aids.filter((aid) => aid?.id !== action.input.id);
+    state.aids = state.aids.filter((aid) => aid.id !== action.input.id);
   },
 };

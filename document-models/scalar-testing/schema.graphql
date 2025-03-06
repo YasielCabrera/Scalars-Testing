@@ -87,12 +87,12 @@ type AmountFieldTokenType {
 
 type PHIDFieldType {
   id: ID!
-  phid: String!
+  phid: String
 }
 
 type AIDFieldType {
   id: ID!
-  aid: String!
+  aid: String
 }
 type DateFieldType {
   id: ID!
@@ -211,7 +211,7 @@ input AddAmountTokensInput {
 
 input AddPhidInput {
   id: ID!
-  phid: String!
+  phid: String
 }
 
 input RemovePhidInput {
@@ -229,7 +229,7 @@ input AddValueDropdownInput {
 
 input AddAidInput {
   id: ID!
-  aid: String!
+  aid: String
 }
 
 input RemoveAidInput {
