@@ -411,6 +411,35 @@
                             "scope": "global"
                         }
                     ]
+                },
+                {
+                    "id": "WWLLF0SppCjDD+TvxwkGlLwjALU=",
+                    "name": "date_time_testing",
+                    "description": "",
+                    "operations": [
+                        {
+                            "id": "akP1aCt3JLMrMUP3hIQFau9rWBA=",
+                            "name": "ADD_DATE_TIME",
+                            "description": "",
+                            "schema": "input AddDateTimeInput {\n  id: ID!\n  datetime: String!\n}",
+                            "template": "",
+                            "reducer": "",
+                            "errors": [],
+                            "examples": [],
+                            "scope": "global"
+                        },
+                        {
+                            "id": "IqGa6IvTKVzMyTdhRTgoShnO1rg=",
+                            "name": "REMOVE_DATETIME",
+                            "description": "",
+                            "schema": "input RemoveDatetimeInput {\n  id: ID!\n}",
+                            "template": "",
+                            "reducer": "",
+                            "errors": [],
+                            "examples": [],
+                            "scope": "global"
+                        }
+                    ]
                 }
             ]
         }
