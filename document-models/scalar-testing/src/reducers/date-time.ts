@@ -4,9 +4,9 @@
  * - delete the file and run the code generator again to have it reset
  */
 
-import { ScalarTestingDateTimeTestingOperations } from "../../gen/date-time-testing/operations";
+import { ScalarTestingDateTimeOperations } from "../../gen/date-time/operations";
 
-export const reducer: ScalarTestingDateTimeTestingOperations = {
+export const reducer: ScalarTestingDateTimeOperations = {
   addDateTimeOperation(state, action, dispatch) {
     if (!Array.isArray(state.datetime)) {
       state.datetime = [];
@@ -16,7 +16,7 @@ export const reducer: ScalarTestingDateTimeTestingOperations = {
       datetime: action.input.datetime,
     });
   },
-  removeDatetimeOperation(state, action, dispatch) {
+  removeDateTimeOperation(state, action, dispatch) {
     state.datetime = state.datetime.filter(
       (datetime) => datetime.id !== action.input.id,
     );

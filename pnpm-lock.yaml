@@ -38,10 +38,10 @@ importers:
         version: 1.15.0(@types/node@22.10.5)
       '@powerhousedao/connect':
         specifier: 1.0.0-dev.202
-        version: 1.0.0-dev.202(@powerhousedao/design-system@1.22.5-canary.93(@tanstack/query-core@5.62.16)(@types/react@18.3.18)(bufferutil@4.0.9)(graphql@16.10.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(tailwindcss@3.4.17)(typescript@5.7.2)(utf-8-validate@5.0.10))(@powerhousedao/scalars@1.16.0(graphql@16.10.0)(zod@3.24.1))(@types/node@22.10.5)(document-model-libs@1.125.1(@codemirror/language@6.10.8)(@codemirror/state@6.5.0)(@codemirror/view@6.36.1)(@types/react@18.3.18)(graphql@16.10.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
+        version: 1.0.0-dev.202(@powerhousedao/design-system@1.22.5-canary.94(@tanstack/query-core@5.62.16)(@types/react@18.3.18)(bufferutil@4.0.9)(graphql@16.10.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(tailwindcss@3.4.17)(typescript@5.7.2)(utf-8-validate@5.0.10))(@powerhousedao/scalars@1.16.0(graphql@16.10.0)(zod@3.24.1))(@types/node@22.10.5)(document-model-libs@1.125.1(@codemirror/language@6.10.8)(@codemirror/state@6.5.0)(@codemirror/view@6.36.1)(@types/react@18.3.18)(graphql@16.10.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       '@powerhousedao/design-system':
-        specifier: 1.22.5-canary.93
-        version: 1.22.5-canary.93(@tanstack/query-core@5.62.16)(@types/react@18.3.18)(bufferutil@4.0.9)(graphql@16.10.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(tailwindcss@3.4.17)(typescript@5.7.2)(utf-8-validate@5.0.10)
+        specifier: 1.22.5-canary.94
+        version: 1.22.5-canary.94(@tanstack/query-core@5.62.16)(@types/react@18.3.18)(bufferutil@4.0.9)(graphql@16.10.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(tailwindcss@3.4.17)(typescript@5.7.2)(utf-8-validate@5.0.10)
       '@powerhousedao/ph-cli':
         specifier: ^0.15.1
         version: 0.15.1(@codemirror/language@6.10.8)(@codemirror/state@6.5.0)(@codemirror/view@6.36.1)(@tanstack/query-core@5.62.16)(@types/node@22.10.5)(@types/pg@8.11.10)(@types/react@18.3.18)(bufferutil@4.0.9)(ethers@6.13.5(bufferutil@4.0.9)(utf-8-validate@5.0.10))(tailwindcss@3.4.17)(typescript@5.7.2)(utf-8-validate@5.0.10)(zod@3.24.1)
@@ -1996,8 +1996,8 @@ packages:
       react: ^18.3.1
       react-dom: ^18.3.1
 
-  '@powerhousedao/design-system@1.22.5-canary.93':
-    resolution: {integrity: sha512-GPkWorfneNsA05/b+OTO2JKqUXlrbiheG1ylYEddJAIRZftgEua0vXN0Yj3i20xSFf2J1kpI+p93p3gL5Yx53Q==}
+  '@powerhousedao/design-system@1.22.5-canary.94':
+    resolution: {integrity: sha512-Ni4SbuCqBaYHsHUP2vZaezpvz8HBNZYXzQBs3LeUZrAH7+8+siDyiSrN8E1GKRcNLt0YqwtQokyUA4i88aeqoA==}
     peerDependencies:
       react: ^18.3.1
       react-dom: ^18.3.1
@@ -2019,8 +2019,8 @@ packages:
       graphql: ^16.9.0
       zod: ^3.23.8
 
-  '@powerhousedao/scalars@1.21.2-canary.93':
-    resolution: {integrity: sha512-FWFFw6vjG5WR0/jvVk7cjlmxgrs36aefUqmNHMCO5I4HCrBc6Ab91sJA4STIhN/Mu6vNCBzb13zA0AeYlhqTVg==}
+  '@powerhousedao/scalars@1.21.2-canary.94':
+    resolution: {integrity: sha512-zC19hYHbc/tidzDlZje9zpv/g0pqcT1AISO6jkLlysC4fYDqmTzIDB8X+WF1x+paZvCT1/3HonLVXci0ZfV5tg==}
     peerDependencies:
       graphql: ^16.9.0
       zod: ^3.23.8
@@ -9255,9 +9255,9 @@ snapshots:
       - sugarss
       - terser
 
-  '@powerhousedao/connect@1.0.0-dev.202(@powerhousedao/design-system@1.22.5-canary.93(@tanstack/query-core@5.62.16)(@types/react@18.3.18)(bufferutil@4.0.9)(graphql@16.10.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(tailwindcss@3.4.17)(typescript@5.7.2)(utf-8-validate@5.0.10))(@powerhousedao/scalars@1.16.0(graphql@16.10.0)(zod@3.24.1))(@types/node@22.10.5)(document-model-libs@1.125.1(@codemirror/language@6.10.8)(@codemirror/state@6.5.0)(@codemirror/view@6.36.1)(@types/react@18.3.18)(graphql@16.10.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))':
+  '@powerhousedao/connect@1.0.0-dev.202(@powerhousedao/design-system@1.22.5-canary.94(@tanstack/query-core@5.62.16)(@types/react@18.3.18)(bufferutil@4.0.9)(graphql@16.10.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(tailwindcss@3.4.17)(typescript@5.7.2)(utf-8-validate@5.0.10))(@powerhousedao/scalars@1.16.0(graphql@16.10.0)(zod@3.24.1))(@types/node@22.10.5)(document-model-libs@1.125.1(@codemirror/language@6.10.8)(@codemirror/state@6.5.0)(@codemirror/view@6.36.1)(@types/react@18.3.18)(graphql@16.10.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))':
     dependencies:
-      '@powerhousedao/design-system': 1.22.5-canary.93(@tanstack/query-core@5.62.16)(@types/react@18.3.18)(bufferutil@4.0.9)(graphql@16.10.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(tailwindcss@3.4.17)(typescript@5.7.2)(utf-8-validate@5.0.10)
+      '@powerhousedao/design-system': 1.22.5-canary.94(@tanstack/query-core@5.62.16)(@types/react@18.3.18)(bufferutil@4.0.9)(graphql@16.10.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(tailwindcss@3.4.17)(typescript@5.7.2)(utf-8-validate@5.0.10)
       '@powerhousedao/scalars': 1.16.0(graphql@16.10.0)(zod@3.24.1)
       '@vitejs/plugin-basic-ssl': 1.2.0(vite@5.4.11(@types/node@22.10.5))
       commander: 12.1.0
@@ -9351,10 +9351,10 @@ snapshots:
       - uploadthing
       - utf-8-validate
 
-  '@powerhousedao/design-system@1.22.5-canary.93(@tanstack/query-core@5.62.16)(@types/react@18.3.18)(bufferutil@4.0.9)(graphql@16.10.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(tailwindcss@3.4.17)(typescript@5.7.2)(utf-8-validate@5.0.10)':
+  '@powerhousedao/design-system@1.22.5-canary.94(@tanstack/query-core@5.62.16)(@types/react@18.3.18)(bufferutil@4.0.9)(graphql@16.10.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(tailwindcss@3.4.17)(typescript@5.7.2)(utf-8-validate@5.0.10)':
     dependencies:
       '@internationalized/date': 3.6.0
-      '@powerhousedao/scalars': 1.21.2-canary.93(graphql@16.10.0)(zod@3.24.1)
+      '@powerhousedao/scalars': 1.21.2-canary.94(graphql@16.10.0)(zod@3.24.1)
       '@radix-ui/react-checkbox': 1.1.3(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@radix-ui/react-dialog': 1.1.4(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@radix-ui/react-dropdown-menu': 2.1.6(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -9638,7 +9638,7 @@ snapshots:
       graphql: 16.10.0
       zod: 3.24.1
 
-  '@powerhousedao/scalars@1.21.2-canary.93(graphql@16.10.0)(zod@3.24.1)':
+  '@powerhousedao/scalars@1.21.2-canary.94(graphql@16.10.0)(zod@3.24.1)':
     dependencies:
       graphql: 16.10.0
       zod: 3.24.1
