@@ -97,15 +97,15 @@ type AIDFieldType {
 }
 type DateFieldType {
   id: ID!
-  date: String!
+  date: String
 }
 type TimeFieldType {
   id: ID!
-  time: String!
+  time: String
 }
 type DateTimeFieldType{
   id: ID!
-  datetime: String!
+  datetime: String
 }
 
 
@@ -245,7 +245,7 @@ input RemoveAidInput {
 
 input AddDateInput {
   id: ID!
-  date: String!
+  date: String
 }
 
 input RemoveDateInput {
@@ -256,7 +256,7 @@ input RemoveDateInput {
 
 input AddTimeInput {
   id: ID!
-  time: String!
+  time: String
 }
 
 input RemoveTimeInput {
@@ -267,7 +267,7 @@ input RemoveTimeInput {
 
 input AddDateTimeInput {
   id: ID!
-  datetime: String!
+  datetime: String
 }
 
 input RemoveDateTimeInput {

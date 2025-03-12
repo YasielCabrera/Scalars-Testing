@@ -40,7 +40,7 @@ export function DateForm({ onAddDate, datesState }: DateFormProps) {
           minDate={new Date().toISOString()}
           name="date"
           placeholder="Select a date"
-          required
+          // required
           showErrorOnBlur
         />
 
