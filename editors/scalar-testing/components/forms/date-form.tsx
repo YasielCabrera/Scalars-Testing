@@ -18,9 +18,12 @@ interface DateFormProps {
 }
 
 export function DateForm({ onAddDate, datesState }: DateFormProps) {
-  const onSubmit = useCallback((data: AddDateInput) => {
-    onAddDate(data);
-  }, []);
+  const onSubmit = useCallback(
+    (data: AddDateInput) => {
+      onAddDate(data);
+    },
+    [onAddDate],
+  );
 
   return (
     <FormWrapper title="Add Date">
@@ -34,8 +37,11 @@ export function DateForm({ onAddDate, datesState }: DateFormProps) {
         <IdField />
         <DatePickerField
           label="Date field"
+          minDate={new Date().toISOString()}
           name="date"
           placeholder="Select a date"
+          required
+          showErrorOnBlur
         />
 
         <Button className="w-full mt-2" size="small">

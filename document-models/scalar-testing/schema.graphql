@@ -26,7 +26,7 @@ type ScalarTestingState {
   dropdown: [DropDown!]!
   date: [DateFieldType!]!
   time: [TimeFieldType!]!
-  datetime: [DateTimeType!]!
+  datetime: [DateTimeFieldType!]! 
 }
 
 type BooleanFieldType {
@@ -103,7 +103,7 @@ type TimeFieldType {
   id: ID!
   time: String!
 }
-type DateTimeType {
+type DateTimeFieldType{
   id: ID!
   datetime: String!
 }
@@ -263,13 +263,13 @@ input RemoveTimeInput {
   id: ID!
 }
 
-# date_time_testing
+# date_time
 
 input AddDateTimeInput {
   id: ID!
   datetime: String!
 }
 
-input RemoveDatetimeInput {
+input RemoveDateTimeInput {
   id: ID!
 }
