@@ -18,7 +18,7 @@ type ScalarTestingState {
   countries: [CountryFieldType!]!
   currency: [CurrencyFieldType!]!
   enums: [EnumFieldType!]!
-  amountMoney: [AmountFieldMoneyType!]!
+  amount: [AmountFieldType!]!
   amountPercentage: [AmountFieldPercentageType!]!
   amountTokens: [AmountFieldTokenType!]!
   phids: [PHIDFieldType!]!
@@ -43,22 +43,22 @@ type NumberFieldType {
 
 type StringFieldType {
   id: ID!
-  string: String!
+  string: String
 }
 
 type URLFieldType {
   id: ID!
-  url: URL!
+  url: URL
 }
 
 type CountryFieldType {
   id: ID!
-  country: String!
+  country: String
 }
 
 type CurrencyFieldType {
   id: ID!
-  currency: Currency!
+  currency: Currency
 }
 
 type EnumFieldType {
@@ -71,19 +71,19 @@ type DropDown {
   value: String
 }
 
-type AmountFieldMoneyType {
+type AmountFieldType {
   id: ID!
-  value: Amount_Money!
+  value: Amount_Money
 }
 
 type AmountFieldPercentageType {
   id: ID!
-  value: Amount_Percentage!
+  value: Amount_Percentage
 }
 
 type AmountFieldTokenType {
   id: ID!
-  value: Amount_Tokens!
+  value: Amount_Tokens
 }
 
 type PHIDFieldType {
@@ -138,7 +138,7 @@ input RemoveNumberInput {
 
 input AddStringInput {
   id: ID!
-  string: String!
+  string: String
 }
 
 input RemoveStringInput {
@@ -149,7 +149,7 @@ input RemoveStringInput {
 
 input AddUrlInput {
   id: ID!
-  url: URL!
+  url: URL
 }
 
 input RemoveUrlInput {
@@ -160,12 +160,12 @@ input RemoveUrlInput {
 
 input AddCountryInput {
   id: ID!
-  country: String!
+  country: String
 }
 
 input AddCountriesInput {
   id: ID!
-  country: [String!]!
+  country: [String]
 }
 
 input RemoveCountryInput {
@@ -188,7 +188,7 @@ input RemoveEnumInput {
 
 input AddCurrencyInput {
   id: ID!
-  currency: Currency!
+  currency: Currency
 }
 
 input RemoveCurrencyInput {
@@ -199,17 +199,17 @@ input RemoveCurrencyInput {
 
 input AddAmountMoneyInput {
   id: ID!
-  value: Amount_Money!
+  value: Amount_Money
 }
 
 input AddAmountPercentageInput {
   id: ID!
-  value: Amount_Percentage!
+  value: Amount_Percentage
 }
 
 input AddAmountTokensInput {
   id: ID!
-  value: Amount_Tokens!
+  value: Amount_Tokens
 }
 
 # phid_testing
@@ -227,7 +227,7 @@ input RemovePhidInput {
 
 input AddValueDropdownInput {
   id: ID!
-  value: String!
+  value: String
 }
 
 # aid_testing
