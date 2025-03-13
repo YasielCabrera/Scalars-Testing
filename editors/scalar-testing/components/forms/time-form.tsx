@@ -8,7 +8,7 @@ import {
   AddTimeInput,
   ScalarTestingState,
 } from "document-models/scalar-testing";
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
 import { FormWrapper } from "../form-wrapper";
 import { State } from "../state";
 
@@ -18,8 +18,10 @@ interface TimeFormProps {
 }
 
 export function TimeForm({ onAddTime, timesState }: TimeFormProps) {
+  const [formKey, setFormKey] = useState(0);
   const onSubmit = useCallback((data: AddTimeInput) => {
     onAddTime(data);
+    setFormKey((prev) => prev + 1);
   }, []);
 
   return (
@@ -28,6 +30,7 @@ export function TimeForm({ onAddTime, timesState }: TimeFormProps) {
 
       <Form
         defaultValues={{ time: "" }}
+        key={formKey}
         onSubmit={onSubmit}
         resetOnSuccessfulSubmit
       >

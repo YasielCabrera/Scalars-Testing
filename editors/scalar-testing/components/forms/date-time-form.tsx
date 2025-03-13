@@ -8,7 +8,7 @@ import {
   AddDateTimeInput,
   ScalarTestingState,
 } from "document-models/scalar-testing";
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
 import { FormWrapper } from "../form-wrapper";
 import { State } from "../state";
 
@@ -21,8 +21,10 @@ export function DateTimeForm({
   onAddDateTime,
   dateTimesState,
 }: DateTimeFormProps) {
+  const [formKey, setFormKey] = useState(0);
   const onSubmit = useCallback((data: AddDateTimeInput) => {
     onAddDateTime(data);
+    setFormKey((prev) => prev + 1);
   }, []);
 
   return (
@@ -36,6 +38,7 @@ export function DateTimeForm({
       >
         <IdField />
         <DateTimeField
+          key={formKey}
           label="Date time field"
           name="datetime"
           placeholder="Select a date time"
