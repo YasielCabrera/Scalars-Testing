@@ -8,7 +8,7 @@ import {
   AddDateInput,
   ScalarTestingState,
 } from "document-models/scalar-testing";
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
 import { FormWrapper } from "../form-wrapper";
 import { State } from "../state";
 
@@ -18,9 +18,11 @@ interface DateFormProps {
 }
 
 export function DateForm({ onAddDate, datesState }: DateFormProps) {
+  const [formKey, setFormKey] = useState(0);
   const onSubmit = useCallback(
     (data: AddDateInput) => {
       onAddDate(data);
+      setFormKey((prev) => prev + 1);
     },
     [onAddDate],
   );
@@ -31,6 +33,7 @@ export function DateForm({ onAddDate, datesState }: DateFormProps) {
 
       <Form
         defaultValues={{ date: "" }}
+        key={formKey}
         onSubmit={onSubmit}
         resetOnSuccessfulSubmit
       >
@@ -40,7 +43,7 @@ export function DateForm({ onAddDate, datesState }: DateFormProps) {
           minDate={new Date().toISOString()}
           name="date"
           placeholder="Select a date"
-          // required
+          required
           showErrorOnBlur
         />
 
