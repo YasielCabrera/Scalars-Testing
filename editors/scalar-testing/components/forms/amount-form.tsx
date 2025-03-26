@@ -51,12 +51,13 @@ export function AmountForm({
         resetOnSuccessfulSubmit
       >
         <IdField />
-        <AmountField
+        {/* TODO: fix amount field */}
+        {/* <AmountField
           allowedCurrencies={["USD", "EUR", "GBP", "JPY"]}
           label="Amount Money"
           name="value"
           type="AmountFiat"
-        />
+        /> */}
         <Button size="small">Add</Button>
       </Form>
 
