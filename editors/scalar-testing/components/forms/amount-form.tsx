@@ -4,16 +4,16 @@ import {
   IdField,
   AmountField,
 } from "@powerhousedao/design-system/scalars";
-import {
+import type {
   AddBooleanInput,
   ScalarTestingState,
-} from "document-models/scalar-testing";
+} from "document-models/scalar-testing/index.js";
 import { useCallback } from "react";
-import { FormWrapper } from "../form-wrapper";
-import { State } from "../state";
+import { FormWrapper } from "../form-wrapper.js";
+import { State } from "../state.js";
 
 interface AmountFormProps {
-  readonly amountMoneyState: ScalarTestingState["amountMoney"];
+  readonly amountMoneyState: ScalarTestingState["amount"];
   readonly amountPercentageState: ScalarTestingState["amountPercentage"];
   readonly amountTokensState: ScalarTestingState["amountTokens"];
 }
@@ -39,7 +39,7 @@ export function AmountForm({
     <FormWrapper title="Add Amount">
       <State
         state={{
-          amountMoney: amountMoneyState,
+          amount: amountMoneyState,
           amountPercentage: amountPercentageState,
           amountTokens: amountTokensState,
         }}
@@ -55,7 +55,7 @@ export function AmountForm({
           allowedCurrencies={["USD", "EUR", "GBP", "JPY"]}
           label="Amount Money"
           name="value"
-          type="AmountCurrencyFiat"
+          type="AmountFiat"
         />
         <Button size="small">Add</Button>
       </Form>
@@ -83,7 +83,7 @@ export function AmountForm({
         <AmountField
           label="Amount Tokens (Crypto)"
           name="value"
-          type="AmountCurrencyCrypto"
+          type="AmountCrypto"
         />
         <Button size="small">Add</Button>
       </Form>

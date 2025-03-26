@@ -1,11 +1,5 @@
-/* eslint-disable react/jsx-max-depth */
-import { EditorProps } from "document-model/document";
-import {
-  ScalarTestingState,
-  ScalarTestingAction,
-  ScalarTestingLocalState,
-  actions,
-  AddBooleanInput,
+import type { EditorProps } from "document-model";
+import type {
   AddStringInput,
   AddUrlInput,
   AddNumberInput,
@@ -17,21 +11,22 @@ import {
   AddDateInput,
   AddTimeInput,
   AddDateTimeInput,
-} from "../../document-models/scalar-testing";
-import { State } from "./components/state";
-import { BooleanForm } from "./components/forms/boolean-form";
+  AddBooleanInput,
+} from "../../document-models/scalar-testing/index.js";
+import { State } from "./components/state.js";
+import { BooleanForm } from "./components/forms/boolean-form.js";
 import { useCallback } from "react";
-import { Accordion } from "./components/accordion";
-import { StringForm } from "./components/forms/string-form";
-import { URLForm } from "./components/forms/url-form";
-import { NumberForm } from "./components/forms/number-form";
-import { PlaygroundForm } from "./components/forms/playground-form";
-import { EnumForm } from "./components/forms/enum-form";
-import { CountryForm } from "./components/forms/country-form";
-import { CurrencyForm } from "./components/forms/currency-form";
-import { AmountForm } from "./components/forms/amount-form";
-import { PhidForm } from "./components/forms/phid-form";
-import { AidForm } from "./components/forms/aid-form";
+import { Accordion } from "./components/accordion.js";
+import { StringForm } from "./components/forms/string-form.js";
+import { URLForm } from "./components/forms/url-form.js";
+import { NumberForm } from "./components/forms/number-form.js";
+import { PlaygroundForm } from "./components/forms/playground-form.js";
+import { EnumForm } from "./components/forms/enum-form.js";
+import { CountryForm } from "./components/forms/country-form.js";
+import { CurrencyForm } from "./components/forms/currency-form.js";
+import { AmountForm } from "./components/forms/amount-form.js";
+import { PhidForm } from "./components/forms/phid-form.js";
+import { AidForm } from "./components/forms/aid-form.js";
 import {
   Dropdown,
   DropdownContent,
@@ -39,16 +34,17 @@ import {
   DropdownTrigger,
 } from "@powerhousedao/design-system/scalars";
 import { Icon } from "@powerhousedao/design-system";
-import { FormWrapper } from "./components/form-wrapper";
-import { DateForm } from "./components/forms/date-form";
-import { TimeForm } from "./components/forms/time-form";
-import { DateTimeForm } from "./components/forms/date-time-form";
+import { FormWrapper } from "./components/form-wrapper.js";
+import { DateForm } from "./components/forms/date-form.js";
+import { TimeForm } from "./components/forms/time-form.js";
+import { DateTimeForm } from "./components/forms/date-time-form.js";
 
-export type IProps = EditorProps<
-  ScalarTestingState,
-  ScalarTestingAction,
-  ScalarTestingLocalState
->;
+import {
+  type ScalarTestingDocument,
+  actions,
+} from "../../document-models/scalar-testing/index.js";
+
+export type IProps = EditorProps<ScalarTestingDocument>;
 
 export default function Editor({ dispatch, document }: IProps) {
   const state = document.state.global;
@@ -115,7 +111,7 @@ export default function Editor({ dispatch, document }: IProps) {
         >
           <PlaygroundForm />
           <AmountForm
-            amountMoneyState={state.amountMoney}
+            amountMoneyState={state.amount}
             amountPercentageState={state.amountPercentage}
             amountTokensState={state.amountTokens}
           />

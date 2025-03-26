@@ -1,4 +1,4 @@
-import { ScalarTestingState } from "document-models/scalar-testing";
+import { type ScalarTestingState } from "document-models/scalar-testing/index.js";
 import ReactJson from "react-json-view";
 
 interface StateProps<T> {

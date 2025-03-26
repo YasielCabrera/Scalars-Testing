@@ -4,17 +4,20 @@
  * - delete the file and run the code generator again to have it reset
  */
 
-import { ScalarTestingEnumTestingOperations } from "../../gen/enum-testing/operations";
+import { type ScalarTestingEnumTestingOperations } from "../../gen/enum-testing/operations.js";
 
 export const reducer: ScalarTestingEnumTestingOperations = {
   addEnumOperation(state, action, dispatch) {
     if (!Array.isArray(state.enums)) {
       state.enums = [];
     }
+    const inputEnums = action.input.enumMultiple?.filter(
+      (enumValue) => !!enumValue,
+    ) as string[] | undefined;
     state.enums.push({
       ...action.input,
       enum: action.input.enum ?? null,
-      enumMultiple: action.input.enumMultiple ?? [],
+      enumMultiple: inputEnums ?? [],
     });
   },
   removeEnumOperation(state, action, dispatch) {

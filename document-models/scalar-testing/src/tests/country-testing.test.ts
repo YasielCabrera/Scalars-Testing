@@ -4,18 +4,16 @@
  */
 
 import { generateMock } from "@powerhousedao/codegen";
-import { utils as documentModelUtils } from "document-model/document";
-
-import utils from "../../gen/utils";
+import utils from "../../gen/utils.js";
 import {
   z,
-  AddCountryInput,
-  AddCountriesInput,
-  RemoveCountryInput,
-} from "../../gen/schema";
-import { reducer } from "../../gen/reducer";
-import * as creators from "../../gen/country-testing/creators";
-import { ScalarTestingDocument } from "../../gen/types";
+  type AddCountryInput,
+  type AddCountriesInput,
+  type RemoveCountryInput,
+} from "../../gen/schema/index.js";
+import { reducer } from "../../gen/reducer.js";
+import * as creators from "../../gen/country-testing/creators.js";
+import type { ScalarTestingDocument } from "../../gen/types.js";
 
 describe("CountryTesting Operations", () => {
   let document: ScalarTestingDocument;

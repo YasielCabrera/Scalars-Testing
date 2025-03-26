@@ -4,7 +4,7 @@
  * - delete the file and run the code generator again to have it reset
  */
 
-import { ScalarTestingDropDownOperations } from "../../gen/drop-down/operations";
+import { type ScalarTestingDropDownOperations } from "../../gen/drop-down/operations.js";
 
 export const reducer: ScalarTestingDropDownOperations = {
   addValueDropdownOperation(state, action, dispatch) {

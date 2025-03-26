@@ -1,13 +1,13 @@
-/* eslint-disable react/jsx-max-depth */
-import { Button, IconName } from "@powerhousedao/design-system";
+import { Button, type IconName } from "@powerhousedao/design-system";
 import { Form, IdField, AIDField } from "@powerhousedao/design-system/scalars";
-import {
+import type {
   AddAidInput,
   ScalarTestingState,
-} from "document-models/scalar-testing";
-import React, { useCallback } from "react";
-import { FormWrapper } from "../form-wrapper";
-import { State } from "../state";
+} from "document-models/scalar-testing/index.js";
+import type React from "react";
+import { useCallback } from "react";
+import { FormWrapper } from "../form-wrapper.js";
+import { State } from "../state.js";
 
 interface IdAutocompleteOption {
   icon?: IconName | React.ReactElement;

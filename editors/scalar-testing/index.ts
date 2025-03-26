@@ -1,21 +1,12 @@
-import { ExtendedEditor, EditorContextProps } from "document-model-libs";
-import Editor from "./editor";
-import {
-  ScalarTestingState,
-  ScalarTestingAction,
-  ScalarTestingLocalState,
-} from "../../document-models/scalar-testing";
+import type { EditorModule } from "document-model";
+import Editor from "./editor.js";
+import type { ScalarTestingDocument } from "../../document-models/scalar-testing/index.js";
 
-export const module: ExtendedEditor<
-  ScalarTestingState,
-  ScalarTestingAction,
-  ScalarTestingLocalState,
-  EditorContextProps
-> = {
+export const module: EditorModule<ScalarTestingDocument> = {
   Component: Editor,
   documentTypes: ["dspot/testing"],
   config: {
-    id: "editor-id",
+    id: "ScalarTesting",
     disableExternalControls: true,
     documentToolbarEnabled: true,
     showSwitchboardLink: true,

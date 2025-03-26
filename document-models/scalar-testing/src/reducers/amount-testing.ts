@@ -4,16 +4,16 @@
  * - delete the file and run the code generator again to have it reset
  */
 
-import { ScalarTestingAmountTestingOperations } from "../../gen/amount-testing/operations";
+import { type ScalarTestingAmountTestingOperations } from "../../gen/amount-testing/operations.js";
 
 export const reducer: ScalarTestingAmountTestingOperations = {
   addAmountMoneyOperation(state, action, dispatch) {
-    if (!Array.isArray(state.amountMoney)) {
-      state.amountMoney = [];
+    if (!Array.isArray(state.amount)) {
+      state.amount = [];
     }
-    state.amountMoney.push({
+    state.amount.push({
       id: action.input.id,
-      value: action.input.value,
+      value: action.input.value ?? null,
     });
   },
 
@@ -23,7 +23,7 @@ export const reducer: ScalarTestingAmountTestingOperations = {
     }
     state.amountPercentage.push({
       id: action.input.id,
-      value: action.input.value,
+      value: action.input.value ?? null,
     });
   },
 
@@ -33,7 +33,7 @@ export const reducer: ScalarTestingAmountTestingOperations = {
     }
     state.amountTokens.push({
       id: action.input.id,
-      value: action.input.value,
+      value: action.input.value ?? null,
     });
   },
 };

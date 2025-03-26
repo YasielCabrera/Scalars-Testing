@@ -1,12 +1,12 @@
 import { Button } from "@powerhousedao/design-system";
 import { Form, IdField, UrlField } from "@powerhousedao/design-system/scalars";
 import {
-  AddUrlInput,
-  ScalarTestingState,
-} from "document-models/scalar-testing";
+  type AddUrlInput,
+  type ScalarTestingState,
+} from "document-models/scalar-testing/index.js";
 import { useCallback } from "react";
-import { FormWrapper } from "../form-wrapper";
-import { State } from "../state";
+import { FormWrapper } from "../form-wrapper.js";
+import { State } from "../state.js";
 
 interface URLFormProps {
   readonly onAddUrl: (data: AddUrlInput) => void;

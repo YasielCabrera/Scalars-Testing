@@ -5,13 +5,13 @@ import {
   IdField,
   TimePickerField,
 } from "@powerhousedao/design-system/scalars";
-import {
+import { useCallback, useState } from "react";
+import { FormWrapper } from "../form-wrapper.js";
+import { State } from "../state.js";
+import type {
   AddTimeInput,
   ScalarTestingState,
-} from "document-models/scalar-testing";
-import { useCallback, useState } from "react";
-import { FormWrapper } from "../form-wrapper";
-import { State } from "../state";
+} from "../../../../document-models/scalar-testing/index.js";
 
 interface TimeFormProps {
   readonly onAddTime: (data: AddTimeInput) => void;

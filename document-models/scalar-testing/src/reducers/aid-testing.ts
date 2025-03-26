@@ -4,7 +4,7 @@
  * - delete the file and run the code generator again to have it reset
  */
 
-import { ScalarTestingAidTestingOperations } from "../../gen/aid-testing/operations";
+import { type ScalarTestingAidTestingOperations } from "../../gen/aid-testing/operations.js";
 
 export const reducer: ScalarTestingAidTestingOperations = {
   addAidOperation(state, action, dispatch) {

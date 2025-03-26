@@ -1,5 +1,9 @@
-import { PropsWithChildren, useId } from "react";
-import { AccordionContent, AccordionItem, AccordionTrigger } from "./accordion";
+import { type PropsWithChildren, useId } from "react";
+import {
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "./accordion.js";
 
 interface FormWrapperProps extends PropsWithChildren {
   readonly title: string;

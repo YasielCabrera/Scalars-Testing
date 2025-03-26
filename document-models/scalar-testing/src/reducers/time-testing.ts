@@ -4,7 +4,7 @@
  * - delete the file and run the code generator again to have it reset
  */
 
-import { ScalarTestingTimeTestingOperations } from "../../gen/time-testing/operations";
+import { type ScalarTestingTimeTestingOperations } from "../../gen/time-testing/operations.js";
 
 export const reducer: ScalarTestingTimeTestingOperations = {
   addTimeOperation(state, action, dispatch) {
@@ -13,7 +13,7 @@ export const reducer: ScalarTestingTimeTestingOperations = {
     }
     state.time.push({
       id: action.input.id,
-      time: action.input.time,
+      time: action.input.time ?? null,
     });
   },
   removeTimeOperation(state, action, dispatch) {

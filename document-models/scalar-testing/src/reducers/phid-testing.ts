@@ -4,7 +4,7 @@
  * - delete the file and run the code generator again to have it reset
  */
 
-import { ScalarTestingPhidTestingOperations } from "../../gen/phid-testing/operations";
+import { type ScalarTestingPhidTestingOperations } from "../../gen/phid-testing/operations.js";
 
 export const reducer: ScalarTestingPhidTestingOperations = {
   addPhidOperation(state, action, dispatch) {

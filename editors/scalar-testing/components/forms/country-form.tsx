@@ -5,14 +5,14 @@ import {
   BooleanField,
   CountryCodeField,
 } from "@powerhousedao/design-system/scalars";
-import {
+import type {
   AddBooleanInput,
   AddCountryInput,
   ScalarTestingState,
-} from "document-models/scalar-testing";
+} from "document-models/scalar-testing/index.js";
 import { useCallback } from "react";
-import { FormWrapper } from "../form-wrapper";
-import { State } from "../state";
+import { FormWrapper } from "../form-wrapper.js";
+import { State } from "../state.js";
 
 interface CountryFormProps {
   readonly onAddCountry: (data: AddCountryInput) => void;

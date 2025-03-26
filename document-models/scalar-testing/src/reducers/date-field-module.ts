@@ -4,9 +4,12 @@
  * - delete the file and run the code generator again to have it reset
  */
 
-import { ScalarTestingDateFieldModuleOperations } from "../../gen/date-field-module/operations";
-import { ScalarTestingState, DateFieldType } from "../../gen/types";
-import { RemoveDateAction } from "../../gen/date-field-module/actions";
+import { type ScalarTestingDateFieldModuleOperations } from "../../gen/date-field-module/operations.js";
+import {
+  type ScalarTestingState,
+  type DateFieldType,
+} from "../../gen/types.js";
+import { type RemoveDateAction } from "../../gen/date-field-module/actions.js";
 
 export const reducer: ScalarTestingDateFieldModuleOperations = {
   addDateOperation(state, action, dispatch) {
@@ -15,7 +18,7 @@ export const reducer: ScalarTestingDateFieldModuleOperations = {
     }
     state.date.push({
       id: action.input.id,
-      date: action.input.date,
+      date: action.input.date ?? null,
     });
   },
   removeDateOperation(
