@@ -1,33 +1,17 @@
-/* eslint-disable react/jsx-max-depth */
-import { EditorProps } from "document-model/document";
-import {
-  SidebarTestingState,
-  SidebarTestingAction,
-  SidebarTestingLocalState,
-  actions,
-} from "../../document-models/sidebar-testing";
-import { utils as documentModelUtils } from "document-model/document";
-import { Button, Icon } from "@powerhousedao/design-system";
+import type { EditorProps } from "document-model";
+import { type SidebarTestingDocument } from "../../document-models/sidebar-testing/index.js";
 import {
   cn,
   Sidebar,
-  SidebarProvider,
   type SidebarNode,
+  SidebarProvider,
 } from "@powerhousedao/design-system/scalars";
-import mockedTree from "./mocked_tree.json";
+import mockedTree from "./mocked_tree.json" with { type: "json" };
+import { Icon } from "@powerhousedao/design-system";
 
-import "./styles.css";
-
-export type IProps = EditorProps<
-  SidebarTestingState,
-  SidebarTestingAction,
-  SidebarTestingLocalState
->;
+export type IProps = EditorProps<SidebarTestingDocument>;
 
 export default function Editor(props: IProps) {
-  // generate a random id
-  // const id = documentModelUtils.hashKey();
-
   return (
     <SidebarProvider nodes={mockedTree as SidebarNode[]}>
       <main className="flex -m-4 rounded-2xl overflow-hidden h-[calc(100%+32px)] w-[calc(100%+32px)]">

@@ -4,7 +4,7 @@
  * - delete the file and run the code generator again to have it reset
  */
 
-import { ScalarTestingDateTimeOperations } from "../../gen/date-time/operations";
+import { type ScalarTestingDateTimeOperations } from "../../gen/date-time/operations.js";
 
 export const reducer: ScalarTestingDateTimeOperations = {
   addDateTimeOperation(state, action, dispatch) {
@@ -13,7 +13,7 @@ export const reducer: ScalarTestingDateTimeOperations = {
     }
     state.datetime.push({
       id: action.input.id,
-      datetime: action.input.datetime,
+      datetime: action.input.datetime ?? null,
     });
   },
   removeDateTimeOperation(state, action, dispatch) {

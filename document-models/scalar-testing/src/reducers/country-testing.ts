@@ -4,13 +4,13 @@
  * - delete the file and run the code generator again to have it reset
  */
 
-import { ScalarTestingCountryTestingOperations } from "../../gen/country-testing/operations";
+import type { ScalarTestingCountryTestingOperations } from "../../gen/country-testing/operations.js";
 
 export const reducer: ScalarTestingCountryTestingOperations = {
   addCountryOperation(state, action, dispatch) {
     state.countries.push({
       ...action.input,
-      country: action.input.country,
+      country: action.input.country ?? null,
     });
   },
   addCountriesOperation(state, action, dispatch) {

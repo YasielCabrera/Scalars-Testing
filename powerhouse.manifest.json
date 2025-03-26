@@ -1,0 +1,32 @@
+{
+  "name": "scalars-testing",
+  "description": "Scalars testing package",
+  "category": "Development",
+  "publisher": {
+    "name": "DSPOT",
+    "url": "hhttps://www.dspot.com.pl/"
+  },
+  "documentModels": [
+    {
+      "id": "dspot/testing",
+      "name": "Scalar Testing"
+    },
+    {
+      "id": "dspot/sidebar-testing",
+      "name": "Sidebar Testing"
+    }
+  ],
+  "editors": [
+    {
+      "id": "ScalarTesting",
+      "name": "Scalar Testing",
+      "documentTypes": ["dspot/testing"]
+    },
+    {
+      "id": "SidebarTesting",
+      "name": "Sidebar Testing",
+      "documentTypes": ["dspot/testing-sidebar"]
+    }
+  ],
+  "apps": []
+}

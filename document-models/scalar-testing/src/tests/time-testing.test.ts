@@ -4,13 +4,15 @@
  */
 
 import { generateMock } from "@powerhousedao/codegen";
-import { utils as documentModelUtils } from "document-model/document";
-
-import utils from "../../gen/utils";
-import { z, AddTimeInput, RemoveTimeInput } from "../../gen/schema";
-import { reducer } from "../../gen/reducer";
-import * as creators from "../../gen/time-testing/creators";
-import { ScalarTestingDocument } from "../../gen/types";
+import utils from "../../gen/utils.js";
+import {
+  z,
+  type AddTimeInput,
+  type RemoveTimeInput,
+} from "../../gen/schema/index.js";
+import { reducer } from "../../gen/reducer.js";
+import * as creators from "../../gen/time-testing/creators.js";
+import type { ScalarTestingDocument } from "../../gen/types.js";
 
 describe("TimeTesting Operations", () => {
   let document: ScalarTestingDocument;

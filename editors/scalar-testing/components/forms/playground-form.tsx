@@ -5,7 +5,7 @@ import {
   StringField,
 } from "@powerhousedao/design-system/scalars";
 import { useCallback } from "react";
-import { FormWrapper } from "../form-wrapper";
+import { FormWrapper } from "../form-wrapper.js";
 
 export function PlaygroundForm() {
   const onSubmit = useCallback((data: any) => {

@@ -4,7 +4,7 @@
  * - delete the file and run the code generator again to have it reset
  */
 
-import { ScalarTestingCurrencyTestingOperations } from "../../gen/currency-testing/operations";
+import { type ScalarTestingCurrencyTestingOperations } from "../../gen/currency-testing/operations.js";
 
 export const reducer: ScalarTestingCurrencyTestingOperations = {
   addCurrencyOperation(state, action, dispatch) {
@@ -13,7 +13,7 @@ export const reducer: ScalarTestingCurrencyTestingOperations = {
     }
     state.currency.push({
       id: action.input.id,
-      currency: action.input.currency,
+      currency: action.input.currency ?? null,
     });
   },
   removeCurrencyOperation(state, action, dispatch) {

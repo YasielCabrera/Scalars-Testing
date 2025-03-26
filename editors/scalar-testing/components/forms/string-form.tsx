@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-max-depth */
 import { Button } from "@powerhousedao/design-system";
 import {
   Form,
@@ -6,12 +5,12 @@ import {
   StringField,
 } from "@powerhousedao/design-system/scalars";
 import {
-  AddStringInput,
-  ScalarTestingState,
-} from "document-models/scalar-testing";
+  type AddStringInput,
+  type ScalarTestingState,
+} from "document-models/scalar-testing/index.js";
 import { useCallback } from "react";
-import { FormWrapper } from "../form-wrapper";
-import { State } from "../state";
+import { FormWrapper } from "../form-wrapper.js";
+import { State } from "../state.js";
 
 interface StringFormProps {
   readonly onAddString: (data: AddStringInput) => void;

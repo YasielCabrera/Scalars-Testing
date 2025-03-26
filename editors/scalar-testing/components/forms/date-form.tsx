@@ -4,13 +4,13 @@ import {
   IdField,
   DatePickerField,
 } from "@powerhousedao/design-system/scalars";
-import {
+import type {
   AddDateInput,
   ScalarTestingState,
-} from "document-models/scalar-testing";
+} from "document-models/scalar-testing/index.js";
 import { useCallback, useState } from "react";
-import { FormWrapper } from "../form-wrapper";
-import { State } from "../state";
+import { FormWrapper } from "../form-wrapper.js";
+import { State } from "../state.js";
 
 interface DateFormProps {
   readonly onAddDate: (data: AddDateInput) => void;

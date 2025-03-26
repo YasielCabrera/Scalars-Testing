@@ -4,7 +4,7 @@
  * - delete the file and run the code generator again to have it reset
  */
 
-import { ScalarTestingBooleanTestingOperations } from "../../gen/boolean-testing/operations";
+import { type ScalarTestingBooleanTestingOperations } from "../../gen/boolean-testing/operations.js";
 
 export const reducer: ScalarTestingBooleanTestingOperations = {
   addBooleanOperation(state, action, dispatch) {
