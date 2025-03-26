@@ -2,7 +2,7 @@ import { Button } from "@powerhousedao/design-system";
 import {
   Form,
   IdField,
-  DateTimeField,
+  DateTimePickerField,
 } from "@powerhousedao/design-system/scalars";
 import type {
   AddDateTimeInput,
@@ -37,14 +37,15 @@ export function DateTimeForm({
         resetOnSuccessfulSubmit
       >
         <IdField />
-        <DateTimeField
+        {/* TODO: fix date time field */}
+        {/* <DateTimePickerField
           key={formKey}
           label="Date time field"
           name="datetime"
           placeholder="Select a date time"
           showDateSelect
           showTimeSelect
-        />
+        /> */}
 
         <Button className="mt-2" size="small">
           Add

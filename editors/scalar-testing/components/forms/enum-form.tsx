@@ -3,7 +3,6 @@ import {
   EnumField,
   Form,
   IdField,
-  StringField,
 } from "@powerhousedao/design-system/scalars";
 import {
   type AddEnumInput,

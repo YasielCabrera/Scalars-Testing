@@ -32,7 +32,7 @@ import {
   DropdownContent,
   DropdownItem,
   DropdownTrigger,
-} from "@powerhousedao/design-system/scalars";
+} from "@powerhousedao/design-system/ui";
 import { Icon } from "@powerhousedao/design-system";
 import { FormWrapper } from "./components/form-wrapper.js";
 import { DateForm } from "./components/forms/date-form.js";
@@ -99,7 +99,7 @@ export default function Editor({ dispatch, document }: IProps) {
   }, []);
 
   return (
-    <div>
+    <div className="overflow-auto" style={{ maxHeight: "calc(100vh - 50px)" }}>
       <State state={state} />
 
       <div className="space-y-4">
