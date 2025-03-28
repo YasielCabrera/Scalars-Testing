@@ -8,6 +8,7 @@ import type {
   AddCurrencyInput,
   AddPhidInput,
   AddAidInput,
+  AddOidInput,
   AddDateInput,
   AddTimeInput,
   AddDateTimeInput,
@@ -27,6 +28,7 @@ import { CurrencyForm } from "./components/forms/currency-form.js";
 import { AmountForm } from "./components/forms/amount-form.js";
 import { PhidForm } from "./components/forms/phid-form.js";
 import { AidForm } from "./components/forms/aid-form.js";
+import { OidForm } from "./components/forms/oid-form.js";
 import {
   Dropdown,
   DropdownContent,
@@ -86,6 +88,11 @@ export default function Editor({ dispatch, document }: IProps) {
   const onAddAid = useCallback((data: AddAidInput) => {
     dispatch(actions.addAid(data));
   }, []);
+
+  const onAddOid = useCallback((data: AddOidInput) => {
+    dispatch(actions.addOid(data));
+  }, []);
+
   const onAddDate = useCallback((data: AddDateInput): void => {
     dispatch(actions.addDate(data));
   }, []);
@@ -133,6 +140,7 @@ export default function Editor({ dispatch, document }: IProps) {
           />
           <PhidForm onAddPhid={onAddPhid} phidsState={state.phids} />
           <AidForm aidsState={state.aids} onAddAid={onAddAid} />
+          <OidForm onAddOid={onAddOid} oidsState={state.oids} />
           <DateForm datesState={state.date} onAddDate={onAddDate} />
           <TimeForm onAddTime={onAddTime} timesState={state.time} />
           <DateTimeForm

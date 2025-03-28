@@ -27,6 +27,7 @@ type ScalarTestingState {
   amountTokens: [AmountFieldTokenType!]!
   phids: [PHIDFieldType!]!
   aids: [AIDFieldType!]!
+  oids: [OIDFieldType!]!
   dropdown: [DropDown!]!
   date: [DateFieldType!]!
   time: [TimeFieldType!]!
@@ -98,6 +99,11 @@ type PHIDFieldType {
 type AIDFieldType {
   id: ID!
   aid: String
+}
+
+type OIDFieldType {
+  id: ID!
+  oid: String
 }
 type DateFieldType {
   id: ID!
@@ -275,5 +281,16 @@ input AddDateTimeInput {
 }
 
 input RemoveDateTimeInput {
+  id: ID!
+}
+
+# oid_testing
+
+input AddOidInput {
+  id: ID!
+  oid: String
+}
+
+input RemoveOidInput {
   id: ID!
 }
