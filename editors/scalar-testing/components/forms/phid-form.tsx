@@ -9,15 +9,15 @@ import { useCallback } from "react";
 import { FormWrapper } from "../form-wrapper.js";
 import { State } from "../state.js";
 
-interface IdAutocompleteOption {
+interface PHIDOption {
   icon?: IconName | React.ReactElement;
   title?: string;
-  path?: string;
+  path?: string | { text: string; url: string };
   value: string;
   description?: string;
 }
 
-const mockedOptions: IdAutocompleteOption[] = [
+const mockedOptions: PHIDOption[] = [
   {
     icon: "PowerhouseLogoSmall",
     title: "Document A",
@@ -200,7 +200,7 @@ const mockedOptions: IdAutocompleteOption[] = [
 ];
 
 const filterOptions = (
-  options: IdAutocompleteOption[],
+  options: PHIDOption[],
   userInput: string,
   context?: Record<string, unknown>,
 ) => {
@@ -224,9 +224,11 @@ const filterOptions = (
       }
     }
 
+    const pathText = typeof opt.path === "object" ? opt.path.text : opt.path;
+
     return (
       opt.title?.toLowerCase().includes(normalizedInput) ||
-      opt.path?.toLowerCase().includes(normalizedInput) ||
+      pathText?.toLowerCase().includes(normalizedInput) ||
       opt.value.toLowerCase().includes(normalizedInput) ||
       opt.description?.toLowerCase().includes(normalizedInput)
     );
@@ -234,10 +236,10 @@ const filterOptions = (
 };
 
 // Async versions
-const fetchOptions = async (
+export const fetchOptions = async (
   userInput: string,
   context?: Record<string, unknown>,
-): Promise<IdAutocompleteOption[]> => {
+): Promise<PHIDOption[]> => {
   // Simulate 2s network delay
   await new Promise((resolve) => setTimeout(resolve, 2000));
 
@@ -249,25 +251,25 @@ const fetchOptions = async (
   return filterOptions(mockedOptions, userInput, context);
 };
 
-const fetchSelectedOption = async (
+export const fetchSelectedOption = async (
   value: string,
-): Promise<IdAutocompleteOption | undefined> => {
+): Promise<PHIDOption | undefined> => {
   // Simulate 2s network delay
   await new Promise((resolve) => setTimeout(resolve, 2000));
   return mockedOptions.find((option) => option.value === value);
 };
 
 // Sync versions
-const fetchOptionsSync = (
+export const fetchOptionsSync = (
   userInput: string,
   context?: Record<string, unknown>,
-): IdAutocompleteOption[] => {
+): PHIDOption[] => {
   return filterOptions(mockedOptions, userInput, context);
 };
 
-const fetchSelectedOptionSync = (
+export const fetchSelectedOptionSync = (
   value: string,
-): IdAutocompleteOption | undefined => {
+): PHIDOption | undefined => {
   return mockedOptions.find((option) => option.value === value);
 };
 
