@@ -32,22 +32,20 @@ export function DateTimeForm({
       <State state={dateTimesState} />
 
       <Form
+        key={formKey}
         defaultValues={{ datetime: "" }}
         onSubmit={onSubmit}
         resetOnSuccessfulSubmit
       >
         <IdField />
-        {/* TODO: fix date time field */}
-        {/* <DateTimePickerField
+        <DateTimePickerField
           key={formKey}
           label="Date time field"
           name="datetime"
           placeholder="Select a date time"
-          showDateSelect
-          showTimeSelect
-        /> */}
+        />
 
-        <Button className="mt-2" size="small">
+        <Button className="w-full mt-2" size="small">
           Add
         </Button>
       </Form>
