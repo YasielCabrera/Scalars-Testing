@@ -3,7 +3,7 @@ import {
   Form,
   IdField,
   BooleanField,
-} from "@powerhousedao/design-system/scalars";
+} from "@powerhousedao/document-engineering/scalars";
 import type {
   AddBooleanInput,
   ScalarTestingState,

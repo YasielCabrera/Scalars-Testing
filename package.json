@@ -47,7 +47,8 @@
     "service-unstartup": "bash ./node_modules/@powerhousedao/ph-cli/dist/scripts/service-unstartup.sh"
   },
   "dependencies": {
-    "@powerhousedao/design-system": "canary",
+    "@powerhousedao/design-system": "1.39.29-dev.1",
+    "@powerhousedao/document-engineering": "1.2.0",
     "@radix-ui/react-accordion": "^1.2.3",
     "document-model": "^2.27.1",
     "graphql": "^16.10.0",

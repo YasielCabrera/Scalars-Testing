@@ -4,7 +4,7 @@ import {
   Form,
   IdField,
   TimePickerField,
-} from "@powerhousedao/design-system/scalars";
+} from "@powerhousedao/document-engineering/scalars";
 import { useCallback, useState } from "react";
 import { FormWrapper } from "../form-wrapper.js";
 import { State } from "../state.js";
