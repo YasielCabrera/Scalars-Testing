@@ -4,8 +4,8 @@ import {
   Sidebar,
   type SidebarNode,
   SidebarProvider,
-} from "@powerhousedao/design-system/ui";
-import { cn } from "@powerhousedao/design-system/scalars";
+} from "@powerhousedao/document-engineering/ui";
+import { cn } from "@powerhousedao/document-engineering/scalars";
 import mockedTree from "./mocked_tree.json" with { type: "json" };
 import { Icon } from "@powerhousedao/design-system";
 

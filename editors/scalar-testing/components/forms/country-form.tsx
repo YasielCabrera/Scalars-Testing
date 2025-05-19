@@ -2,11 +2,9 @@ import { Button } from "@powerhousedao/design-system";
 import {
   Form,
   IdField,
-  BooleanField,
   CountryCodeField,
-} from "@powerhousedao/design-system/scalars";
+} from "@powerhousedao/document-engineering/scalars";
 import type {
-  AddBooleanInput,
   AddCountryInput,
   ScalarTestingState,
 } from "document-models/scalar-testing/index.js";

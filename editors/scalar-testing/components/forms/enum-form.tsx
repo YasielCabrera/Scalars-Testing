@@ -3,7 +3,7 @@ import {
   EnumField,
   Form,
   IdField,
-} from "@powerhousedao/design-system/scalars";
+} from "@powerhousedao/document-engineering/scalars";
 import {
   type AddEnumInput,
   type ScalarTestingState,

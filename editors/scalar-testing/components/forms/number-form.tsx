@@ -3,7 +3,7 @@ import {
   Form,
   IdField,
   NumberField,
-} from "@powerhousedao/design-system/scalars";
+} from "@powerhousedao/document-engineering/scalars";
 import {
   type AddNumberInput,
   type ScalarTestingState,

@@ -34,7 +34,7 @@ import {
   DropdownContent,
   DropdownItem,
   DropdownTrigger,
-} from "@powerhousedao/design-system/ui";
+} from "@powerhousedao/document-engineering/ui";
 import { Icon } from "@powerhousedao/design-system";
 import { FormWrapper } from "./components/form-wrapper.js";
 import { DateForm } from "./components/forms/date-form.js";

@@ -1,5 +1,5 @@
 import { Button } from "@powerhousedao/design-system";
-import { Form, IdField, UrlField } from "@powerhousedao/design-system/scalars";
+import { Form, IdField, UrlField } from "@powerhousedao/document-engineering/scalars";
 import {
   type AddUrlInput,
   type ScalarTestingState,

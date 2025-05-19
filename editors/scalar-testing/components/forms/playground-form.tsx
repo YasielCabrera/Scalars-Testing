@@ -3,7 +3,7 @@ import {
   Form,
   IdField,
   StringField,
-} from "@powerhousedao/design-system/scalars";
+} from "@powerhousedao/document-engineering/scalars";
 import { useCallback } from "react";
 import { FormWrapper } from "../form-wrapper.js";
 

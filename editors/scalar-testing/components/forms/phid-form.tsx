@@ -1,5 +1,5 @@
 import { Button, type IconName } from "@powerhousedao/design-system";
-import { Form, IdField, PHIDField } from "@powerhousedao/design-system/scalars";
+import { Form, IdField, PHIDField } from "@powerhousedao/document-engineering/scalars";
 import {
   type AddPhidInput,
   type ScalarTestingState,

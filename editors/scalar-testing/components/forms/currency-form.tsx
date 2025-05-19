@@ -3,7 +3,7 @@ import {
   Form,
   IdField,
   CurrencyCodeField,
-} from "@powerhousedao/design-system/scalars";
+} from "@powerhousedao/document-engineering/scalars";
 import type {
   AddCurrencyInput,
   ScalarTestingState,

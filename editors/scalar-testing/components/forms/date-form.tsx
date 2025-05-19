@@ -3,7 +3,7 @@ import {
   Form,
   IdField,
   DatePickerField,
-} from "@powerhousedao/design-system/scalars";
+} from "@powerhousedao/document-engineering/scalars";
 import type {
   AddDateInput,
   ScalarTestingState,
