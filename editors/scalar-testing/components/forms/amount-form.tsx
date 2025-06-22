@@ -1,70 +1,103 @@
 import { Button } from "@powerhousedao/design-system";
-import {
-  Form,
-  IdField,
-  AmountField,
-} from "@powerhousedao/document-engineering/scalars";
 import type {
+  AddAmountInput,
+  AddAmountCryptoInput,
+  AddAmountCurrencyInput,
+  AddAmountFiatInput,
+  AddAmountPercentageInput,
   AddBooleanInput,
   ScalarTestingState,
 } from "document-models/scalar-testing/index.js";
 import { useCallback } from "react";
 import { FormWrapper } from "../form-wrapper.js";
 import { State } from "../state.js";
+import { Form, IdField, AmountField } from "@powerhousedao/document-engineering/scalars";
 
 interface AmountFormProps {
-  readonly amountMoneyState: ScalarTestingState["amount"];
+  readonly amountState: ScalarTestingState["amount"];
+  onAddAmount: (data: AddAmountInput) => void;
   readonly amountPercentageState: ScalarTestingState["amountPercentage"];
-  readonly amountTokensState: ScalarTestingState["amountTokens"];
+  onAddAmountPercentage: (data: AddAmountPercentageInput) => void;
+  readonly amountFiatState: ScalarTestingState["amountFiat"];
+  onAddAmountFiat: (data: AddAmountFiatInput) => void;
+  readonly amountCryptoState: ScalarTestingState["amountCrypto"];
+  onAddAmountCrypto: (data: AddAmountCryptoInput) => void;
+  readonly amountCurrencyState: ScalarTestingState["amountCurrency"];
+  onAddAmountCurrency: (data: AddAmountCurrencyInput) => void;
 }
 
 export function AmountForm({
-  amountMoneyState,
+  amountState,
   amountPercentageState,
-  amountTokensState,
+  onAddAmount,
+  onAddAmountPercentage,
+  amountFiatState,
+  onAddAmountFiat,
+  amountCryptoState,
+  onAddAmountCrypto,
+  amountCurrencyState,
+  onAddAmountCurrency,
 }: AmountFormProps) {
-  const onMoneySubmit = useCallback((data: AddBooleanInput) => {
-    // implement this
+  const onAmountSubmit = useCallback((data: AddAmountInput) => {
+    onAddAmount(data);
   }, []);
 
-  const onPercentageSubmit = useCallback((data: AddBooleanInput) => {
-    // implement this
+  const onPercentageSubmit = useCallback((data: AddAmountPercentageInput) => {
+    onAddAmountPercentage(data);
   }, []);
 
-  const onTokensSubmit = useCallback((data: AddBooleanInput) => {
-    // implement this
+  const onFiatSubmit = useCallback((data: AddAmountFiatInput) => {
+    onAddAmountFiat(data);
   }, []);
+
+  const onCryptoSubmit = useCallback((data: AddAmountCryptoInput) => {
+    onAddAmountCrypto(data);
+  }, []);
+
+  const onCurrencySubmit = useCallback((data: AddAmountCurrencyInput) => {
+    onAddAmountCurrency(data);
+  }, []);
+
+
 
   return (
     <FormWrapper title="Add Amount">
       <State
         state={{
-          amount: amountMoneyState,
+          amount: amountState,
           amountPercentage: amountPercentageState,
-          amountTokens: amountTokensState,
+          amountFiat: amountFiatState,
+          amountCrypto: amountCryptoState,
+          amountCurrency: amountCurrencyState,
+
         }}
       />
 
       <Form
-        className="flex flex-row gap-2 items-center"
-        onSubmit={onMoneySubmit}
-        resetOnSuccessfulSubmit
+        defaultValues={{ value:{
+          value: 0,
+        } }}
+        className="flex flex-row gap-2 items-end mt-4"
+        onSubmit={onAmountSubmit}
+        resetOnSuccessfulSubmit  
       >
         <IdField />
-        {/* TODO: fix amount field */}
-        {/* <AmountField
-          allowedCurrencies={["USD", "EUR", "GBP", "JPY"]}
-          label="Amount Money"
+      
+        <AmountField
+          label="Amount"
           name="value"
-          type="AmountFiat"
-        /> */}
+          type="Amount"
+      
+        />
+
         <Button size="small">Add</Button>
       </Form>
 
       <Form
-        className="flex flex-row gap-2 items-center"
+        className="flex flex-row gap-2 items-end mt-4"
         onSubmit={onPercentageSubmit}
         resetOnSuccessfulSubmit
+        defaultValues={{ value: 0 }}
       >
         <IdField />
         <AmountField
@@ -74,20 +107,55 @@ export function AmountForm({
         />
         <Button size="small">Add</Button>
       </Form>
-
       <Form
-        className="flex flex-row gap-2 items-center"
-        onSubmit={onTokensSubmit}
+        key="fiat"
+        className="flex flex-row gap-2 items-end mt-4"
+        onSubmit={onFiatSubmit}
         resetOnSuccessfulSubmit
+        defaultValues={{ value: { unit: "", value: 0 } }}
       >
         <IdField />
         <AmountField
-          label="Amount Tokens (Crypto)"
+          label="Amount Fiat"
           name="value"
-          type="AmountCrypto"
+          type="AmountFiat"
+          placeholderSelect="CUR"
         />
         <Button size="small">Add</Button>
       </Form>
+      <Form
+        className="flex flex-row gap-2 items-end mt-4"
+        onSubmit={onCryptoSubmit}
+        resetOnSuccessfulSubmit
+        defaultValues={{ value: { unit: "", value: 0 } }}
+      >
+        <IdField />
+        <AmountField
+          label="Amount Token (Crypto)"
+          name="value"
+          type="AmountFiat"
+          placeholderSelect="CUR"
+          required
+        />
+        <Button size="small">Add</Button>
+      </Form>
+      <Form
+        className="flex flex-row gap-2 items-end mt-4"
+        onSubmit={onCurrencySubmit}
+        resetOnSuccessfulSubmit
+        defaultValues={{ value: { unit: "", value: 0 } }}
+      >
+        <IdField />
+        <AmountField
+          label="Amount Currency"
+          name="value"
+          type="AmountCurrency"
+          placeholderSelect="CUR"
+        />
+        <Button size="small">Add</Button>
+      </Form> 
+
+
     </FormWrapper>
   );
 }
