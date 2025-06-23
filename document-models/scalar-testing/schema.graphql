@@ -24,7 +24,9 @@ type ScalarTestingState {
   enums: [EnumFieldType!]!
   amount: [AmountFieldType!]!
   amountPercentage: [AmountFieldPercentageType!]!
-  amountTokens: [AmountFieldTokenType!]!
+  amountFiat: [AmountFiatFieldType!]!
+  amountCrypto: [AmountCryptoFieldType!]!
+  amountCurrency: [AmountCurrencyFieldType!]!
   phids: [PHIDFieldType!]!
   aids: [AIDFieldType!]!
   oids: [OIDFieldType!]!
@@ -78,7 +80,7 @@ type DropDown {
 
 type AmountFieldType {
   id: ID!
-  value: Amount_Money
+  value: Amount
 }
 
 type AmountFieldPercentageType {
@@ -86,10 +88,20 @@ type AmountFieldPercentageType {
   value: Amount_Percentage
 }
 
-type AmountFieldTokenType {
+type AmountFiatFieldType {
   id: ID!
-  value: Amount_Tokens
+  value: Amount_Fiat
 }
+
+type AmountCryptoFieldType {
+  id: ID!
+  value: Amount_Currency
+}
+type AmountCurrencyFieldType {
+  id: ID!
+  value: Amount_Currency
+}
+
 
 type PHIDFieldType {
   id: ID!
@@ -207,9 +219,9 @@ input RemoveCurrencyInput {
 
 # amount_testing
 
-input AddAmountMoneyInput {
+input AddAmountInput {
   id: ID!
-  value: Amount_Money
+  value: Amount
 }
 
 input AddAmountPercentageInput {
@@ -217,9 +229,40 @@ input AddAmountPercentageInput {
   value: Amount_Percentage
 }
 
-input AddAmountTokensInput {
+input RemoveAmountInput {
   id: ID!
-  value: Amount_Tokens
+  
+}
+
+input RemovePercentInput {
+  id:ID!
+}
+
+input AddAmountFiatInput {
+  id:ID!
+  value: Amount_Fiat
+}
+
+input RemoveAmountFiatInput {
+ id:ID!
+}
+
+input AddAmountCryptoInput {
+  id: ID!
+  value: Amount_Crypto
+}
+
+input RemoveAmountCryptoInput {
+ id: ID!
+}
+
+input AddAmountCurrencyInput {
+  id: ID!
+  value: Amount_Currency
+}
+
+input RemoveAmountCurrencyInput {
+  id: ID!
 }
 
 # phid_testing

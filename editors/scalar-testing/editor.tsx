@@ -13,6 +13,11 @@ import type {
   AddTimeInput,
   AddDateTimeInput,
   AddBooleanInput,
+  AddAmountInput,
+  AddAmountPercentageInput,
+  AddAmountFiatInput,
+  AddAmountCryptoInput,
+  AddAmountCurrencyInput,
 } from "../../document-models/scalar-testing/index.js";
 import { State } from "./components/state.js";
 import { BooleanForm } from "./components/forms/boolean-form.js";
@@ -106,6 +111,28 @@ export default function Editor({ dispatch, document }: IProps) {
     dispatch(actions.addDateTime(data));
   }, []);
 
+  const onAddAmount = useCallback((data: AddAmountInput) => {
+    dispatch(actions.addAmount(data));
+  }, []);
+
+  const onAddAmountPercentage = useCallback((data: AddAmountPercentageInput) => {
+    
+    dispatch(actions.addAmountPercentage(data));
+  }, []);
+
+  const onAddAmountFiat = useCallback((data: AddAmountFiatInput) => {
+    console.log("data", data);
+    dispatch(actions.addAmountFiat(data));
+  }, []);
+
+  const onAddAmountCrypto = useCallback((data: AddAmountCryptoInput) => {
+    dispatch(actions.addAmountCrypto(data));
+  }, []);
+
+  const onAddAmountCurrency = useCallback((data: AddAmountCurrencyInput) => {
+    dispatch(actions.addAmountCurrency(data));
+  }, []);
+
   return (
     <div className="overflow-auto" style={{ maxHeight: "calc(100vh - 50px)" }}>
       <State state={state} />
@@ -119,9 +146,16 @@ export default function Editor({ dispatch, document }: IProps) {
         >
           <PlaygroundForm />
           <AmountForm
-            amountMoneyState={state.amount}
+            amountState={state.amount}
+            onAddAmount={onAddAmount}
+            onAddAmountPercentage={onAddAmountPercentage}
             amountPercentageState={state.amountPercentage}
-            amountTokensState={state.amountTokens}
+            amountFiatState={state.amountFiat}
+            onAddAmountFiat={onAddAmountFiat}
+            amountCryptoState={state.amountCrypto}
+            onAddAmountCrypto={onAddAmountCrypto}
+            amountCurrencyState={state.amountCurrency}
+            onAddAmountCurrency={onAddAmountCurrency}
           />
           <BooleanForm
             booleansState={state.booleans}
