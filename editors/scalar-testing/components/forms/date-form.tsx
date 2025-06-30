@@ -40,11 +40,12 @@ export function DateForm({ onAddDate, datesState }: DateFormProps) {
         <IdField />
         <DatePickerField
           label="Date field"
-          minDate={new Date().toISOString()}
           name="date"
           placeholder="Select a date"
           required
           showErrorOnBlur
+          autoClose
+          dateFormat="YYYY-MM"
         />
 
         <Button className="w-full mt-2" size="small">
