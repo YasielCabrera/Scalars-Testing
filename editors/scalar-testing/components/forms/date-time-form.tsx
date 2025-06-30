@@ -43,6 +43,8 @@ export function DateTimeForm({
           label="Date time field"
           name="datetime"
           placeholder="Select a date time"
+          autoClose
+          dateFormat="MM/YYYY"
         />
 
         <Button className="w-full mt-2" size="small">
