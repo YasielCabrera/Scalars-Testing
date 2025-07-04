@@ -85,7 +85,7 @@ export function AmountForm({
         <IdField />
       
         <AmountField
-          label="Amount without unit"
+          label="Amount"
           name="value"
           type="Amount"
         />

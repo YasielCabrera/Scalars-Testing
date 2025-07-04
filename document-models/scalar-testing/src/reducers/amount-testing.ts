@@ -31,8 +31,7 @@ export const reducer: ScalarTestingAmountTestingOperations = {
       id: action.input.id,
       value: action.input.value ?? null,
     });
-    
-    console.log("AmountPercentage added:", action.input, "value is null:", action.input.value === null);
+
   },
 
   addAmountFiatOperation(state, action, dispatch) {
@@ -47,7 +46,6 @@ export const reducer: ScalarTestingAmountTestingOperations = {
     }
     state.amountFiat.push(newAmountFiat);
     
-    console.log("AmountFiat added:", action.input, "value is null:", action.input.value === null);
   },
 
   addAmountCryptoOperation(state: ScalarTestingState, action: AddAmountCryptoAction, dispatch) {
@@ -61,7 +59,6 @@ export const reducer: ScalarTestingAmountTestingOperations = {
     }
     state.amountCrypto.push(newAmountCrypto);
     
-    console.log("AmountCrypto added:", action.input, "value is null:", action.input.value === null);
   },
   
   addAmountCurrencyOperation(state, action, dispatch) {
@@ -75,7 +72,6 @@ export const reducer: ScalarTestingAmountTestingOperations = {
     }
     state.amountCurrency.push(newAmountCurrency);
     
-    console.log("AmountCurrency added:", action.input, "value is null:", action.input.value === null);
   },
 
   removeAmountOperation(state, action, dispatch) {
