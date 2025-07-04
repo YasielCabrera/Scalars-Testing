@@ -95,7 +95,7 @@ type AmountFiatFieldType {
 
 type AmountCryptoFieldType {
   id: ID!
-  value: Amount_Currency
+  value: Amount_Crypto
 }
 type AmountCurrencyFieldType {
   id: ID!
@@ -239,7 +239,7 @@ input RemovePercentInput {
 }
 
 input AddAmountFiatInput {
-  id:ID!
+  id: ID!
   value: Amount_Fiat
 }
 

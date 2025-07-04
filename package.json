@@ -48,7 +48,7 @@
   },
   "dependencies": {
     "@powerhousedao/design-system": "1.39.29-dev.1",
-    "@powerhousedao/document-engineering": "1.15.0",
+    "@powerhousedao/document-engineering": "1.16.1",
     "@radix-ui/react-accordion": "^1.2.3",
     "document-model": "^2.27.1",
     "graphql": "^16.10.0",
