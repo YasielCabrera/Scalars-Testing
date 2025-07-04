@@ -111,7 +111,7 @@ export default function Editor({ dispatch, document }: IProps) {
     dispatch(actions.addDateTime(data));
   }, []);
 
-  const onAddAmount = useCallback((data: AddAmountInput) => {
+  const  onAddAmount = useCallback((data: AddAmountInput) => {
     dispatch(actions.addAmount(data));
   }, []);
 
@@ -121,7 +121,7 @@ export default function Editor({ dispatch, document }: IProps) {
   }, []);
 
   const onAddAmountFiat = useCallback((data: AddAmountFiatInput) => {
-    console.log("data", data);
+
     dispatch(actions.addAmountFiat(data));
   }, []);
 

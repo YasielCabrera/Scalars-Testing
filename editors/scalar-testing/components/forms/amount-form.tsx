@@ -74,12 +74,13 @@ export function AmountForm({
       />
 
       <Form
-        defaultValues={{ value:{
-          value: 0,
-        } }}
         className="flex flex-row gap-2 items-end mt-4"
         onSubmit={onAmountSubmit}
-        resetOnSuccessfulSubmit  
+        resetOnSuccessfulSubmit
+        defaultValues={{ value: {
+          value: 0,
+        }}}
+        
       >
         <IdField />
       
@@ -87,11 +88,11 @@ export function AmountForm({
           label="Amount"
           name="value"
           type="Amount"
-      
         />
 
         <Button size="small">Add</Button>
       </Form>
+
 
       <Form
         className="flex flex-row gap-2 items-end mt-4"
@@ -127,7 +128,7 @@ export function AmountForm({
         className="flex flex-row gap-2 items-end mt-4"
         onSubmit={onCryptoSubmit}
         resetOnSuccessfulSubmit
-        defaultValues={{ value: { unit: "", value: 0 } }}
+        defaultValues={{ value: { value: 0 } }}
       >
         <IdField />
         <AmountField
