@@ -1,0 +1,70 @@
+{
+    "id": "dspot/object-set-table-testing",
+    "name": "ObjectSetTableTesting",
+    "extension": ".ostt",
+    "description": "Object Set Table Testing playground",
+    "author": {
+        "name": "Dspot",
+        "website": ""
+    },
+    "specifications": [
+        {
+            "version": 1,
+            "changeLog": [],
+            "state": {
+                "global": {
+                    "schema": "type ObjectSetTableTestingState {\n  accounts: [AccountEntry!]!\n}\n\ntype AccountEntry {\n  id: OID!\n  name: OLabel\n  account: String\n  budgetPath: String\n  type: AccountType\n}\n\nenum AccountType {\n  Protocol\n  Auditor\n  Operational\n  PaymentProcessor\n}",
+                    "initialValue": "{\n  \"accounts\": []\n}",
+                    "examples": []
+                },
+                "local": {
+                    "schema": "",
+                    "initialValue": "",
+                    "examples": []
+                }
+            },
+            "modules": [
+                {
+                    "id": "K/P4HUJl1/p52viKTGgjUL8OxPA=",
+                    "name": "set_table",
+                    "description": "",
+                    "operations": [
+                        {
+                            "id": "+9G46EGzDC2CWkX6YkREvOHJXLc=",
+                            "name": "ADD_ACCOUNT",
+                            "description": "",
+                            "schema": "input AddAccountInput {\n  name: OLabel\n  account: String\n  budgetPath: String\n  type: AccountType\n}",
+                            "template": "",
+                            "reducer": "",
+                            "errors": [],
+                            "examples": [],
+                            "scope": "global"
+                        },
+                        {
+                            "id": "77xs8IpwRsebIm748+XVykQ+F5w=",
+                            "name": "REMOVE_ACCOUNT",
+                            "description": "",
+                            "schema": "input RemoveAccountInput {\n  id: OID!\n}",
+                            "template": "",
+                            "reducer": "",
+                            "errors": [],
+                            "examples": [],
+                            "scope": "global"
+                        },
+                        {
+                            "id": "dj334GVV0TK4iUzdqWy8eMQLrxA=",
+                            "name": "UPDATE_ACCOUNT",
+                            "description": "",
+                            "schema": "input UpdateAccountInput {\n  id: OID!\n  name: OLabel\n  account: String\n  budgetPath: String\n  type: AccountType\n}",
+                            "template": "",
+                            "reducer": "",
+                            "errors": [],
+                            "examples": [],
+                            "scope": "global"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
