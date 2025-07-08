@@ -18,6 +18,7 @@ import type {
   AddAmountFiatInput,
   AddAmountCryptoInput,
   AddAmountCurrencyInput,
+  AddEmailInput,
 } from "../../document-models/scalar-testing/index.js";
 import { State } from "./components/state.js";
 import { BooleanForm } from "./components/forms/boolean-form.js";
@@ -51,6 +52,7 @@ import {
   type ScalarTestingDocument,
   actions,
 } from "../../document-models/scalar-testing/index.js";
+import { EmailForm } from "./components/forms/email-form.js";
 
 export type IProps = EditorProps<ScalarTestingDocument>;
 
@@ -133,6 +135,10 @@ export default function Editor({ dispatch, document }: IProps) {
     dispatch(actions.addAmountCurrency(data));
   }, []);
 
+  const onAddEmail = useCallback((data: AddEmailInput) => {
+    dispatch(actions.addEmail(data));
+  }, []);
+
   return (
     <div className="overflow-auto" style={{ maxHeight: "calc(100vh - 50px)" }}>
       <State state={state} />
@@ -182,6 +188,7 @@ export default function Editor({ dispatch, document }: IProps) {
             dateTimesState={state.datetime}
             onAddDateTime={onAddDateTime}
           />
+          <EmailForm onAddEmail={onAddEmail} emailsState={state.emails} />
           <FormWrapper title="Add Value Dropdown">
             <Dropdown>
               <DropdownTrigger className="w-[284px]">

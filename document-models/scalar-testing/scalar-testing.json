@@ -13,8 +13,8 @@
             "changeLog": [],
             "state": {
                 "global": {
-                    "schema": "type ScalarTestingState {\n  booleans: [BooleanFieldType!]!\n  numbers: [NumberFieldType!]!\n  strings: [StringFieldType!]!\n  urls: [URLFieldType!]!\n  countries: [CountryFieldType!]!\n  currency: [CurrencyFieldType!]!\n  enums: [EnumFieldType!]!\n  amount: [AmountFieldType!]!\n  amountPercentage: [AmountFieldPercentageType!]!\n  amountFiat: [AmountFiatFieldType!]!\n  amountCrypto: [AmountCryptoFieldType!]!\n  amountCurrency: [AmountCurrencyFieldType!]!\n  phids: [PHIDFieldType!]!\n  aids: [AIDFieldType!]!\n  oids: [OIDFieldType!]!\n  dropdown: [DropDown!]!\n  date: [DateFieldType!]!\n  time: [TimeFieldType!]!\n  datetime: [DateTimeFieldType!]! \n}\n\ntype BooleanFieldType {\n  id: ID!\n  boolean: Boolean!\n}\n\ntype NumberFieldType {\n  id: ID!\n  integer: Int\n  float: Float\n  bigInt: Int\n}\n\ntype StringFieldType {\n  id: ID!\n  string: String\n}\n\ntype URLFieldType {\n  id: ID!\n  url: URL\n}\n\ntype CountryFieldType {\n  id: ID!\n  country: String\n}\n\ntype CurrencyFieldType {\n  id: ID!\n  currency: Currency\n}\n\ntype EnumFieldType {\n  id: ID!\n  enum: String\n  enumMultiple: [String]\n}\ntype DropDown {\n  id: ID!\n  value: String\n}\n\ntype AmountFieldType {\n  id: ID!\n  value: Amount\n}\n\ntype AmountFieldPercentageType {\n  id: ID!\n  value: Amount_Percentage\n}\n\ntype AmountFiatFieldType {\n  id: ID!\n  value: Amount_Fiat\n}\n\ntype AmountCryptoFieldType {\n  id: ID!\n  value: Amount_Crypto\n}\ntype AmountCurrencyFieldType {\n  id: ID!\n  value: Amount_Currency\n}\n\n\ntype PHIDFieldType {\n  id: ID!\n  phid: String\n}\n\ntype AIDFieldType {\n  id: ID!\n  aid: String\n}\n\ntype OIDFieldType {\n  id: ID!\n  oid: String\n}\ntype DateFieldType {\n  id: ID!\n  date: String\n}\ntype TimeFieldType {\n  id: ID!\n  time: String\n}\ntype DateTimeFieldType{\n  id: ID!\n  datetime: String\n}",
-                    "initialValue": "{\n  \"booleans\": [],\n  \"numbers\": [],\n  \"strings\": [],\n  \"urls\": [],\n  \"countries\": [],\n  \"currency\": [],\n  \"enums\": [],\n  \"amount\": [],\n  \"amountPercentage\": [],\n  \"amountFiat\": [],\n  \"amountCrypto\": [],\n  \"amountCurrency\": [],\n  \"phids\": [],\n  \"aids\": [],\n  \"oids\": [],\n  \"dropdown\": [],\n  \"date\": [],\n  \"time\": [],\n  \"datetime\": []\n}",
+                    "schema": "type ScalarTestingState {\n  booleans: [BooleanFieldType!]!\n  numbers: [NumberFieldType!]!\n  strings: [StringFieldType!]!\n  urls: [URLFieldType!]!\n  countries: [CountryFieldType!]!\n  currency: [CurrencyFieldType!]!\n  enums: [EnumFieldType!]!\n  amount: [AmountFieldType!]!\n  amountPercentage: [AmountFieldPercentageType!]!\n  amountFiat: [AmountFiatFieldType!]!\n  amountCrypto: [AmountCryptoFieldType!]!\n  amountCurrency: [AmountCurrencyFieldType!]!\n  phids: [PHIDFieldType!]!\n  aids: [AIDFieldType!]!\n  oids: [OIDFieldType!]!\n  dropdown: [DropDown!]!\n  date: [DateFieldType!]!\n  time: [TimeFieldType!]!\n  datetime: [DateTimeFieldType!]!\n  emails: [EmailAddressFieldType!]!\n}\n\ntype BooleanFieldType {\n  id: ID!\n  boolean: Boolean!\n}\n\ntype NumberFieldType {\n  id: ID!\n  integer: Int\n  float: Float\n  bigInt: Int\n}\n\ntype StringFieldType {\n  id: ID!\n  string: String\n}\n\ntype URLFieldType {\n  id: ID!\n  url: URL\n}\n\ntype CountryFieldType {\n  id: ID!\n  country: String\n}\n\ntype CurrencyFieldType {\n  id: ID!\n  currency: Currency\n}\n\ntype EnumFieldType {\n  id: ID!\n  enum: String\n  enumMultiple: [String]\n}\ntype DropDown {\n  id: ID!\n  value: String\n}\n\ntype AmountFieldType {\n  id: ID!\n  value: Amount\n}\n\ntype AmountFieldPercentageType {\n  id: ID!\n  value: Amount_Percentage\n}\n\ntype AmountFiatFieldType {\n  id: ID!\n  value: Amount_Fiat\n}\n\ntype AmountCryptoFieldType {\n  id: ID!\n  value: Amount_Crypto\n}\ntype AmountCurrencyFieldType {\n  id: ID!\n  value: Amount_Currency\n}\n\n\ntype PHIDFieldType {\n  id: ID!\n  phid: String\n}\n\ntype AIDFieldType {\n  id: ID!\n  aid: String\n}\n\ntype OIDFieldType {\n  id: ID!\n  oid: String\n}\ntype DateFieldType {\n  id: ID!\n  date: String\n}\ntype TimeFieldType {\n  id: ID!\n  time: String\n}\ntype DateTimeFieldType{\n  id: ID!\n  datetime: String\n}\n\ntype EmailAddressFieldType{\n  id: ID!\n  email: EmailAddress\n}\n\n\n",
+                    "initialValue": "{\n  \"booleans\": [],\n  \"numbers\": [],\n  \"strings\": [],\n  \"urls\": [],\n  \"countries\": [],\n  \"currency\": [],\n  \"enums\": [],\n  \"amount\": [],\n  \"amountPercentage\": [],\n  \"amountFiat\": [],\n  \"amountCrypto\": [],\n  \"amountCurrency\": [],\n  \"phids\": [],\n  \"aids\": [],\n  \"oids\": [],\n  \"dropdown\": [],\n  \"date\": [],\n  \"time\": [],\n  \"datetime\": [],\n  \"emails\": []\n}",
                     "examples": []
                 },
                 "local": {
@@ -539,6 +539,35 @@
                             "name": "REMOVE_OID",
                             "description": "",
                             "schema": "input RemoveOidInput {\n  id: ID!\n}",
+                            "template": "",
+                            "reducer": "",
+                            "errors": [],
+                            "examples": [],
+                            "scope": "global"
+                        }
+                    ]
+                },
+                {
+                    "id": "LlW7lwDBZqo5WeCtLQ6Q5PF6sm8=",
+                    "name": "email_testing",
+                    "description": "",
+                    "operations": [
+                        {
+                            "id": "VomAkABNGGT5y5LTQ75NgAX02Ug=",
+                            "name": "ADD_EMAIL",
+                            "description": "",
+                            "schema": "input AddEmailInput {\n id: ID!\n email: EmailAddress \n}",
+                            "template": "",
+                            "reducer": "",
+                            "errors": [],
+                            "examples": [],
+                            "scope": "global"
+                        },
+                        {
+                            "id": "JEHB3dD2wzqQi623fR8pxGLON2c=",
+                            "name": "REMOVE_EMAIL",
+                            "description": "",
+                            "schema": "input RemoveEmailInput {\n  id: ID!\n}",
                             "template": "",
                             "reducer": "",
                             "errors": [],
