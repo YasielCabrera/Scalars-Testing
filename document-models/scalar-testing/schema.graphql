@@ -33,7 +33,8 @@ type ScalarTestingState {
   dropdown: [DropDown!]!
   date: [DateFieldType!]!
   time: [TimeFieldType!]!
-  datetime: [DateTimeFieldType!]! 
+  datetime: [DateTimeFieldType!]!
+  emails: [EmailAddressFieldType!]!
 }
 
 type BooleanFieldType {
@@ -129,6 +130,14 @@ type DateTimeFieldType{
   id: ID!
   datetime: String
 }
+
+type EmailAddressFieldType{
+  id: ID!
+  email: EmailAddress
+}
+
+
+
 
 
 
@@ -335,5 +344,16 @@ input AddOidInput {
 }
 
 input RemoveOidInput {
+  id: ID!
+}
+
+# email_testing
+
+input AddEmailInput {
+ id: ID!
+ email: EmailAddress 
+}
+
+input RemoveEmailInput {
   id: ID!
 }
