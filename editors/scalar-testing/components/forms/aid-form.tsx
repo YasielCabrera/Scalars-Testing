@@ -8,6 +8,7 @@ import type React from "react";
 import { useCallback } from "react";
 import { FormWrapper } from "../form-wrapper.js";
 import { State } from "../state.js";
+import { useFormReset } from "../../hooks/use-form-reset.js";
 
 interface AIDOption {
   icon?: IconName | React.ReactElement;
@@ -382,6 +383,12 @@ export function AidForm({ onAddAid, aidsState }: AidFormProps) {
     onAddAid(data);
   }, []);
 
+  const { formKey: formKeyAid, onSubmit: onSubmitAid } = useFormReset<AddAidInput>({
+    onSubmitCallback: onAddAid,
+    resetOnSuccessfulSubmit: true,
+    formId: 'aid'
+  });
+
   return (
     <FormWrapper title="Add Aid">
       <State state={aidsState} />
@@ -389,8 +396,9 @@ export function AidForm({ onAddAid, aidsState }: AidFormProps) {
       <div className="flex flex-col gap-4 min-h-[380px]">
         <Form
           defaultValues={{ aid: "" }}
-          onSubmit={onSubmit}
+          onSubmit={onSubmitAid}
           resetOnSuccessfulSubmit
+          key={formKeyAid}
         >
           <IdField />
           <AIDField

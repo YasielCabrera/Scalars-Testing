@@ -11,6 +11,7 @@ import {
 import { useCallback } from "react";
 import { FormWrapper } from "../form-wrapper.js";
 import { State } from "../state.js";
+import { useFormReset } from "../../hooks/use-form-reset.js";
 
 interface NumberFormProps {
   readonly onAddNumber: (data: AddNumberInput) => void;
@@ -21,6 +22,11 @@ export function NumberForm({ onAddNumber, numbersState }: NumberFormProps) {
   const onSubmit = useCallback((data: AddNumberInput) => {
     onAddNumber(data);
   }, []);
+  const { formKey: formKeyNumber, onSubmit: onSubmitNumber } = useFormReset<AddNumberInput>({
+    onSubmitCallback: onAddNumber,
+    resetOnSuccessfulSubmit: true,
+    formId: 'number'
+  });
 
   return (
     <FormWrapper title="Add Number">
@@ -31,8 +37,9 @@ export function NumberForm({ onAddNumber, numbersState }: NumberFormProps) {
           float: 0,
           bigInt: 0,
         }}
-        onSubmit={onSubmit}
+        onSubmit={onSubmitNumber}
         resetOnSuccessfulSubmit
+        key={formKeyNumber}
       >
         <IdField />
         <NumberField label="Integer" name="integer" />

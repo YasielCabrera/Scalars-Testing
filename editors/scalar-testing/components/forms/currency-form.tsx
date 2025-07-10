@@ -11,6 +11,7 @@ import type {
 import { useCallback } from "react";
 import { FormWrapper } from "../form-wrapper.js";
 import { State } from "../state.js";
+import { useFormReset } from "../../hooks/use-form-reset.js";
 
 interface CurrencyFormProps {
   readonly onAddCurrency: (data: AddCurrencyInput) => void;
@@ -25,14 +26,22 @@ export function CurrencyForm({
     onAddCurrency(data);
   }, []);
 
+  const { formKey: formKeyCurrency, onSubmit: onSubmitCurrency } = useFormReset<AddCurrencyInput>({
+    onSubmitCallback: onAddCurrency,
+    resetOnSuccessfulSubmit: true,
+    formId: 'currency'
+  });
+
   return (
     <FormWrapper title="Add Currency">
       <State state={currenciesState} />
 
       <Form
         defaultValues={{ currency: "" }}
-        onSubmit={onSubmit}
+        onSubmit={onSubmitCurrency}
         resetOnSuccessfulSubmit
+        key={formKeyCurrency}
+
       >
         <IdField />
         <CurrencyCodeField

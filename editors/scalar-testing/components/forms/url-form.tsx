@@ -7,6 +7,7 @@ import {
 import { useCallback } from "react";
 import { FormWrapper } from "../form-wrapper.js";
 import { State } from "../state.js";
+import { useFormReset } from "../../hooks/use-form-reset.js";
 
 interface URLFormProps {
   readonly onAddUrl: (data: AddUrlInput) => void;
@@ -14,9 +15,10 @@ interface URLFormProps {
 }
 
 export function URLForm({ onAddUrl, urlsState }: URLFormProps) {
-  const onSubmit = useCallback((data: AddUrlInput) => {
-    onAddUrl(data);
-  }, []);
+  const { formKey, onSubmit } = useFormReset<AddUrlInput>({
+    onSubmitCallback: onAddUrl,
+    resetOnSuccessfulSubmit: true,
+  });
 
   return (
     <FormWrapper title="Add URL">
@@ -25,6 +27,7 @@ export function URLForm({ onAddUrl, urlsState }: URLFormProps) {
         defaultValues={{ url: "" }}
         onSubmit={onSubmit}
         resetOnSuccessfulSubmit
+        key={formKey}
       >
         <IdField />
         <UrlField

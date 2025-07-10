@@ -6,12 +6,11 @@ import {
 } from "@powerhousedao/document-engineering/scalars";
 import {
     type AddEmailInput,
-  type AddStringInput,
   type ScalarTestingState,
 } from "document-models/scalar-testing/index.js";
-import { useCallback } from "react";
 import { FormWrapper } from "../form-wrapper.js";
 import { State } from "../state.js";
+import { useFormReset } from "../../hooks/use-form-reset.js";
 
 interface EmailFormProps {
   readonly onAddEmail: (data: AddEmailInput) => void;
@@ -19,14 +18,16 @@ interface EmailFormProps {
 }
 
 export function EmailForm({ onAddEmail, emailsState }: EmailFormProps) {
-  const onSubmit = useCallback((data: AddEmailInput) => {
-    onAddEmail(data);
-  }, []);
+  const { formKey, onSubmit } = useFormReset<AddEmailInput>({
+    onSubmitCallback: onAddEmail,
+    resetOnSuccessfulSubmit: true,
+  });
 
   return (
     <FormWrapper title="Add Email">
       <State state={emailsState} />
         <Form
+          key={formKey}
           defaultValues={{ email: "" }}
           onSubmit={onSubmit}
           resetOnSuccessfulSubmit

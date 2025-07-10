@@ -8,6 +8,7 @@ import type React from "react";
 import { useCallback } from "react";
 import { FormWrapper } from "../form-wrapper.js";
 import { State } from "../state.js";
+import { useFormReset } from "../../hooks/use-form-reset.js";
 
 interface OIDOption {
   icon?: IconName | React.ReactElement;
@@ -165,6 +166,12 @@ export function OidForm({ onAddOid, oidsState }: OidFormProps) {
     onAddOid(data);
   }, []);
 
+  const { formKey: formKeyOid, onSubmit: onSubmitOid } = useFormReset<AddOidInput>({
+    onSubmitCallback: onAddOid,
+    resetOnSuccessfulSubmit: true,
+    formId: 'oid'
+  });
+
   return (
     <FormWrapper title="Add Oid">
       <State state={oidsState} />
@@ -172,8 +179,10 @@ export function OidForm({ onAddOid, oidsState }: OidFormProps) {
       <div className="flex flex-col gap-4 min-h-[380px]">
         <Form
           defaultValues={{ oid: "" }}
-          onSubmit={onSubmit}
+          onSubmit={onSubmitOid}
           resetOnSuccessfulSubmit
+          key={formKeyOid}
+          
         >
           <IdField />
           <OIDField

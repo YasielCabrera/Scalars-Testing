@@ -5,13 +5,13 @@ import {
   IdField,
   TimePickerField,
 } from "@powerhousedao/document-engineering/scalars";
-import { useCallback, useState } from "react";
 import { FormWrapper } from "../form-wrapper.js";
 import { State } from "../state.js";
 import type {
   AddTimeInput,
   ScalarTestingState,
 } from "../../../../document-models/scalar-testing/index.js";
+import { useFormReset } from "../../hooks/use-form-reset.js";
 
 interface TimeFormProps {
   readonly onAddTime: (data: AddTimeInput) => void;
@@ -19,11 +19,11 @@ interface TimeFormProps {
 }
 
 export function TimeForm({ onAddTime, timesState }: TimeFormProps) {
-  const [formKey, setFormKey] = useState(0);
-  const onSubmit = useCallback((data: AddTimeInput) => {
-    onAddTime(data);
-    setFormKey((prev) => prev + 1);
-  }, []);
+  const { formKey: formKeyTime, onSubmit: onSubmitTime } = useFormReset<AddTimeInput>({
+    onSubmitCallback: onAddTime,
+    resetOnSuccessfulSubmit: true,
+    formId: 'time'
+  });
 
   return (
     <FormWrapper title="Add Time">
@@ -31,8 +31,8 @@ export function TimeForm({ onAddTime, timesState }: TimeFormProps) {
 
       <Form
         defaultValues={{ time: "" }}
-        key={formKey}
-        onSubmit={onSubmit}
+        key={formKeyTime}
+        onSubmit={onSubmitTime}
         resetOnSuccessfulSubmit
       >
         <IdField />

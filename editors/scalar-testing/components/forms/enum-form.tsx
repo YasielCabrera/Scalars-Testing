@@ -11,6 +11,7 @@ import {
 import { useCallback } from "react";
 import { FormWrapper } from "../form-wrapper.js";
 import { State } from "../state.js";
+import { useFormReset } from "../../hooks/use-form-reset.js";
 
 interface EnumFormProps {
   readonly onAddEnum: (data: AddEnumInput) => void;
@@ -18,9 +19,24 @@ interface EnumFormProps {
 }
 
 export function EnumForm({ onAddEnum, enumsState }: EnumFormProps) {
-  const onSubmit = useCallback((data: AddEnumInput) => {
-    onAddEnum(data);
-  }, []);
+
+  const { formKey: formKeyEnumRadio, onSubmit: onSubmitEnumRadio } = useFormReset<AddEnumInput>({
+    onSubmitCallback: onAddEnum,
+    resetOnSuccessfulSubmit: true,
+    formId: 'enum-radio'
+  });
+
+  const { formKey: formKeyEnumSelect, onSubmit: onSubmitEnumSelect } = useFormReset<AddEnumInput>({
+    onSubmitCallback: onAddEnum,
+    resetOnSuccessfulSubmit: true,
+    formId: 'enum-select'
+  });
+
+  const { formKey: formKeyEnumMultiple, onSubmit: onSubmitEnumMultiple } = useFormReset<AddEnumInput>({
+    onSubmitCallback: onAddEnum,
+    resetOnSuccessfulSubmit: true,
+    formId: 'enum-multiple'
+  });
 
   return (
     <FormWrapper title="Add Enums">
@@ -30,8 +46,10 @@ export function EnumForm({ onAddEnum, enumsState }: EnumFormProps) {
         <div className="flex flex-col gap-2 sm:flex-row">
           <Form
             defaultValues={{ enum: "" }}
-            onSubmit={onSubmit}
+            onSubmit={onSubmitEnumRadio}
             resetOnSuccessfulSubmit
+            key={formKeyEnumRadio}
+
           >
             <IdField />
             <EnumField
@@ -51,8 +69,10 @@ export function EnumForm({ onAddEnum, enumsState }: EnumFormProps) {
 
           <Form
             defaultValues={{ enum: "" }}
-            onSubmit={onSubmit}
+            onSubmit={onSubmitEnumSelect}
             resetOnSuccessfulSubmit
+            key={formKeyEnumSelect}
+
           >
             <IdField />
             <EnumField
@@ -74,8 +94,10 @@ export function EnumForm({ onAddEnum, enumsState }: EnumFormProps) {
 
         <Form
           defaultValues={{ enumMultiple: [] }}
-          onSubmit={onSubmit}
+          onSubmit={onSubmitEnumMultiple}
           resetOnSuccessfulSubmit
+          key={formKeyEnumMultiple}
+
         >
           <IdField />
           <EnumField

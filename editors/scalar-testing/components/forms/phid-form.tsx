@@ -8,6 +8,7 @@ import type React from "react";
 import { useCallback } from "react";
 import { FormWrapper } from "../form-wrapper.js";
 import { State } from "../state.js";
+import { useFormReset } from "../../hooks/use-form-reset.js";
 
 interface PHIDOption {
   icon?: IconName | React.ReactElement;
@@ -287,6 +288,12 @@ export function PhidForm({ onAddPhid, phidsState }: PhidFormProps) {
     onAddPhid(data);
   }, []);
 
+  const { formKey: formKeyPhid, onSubmit: onSubmitPhid } = useFormReset<AddPhidInput>({
+    onSubmitCallback: onAddPhid,
+    resetOnSuccessfulSubmit: true,
+    formId: 'phid'
+  });
+
   return (
     <FormWrapper title="Add Phid">
       <State state={phidsState} />
@@ -294,7 +301,8 @@ export function PhidForm({ onAddPhid, phidsState }: PhidFormProps) {
       <div className="flex flex-col gap-4 min-h-[380px]">
         <Form
           defaultValues={{ phid: "" }}
-          onSubmit={onSubmit}
+          onSubmit={onSubmitPhid}
+          key={formKeyPhid}
           resetOnSuccessfulSubmit
         >
           <IdField />

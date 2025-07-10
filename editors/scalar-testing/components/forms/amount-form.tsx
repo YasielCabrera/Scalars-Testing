@@ -12,6 +12,7 @@ import { useCallback } from "react";
 import { FormWrapper } from "../form-wrapper.js";
 import { State } from "../state.js";
 import { Form, IdField, AmountField } from "@powerhousedao/document-engineering/scalars";
+import { useFormReset } from "../../hooks/use-form-reset.js";
 
 interface AmountFormProps {
   readonly amountState: ScalarTestingState["amount"];
@@ -58,9 +59,41 @@ export function AmountForm({
     onAddAmountCurrency(data);
   }, []);
 
+     const { formKey: formKeyAmount, onSubmit: onSubmitAmount } = useFormReset<AddAmountInput>({
+      onSubmitCallback: onAmountSubmit,
+      resetOnSuccessfulSubmit: true,
+      formId: 'amount'
+     });
+
+  const { formKey: formKeyPercentage, onSubmit: onSubmitPercentage } = useFormReset<AddAmountPercentageInput>({
+    onSubmitCallback: onPercentageSubmit,
+    resetOnSuccessfulSubmit: true,
+    formId: 'percentage'
+  });
 
 
-  return (
+  const { formKey: formKeyFiat, onSubmit: onSubmitFiat } = useFormReset<AddAmountFiatInput>({
+
+    onSubmitCallback: onFiatSubmit,
+    resetOnSuccessfulSubmit: true,
+    formId: 'fiat'
+  });
+
+  const { formKey: formKeyCrypto, onSubmit: onSubmitCrypto } = useFormReset<AddAmountCryptoInput>({
+
+    onSubmitCallback: onCryptoSubmit,
+    resetOnSuccessfulSubmit: true,
+    formId: 'crypto'
+  });
+
+  const { formKey: formKeyCurrency, onSubmit: onSubmitCurrency } = useFormReset<AddAmountCurrencyInput>({
+
+    onSubmitCallback: onCurrencySubmit,
+    resetOnSuccessfulSubmit: true,
+    formId: 'currency'
+  });
+
+      return (
     <FormWrapper title="Add Amount">
       <State
         state={{
@@ -75,8 +108,9 @@ export function AmountForm({
 
       <Form
         className="flex flex-row gap-2 items-end mt-4"
-        onSubmit={onAmountSubmit}
+        onSubmit={onSubmitAmount}
         resetOnSuccessfulSubmit
+        key={formKeyAmount}
         defaultValues={{ value: {
           value: 0,
         }}}
@@ -96,8 +130,9 @@ export function AmountForm({
 
       <Form
         className="flex flex-row gap-2 items-end mt-4"
-        onSubmit={onPercentageSubmit}
+        onSubmit={onSubmitPercentage}
         resetOnSuccessfulSubmit
+        key={formKeyPercentage}
         defaultValues={{ value: 0 }}
       >
         <IdField />
@@ -109,10 +144,10 @@ export function AmountForm({
         <Button size="small">Add</Button>
       </Form>
       <Form
-        key="fiat"
         className="flex flex-row gap-2 items-end mt-4"
-        onSubmit={onFiatSubmit}
+        onSubmit={onSubmitFiat}
         resetOnSuccessfulSubmit
+        key={formKeyFiat}
         defaultValues={{ value: { unit: "", value: 0 } }}
       >
         <IdField />
@@ -126,8 +161,9 @@ export function AmountForm({
       </Form>
       <Form
         className="flex flex-row gap-2 items-end mt-4"
-        onSubmit={onCryptoSubmit}
+        onSubmit={onSubmitCrypto}
         resetOnSuccessfulSubmit
+        key={formKeyCrypto}
         defaultValues={{ value: { value: 0 } }}
       >
         <IdField />
@@ -142,8 +178,9 @@ export function AmountForm({
       </Form>
       <Form
         className="flex flex-row gap-2 items-end mt-4"
-        onSubmit={onCurrencySubmit}
+        onSubmit={onSubmitCurrency}
         resetOnSuccessfulSubmit
+        key={formKeyCurrency}
         defaultValues={{ value: { unit: "", value: 0 } }}
       >
         <IdField />

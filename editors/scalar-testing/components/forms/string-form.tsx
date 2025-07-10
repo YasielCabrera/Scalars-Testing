@@ -11,6 +11,7 @@ import {
 import { useCallback } from "react";
 import { FormWrapper } from "../form-wrapper.js";
 import { State } from "../state.js";
+import { useFormReset } from "../../hooks/use-form-reset.js";
 
 interface StringFormProps {
   readonly onAddString: (data: AddStringInput) => void;
@@ -18,9 +19,16 @@ interface StringFormProps {
 }
 
 export function StringForm({ onAddString, stringsState }: StringFormProps) {
-  const onSubmit = useCallback((data: AddStringInput) => {
-    onAddString(data);
-  }, []);
+  const { formKey, onSubmit } = useFormReset<AddStringInput>({
+    onSubmitCallback: onAddString,
+    resetOnSuccessfulSubmit: true,
+    formId: 'single-line'
+  });
+  const { formKey: formKeyArea, onSubmit: onSubmitArea } = useFormReset<AddStringInput>({
+    onSubmitCallback: onAddString,
+    resetOnSuccessfulSubmit: true,
+    formId: 'multi-line'
+  });
 
   return (
     <FormWrapper title="Add String">
@@ -31,6 +39,7 @@ export function StringForm({ onAddString, stringsState }: StringFormProps) {
           defaultValues={{ string: "" }}
           onSubmit={onSubmit}
           resetOnSuccessfulSubmit
+          key={formKey}
         >
           <IdField />
           <StringField
@@ -45,9 +54,10 @@ export function StringForm({ onAddString, stringsState }: StringFormProps) {
 
         <Form
           defaultValues={{ string: "" }}
-          onSubmit={onSubmit}
+          onSubmit={onSubmitArea}
           resetOnSuccessfulSubmit
-        >
+          key={formKeyArea}
+          >
           <IdField />
           <StringField
             label="Multi-line String field"

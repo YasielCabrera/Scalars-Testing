@@ -6,11 +6,14 @@ import {
 } from "@powerhousedao/document-engineering/scalars";
 import type {
   AddBooleanInput,
+  AddEmailInput,
   ScalarTestingState,
 } from "document-models/scalar-testing/index.js";
-import { useCallback } from "react";
+// import { useCallback } from "react";
 import { FormWrapper } from "../form-wrapper.js";
 import { State } from "../state.js";
+import { useFormReset } from "../../hooks/use-form-reset.js";
+
 
 interface BooleanFormProps {
   readonly onAddBoolean: (data: AddBooleanInput) => void;
@@ -18,9 +21,10 @@ interface BooleanFormProps {
 }
 
 export function BooleanForm({ onAddBoolean, booleansState }: BooleanFormProps) {
-  const onSubmit = useCallback((data: AddBooleanInput) => {
-    onAddBoolean(data);
-  }, []);
+  const { formKey, onSubmit } = useFormReset<AddBooleanInput>({
+    onSubmitCallback: onAddBoolean,
+    resetOnSuccessfulSubmit: true,
+  });
 
   return (
     <FormWrapper title="Add Boolean">
@@ -31,6 +35,7 @@ export function BooleanForm({ onAddBoolean, booleansState }: BooleanFormProps) {
         defaultValues={{ boolean: false }}
         onSubmit={onSubmit}
         resetOnSuccessfulSubmit
+        key={formKey}
       >
         <IdField />
         <BooleanField label="Boolean field" name="boolean" />

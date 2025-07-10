@@ -11,6 +11,7 @@ import type {
 import { useCallback, useState } from "react";
 import { FormWrapper } from "../form-wrapper.js";
 import { State } from "../state.js";
+import { useFormReset } from "../../hooks/use-form-reset.js";
 
 interface DateFormProps {
   readonly onAddDate: (data: AddDateInput) => void;
@@ -18,14 +19,12 @@ interface DateFormProps {
 }
 
 export function DateForm({ onAddDate, datesState }: DateFormProps) {
-  const [formKey, setFormKey] = useState(0);
-  const onSubmit = useCallback(
-    (data: AddDateInput) => {
-      onAddDate(data);
-      setFormKey((prev) => prev + 1);
-    },
-    [onAddDate],
-  );
+
+  const { formKey: formKeyDate, onSubmit: onSubmitDate } = useFormReset<AddDateInput>({
+    onSubmitCallback: onAddDate,
+    resetOnSuccessfulSubmit: true,
+    formId: 'date'
+  });
 
   return (
     <FormWrapper title="Add Date">
@@ -33,8 +32,8 @@ export function DateForm({ onAddDate, datesState }: DateFormProps) {
 
       <Form
         defaultValues={{ date: "" }}
-        key={formKey}
-        onSubmit={onSubmit}
+        key={formKeyDate}
+        onSubmit={onSubmitDate}
         resetOnSuccessfulSubmit
       >
         <IdField />

@@ -11,6 +11,7 @@ import type {
 import { useCallback, useState } from "react";
 import { FormWrapper } from "../form-wrapper.js";
 import { State } from "../state.js";
+import { useFormReset } from "../../hooks/use-form-reset.js";
 
 interface DateTimeFormProps {
   readonly onAddDateTime: (data: AddDateTimeInput) => void;
@@ -21,25 +22,25 @@ export function DateTimeForm({
   onAddDateTime,
   dateTimesState,
 }: DateTimeFormProps) {
-  const [formKey, setFormKey] = useState(0);
-  const onSubmit = useCallback((data: AddDateTimeInput) => {
-    onAddDateTime(data);
-    setFormKey((prev) => prev + 1);
-  }, []);
+  const { formKey: formKeyDateTime, onSubmit: onSubmitDateTime } = useFormReset<AddDateTimeInput>({
+    onSubmitCallback: onAddDateTime,
+    resetOnSuccessfulSubmit: true,
+    formId: 'date-time'
+  });
 
   return (
     <FormWrapper title="Add DateTime">
       <State state={dateTimesState} />
 
       <Form
-        key={formKey}
+        key={formKeyDateTime}
         defaultValues={{ datetime: "" }}
-        onSubmit={onSubmit}
+        onSubmit={onSubmitDateTime}
         resetOnSuccessfulSubmit
       >
         <IdField />
         <DateTimePickerField
-          key={formKey}
+          key={formKeyDateTime}
           label="Date time field"
           name="datetime"
           placeholder="Select a date time"
