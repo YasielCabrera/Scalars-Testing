@@ -5,7 +5,6 @@ import type {
   ScalarTestingState,
 } from "document-models/scalar-testing/index.js";
 import type React from "react";
-import { useCallback } from "react";
 import { FormWrapper } from "../form-wrapper.js";
 import { State } from "../state.js";
 import { useFormReset } from "../../hooks/use-form-reset.js";
@@ -379,10 +378,6 @@ interface AidFormProps {
 }
 
 export function AidForm({ onAddAid, aidsState }: AidFormProps) {
-  const onSubmit = useCallback((data: AddAidInput) => {
-    onAddAid(data);
-  }, []);
-
   const { formKey: formKeyAid, onSubmit: onSubmitAid } = useFormReset<AddAidInput>({
     onSubmitCallback: onAddAid,
     resetOnSuccessfulSubmit: true,

@@ -5,7 +5,6 @@ import type {
   AddAmountCurrencyInput,
   AddAmountFiatInput,
   AddAmountPercentageInput,
-  AddBooleanInput,
   ScalarTestingState,
 } from "document-models/scalar-testing/index.js";
 import { useCallback } from "react";

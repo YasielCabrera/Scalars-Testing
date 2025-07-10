@@ -8,7 +8,6 @@ import type {
   AddCountryInput,
   ScalarTestingState,
 } from "document-models/scalar-testing/index.js";
-import { useCallback } from "react";
 import { FormWrapper } from "../form-wrapper.js";
 import { State } from "../state.js";
 import { useFormReset } from "../../hooks/use-form-reset.js";
@@ -22,9 +21,6 @@ export function CountryForm({
   onAddCountry,
   countriesState,
 }: CountryFormProps) {
-  const onSubmit = useCallback((data: AddCountryInput) => {
-    onAddCountry(data);
-  }, []);
   const { formKey: formKeyCountry, onSubmit: onSubmitCountry } = useFormReset<AddCountryInput>({
     onSubmitCallback: onAddCountry,
     resetOnSuccessfulSubmit: true,

@@ -4,7 +4,6 @@ import {
   type AddUrlInput,
   type ScalarTestingState,
 } from "document-models/scalar-testing/index.js";
-import { useCallback } from "react";
 import { FormWrapper } from "../form-wrapper.js";
 import { State } from "../state.js";
 import { useFormReset } from "../../hooks/use-form-reset.js";

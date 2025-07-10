@@ -5,7 +5,6 @@ import {
   type ScalarTestingState,
 } from "document-models/scalar-testing/index.js";
 import type React from "react";
-import { useCallback } from "react";
 import { FormWrapper } from "../form-wrapper.js";
 import { State } from "../state.js";
 import { useFormReset } from "../../hooks/use-form-reset.js";
@@ -284,9 +283,6 @@ interface PhidFormProps {
 }
 
 export function PhidForm({ onAddPhid, phidsState }: PhidFormProps) {
-  const onSubmit = useCallback((data: AddPhidInput) => {
-    onAddPhid(data);
-  }, []);
 
   const { formKey: formKeyPhid, onSubmit: onSubmitPhid } = useFormReset<AddPhidInput>({
     onSubmitCallback: onAddPhid,

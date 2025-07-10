@@ -8,7 +8,6 @@ import type {
   AddCurrencyInput,
   ScalarTestingState,
 } from "document-models/scalar-testing/index.js";
-import { useCallback } from "react";
 import { FormWrapper } from "../form-wrapper.js";
 import { State } from "../state.js";
 import { useFormReset } from "../../hooks/use-form-reset.js";
@@ -22,9 +21,7 @@ export function CurrencyForm({
   onAddCurrency,
   currenciesState,
 }: CurrencyFormProps) {
-  const onSubmit = useCallback((data: AddCurrencyInput) => {
-    onAddCurrency(data);
-  }, []);
+
 
   const { formKey: formKeyCurrency, onSubmit: onSubmitCurrency } = useFormReset<AddCurrencyInput>({
     onSubmitCallback: onAddCurrency,
