@@ -19,12 +19,10 @@ interface EmailFormProps {
 
 export function EmailForm({ onAddEmail, emailsState }: EmailFormProps) {
   const onSubmit = useCallback((data: AddEmailInput) => {
-    console.log("Email with confirmation data:", data);
     onAddEmail(data);
   }, [onAddEmail]);
 
   const onSubmitSimple = useCallback((data: AddEmailInput) => {
-    console.log("Simple email data:", data);
     onAddEmail(data);
   }, [onAddEmail]);
 
@@ -35,22 +33,13 @@ export function EmailForm({ onAddEmail, emailsState }: EmailFormProps) {
       <div className="mb-6">
         <h3 className="text-lg font-semibold mb-3">Email with Confirmation</h3>
         <Form
-          defaultValues={{ email: "", emailConfirmation: "" }}
+          defaultValues={{ email: "", confirmEmail: "" }}
           onSubmit={onSubmit}
           resetOnSuccessfulSubmit
         >
           <IdField />
-          <EmailField
-            label="Email field"
-            name="email"
-            required
-          />
-          <EmailField
-            label="Email Confirmation"
-            name="emailConfirmation"
-            matchFieldName="email"
-            required
-          />
+          <EmailField label="Email Address" name="email" placeholder="Enter your email" />
+          <EmailField label="Confirm Email" name="confirmEmail" placeholder="Confirm your email" matchFieldName="email" />
           <Button className="w-full mt-2" size="small">
             Add Email with Confirmation
           </Button>
@@ -60,15 +49,16 @@ export function EmailForm({ onAddEmail, emailsState }: EmailFormProps) {
       <div className="mb-6">
         <h3 className="text-lg font-semibold mb-3">Simple Email Field</h3>
         <Form
-          defaultValues={{ email: "" }}
+          defaultValues={{ otherEmail: "" }}
           onSubmit={onSubmitSimple}
           resetOnSuccessfulSubmit
         >
           <IdField />
           <EmailField
             label="Email field"
-            name="email"
+            name="otherEmail"
             required
+            minLength={15}
           />
           <Button className="w-full mt-2" size="small">
             Add Simple Email
