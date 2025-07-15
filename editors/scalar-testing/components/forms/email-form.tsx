@@ -39,7 +39,10 @@ export function EmailForm({ onAddEmail, emailsState }: EmailFormProps) {
         >
           <IdField />
           <EmailField label="Email Address" name="email" placeholder="Enter your email" />
-          <EmailField label="Confirm Email" name="confirmEmail" placeholder="Confirm your email" matchFieldName="email" />
+          <div className="mt-2">
+            <EmailField label="Confirm Email" name="confirmEmail" placeholder="Confirm your email" matchFieldName="email" />
+          </div>
+          
           <Button className="w-full mt-2" size="small">
             Add Email with Confirmation
           </Button>
