@@ -35,6 +35,7 @@ type ScalarTestingState {
   time: [TimeFieldType!]!
   datetime: [DateTimeFieldType!]!
   emails: [EmailAddressFieldType!]!
+  passwords: [PasswordFieldType!]!
 }
 
 type BooleanFieldType {
@@ -136,7 +137,10 @@ type EmailAddressFieldType{
   email: EmailAddress
 }
 
-
+type PasswordFieldType{
+  id: ID!
+  password: String
+}
 
 
 
@@ -355,5 +359,16 @@ input AddEmailInput {
 }
 
 input RemoveEmailInput {
+  id: ID!
+}
+
+# password_testing
+
+input AddPasswordInput {
+ id: ID!
+ password: String 
+}
+
+input RemovePasswordInput {
   id: ID!
 }
