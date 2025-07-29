@@ -128,13 +128,13 @@ export function AmountForm({
         className="flex flex-row gap-2 items-end mt-4"
         onSubmit={onCryptoSubmit}
         resetOnSuccessfulSubmit
-        defaultValues={{ value: { value: 0 } }}
+        defaultValues={{ value: { unit: "", value: "" } }}
       >
         <IdField />
         <AmountField
           label="Amount Token (Crypto)"
           name="value"
-          type="AmountFiat"
+          type="AmountCrypto"
           placeholderSelect="CUR"
           required
         />
@@ -144,7 +144,7 @@ export function AmountForm({
         className="flex flex-row gap-2 items-end mt-4"
         onSubmit={onCurrencySubmit}
         resetOnSuccessfulSubmit
-        defaultValues={{ value: { unit: "", value: 0 } }}
+        defaultValues={{ value: { unit: "", value: "" } }}
       >
         <IdField />
         <AmountField

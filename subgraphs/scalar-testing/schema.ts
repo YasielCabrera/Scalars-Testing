@@ -26,6 +26,7 @@ export const schema: DocumentNode = gql`
     time: [TimeFieldType!]!
     datetime: [DateTimeFieldType!]!
     emails: [EmailAddressFieldType!]!
+    passwords: [PasswordFieldType!]!
   }
 
   type BooleanFieldType {
@@ -124,6 +125,11 @@ export const schema: DocumentNode = gql`
   type EmailAddressFieldType {
     id: ID!
     email: EmailAddress
+  }
+
+  type PasswordFieldType {
+    id: ID!
+    password: String
   }
 
   """
@@ -344,6 +350,16 @@ export const schema: DocumentNode = gql`
       docId: PHID
       input: ScalarTesting_RemoveEmailInput
     ): Int
+    ScalarTesting_addPassword(
+      driveId: String
+      docId: PHID
+      input: ScalarTesting_AddPasswordInput
+    ): Int
+    ScalarTesting_removePassword(
+      driveId: String
+      docId: PHID
+      input: ScalarTesting_RemovePasswordInput
+    ): Int
   }
 
   """
@@ -551,6 +567,17 @@ export const schema: DocumentNode = gql`
     email: EmailAddress
   }
   input ScalarTesting_RemoveEmailInput {
+    id: ID!
+  }
+
+  """
+  Module: PasswordTesting
+  """
+  input ScalarTesting_AddPasswordInput {
+    id: ID!
+    password: String
+  }
+  input ScalarTesting_RemovePasswordInput {
     id: ID!
   }
 `;
