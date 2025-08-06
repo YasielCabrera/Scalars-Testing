@@ -1,9 +1,9 @@
-import { detectSync } from 'package-manager-detector/detect';
-import { resolveCommand } from 'package-manager-detector/commands';
-import { AgentName } from 'package-manager-detector';
+import { detect } from 'package-manager-detector';
+import { resolveCommand } from 'package-manager-detector';
+import type { AgentName } from 'package-manager-detector';
 import { execSync } from 'child_process';
 
-import pkg from '../package.json';
+import pkg from '../package.json' with { type: 'json' };
 
 const packageJson = pkg as { dependencies?: Record<string, string>, devDependencies?: Record<string, string> };
 
@@ -36,7 +36,7 @@ if (devDependencies.storybook || dependencies.storybook) {
     process.exit(0);
 }
 
-const pm = detectSync();
+const pm = await detect();
 
 const getAddDevOption = (pm: AgentName) => {
     return pm === 'bun' ? '-d' : '-D';

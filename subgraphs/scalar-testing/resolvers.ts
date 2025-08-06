@@ -4,7 +4,7 @@
 import { type Subgraph } from "@powerhousedao/reactor-api";
 import { addFile } from "document-drive";
 import { actions } from "../../document-models/scalar-testing/index.js";
-import { generateId, hashKey } from "document-model";
+import { generateId } from "document-model";
 
 const DEFAULT_DRIVE_ID = "powerhouse";
 
@@ -20,12 +20,12 @@ export const getResolvers = (subgraph: Subgraph): Record<string, any> => {
             const docId: string = args.docId || "";
             const doc = await reactor.getDocument(driveId, docId);
             return {
-              id: docId,
               driveId: driveId,
               ...doc,
+              ...doc.header,
               state: doc.state.global,
               stateJSON: doc.state.global,
-              revision: doc.revision.global,
+              revision: doc.header.revision["global"] ?? 0,
             };
           },
           getDocuments: async (args: any) => {
@@ -35,17 +35,19 @@ export const getResolvers = (subgraph: Subgraph): Record<string, any> => {
               docsIds.map(async (docId) => {
                 const doc = await reactor.getDocument(driveId, docId);
                 return {
-                  id: docId,
                   driveId: driveId,
                   ...doc,
+                  ...doc.header,
                   state: doc.state.global,
                   stateJSON: doc.state.global,
-                  revision: doc.revision.global,
+                  revision: doc.header.revision["global"] ?? 0,
                 };
               }),
             );
 
-            return docs.filter((doc) => doc.documentType === "dspot/testing");
+            return docs.filter(
+              (doc) => doc.header.documentType === "dspot/testing",
+            );
           },
         };
       },
@@ -65,12 +67,12 @@ export const getResolvers = (subgraph: Subgraph): Record<string, any> => {
               {
                 branch: "main",
                 scope: "global",
-                syncId: hashKey(),
+                syncId: generateId(),
               },
               {
                 branch: "main",
                 scope: "local",
-                syncId: hashKey(),
+                syncId: generateId(),
               },
             ],
           }),
@@ -90,7 +92,7 @@ export const getResolvers = (subgraph: Subgraph): Record<string, any> => {
           actions.addBoolean({ ...args.input }),
         );
 
-        return doc.revision.global + 1;
+        return (doc.header.revision["global"] ?? 0) + 1;
       },
 
       ScalarTesting_removeBoolean: async (_: any, args: any) => {
@@ -104,7 +106,7 @@ export const getResolvers = (subgraph: Subgraph): Record<string, any> => {
           actions.removeBoolean({ ...args.input }),
         );
 
-        return doc.revision.global + 1;
+        return (doc.header.revision["global"] ?? 0) + 1;
       },
 
       ScalarTesting_addNumber: async (_: any, args: any) => {
@@ -118,7 +120,7 @@ export const getResolvers = (subgraph: Subgraph): Record<string, any> => {
           actions.addNumber({ ...args.input }),
         );
 
-        return doc.revision.global + 1;
+        return (doc.header.revision["global"] ?? 0) + 1;
       },
 
       ScalarTesting_removeNumber: async (_: any, args: any) => {
@@ -132,7 +134,7 @@ export const getResolvers = (subgraph: Subgraph): Record<string, any> => {
           actions.removeNumber({ ...args.input }),
         );
 
-        return doc.revision.global + 1;
+        return (doc.header.revision["global"] ?? 0) + 1;
       },
 
       ScalarTesting_addString: async (_: any, args: any) => {
@@ -146,7 +148,7 @@ export const getResolvers = (subgraph: Subgraph): Record<string, any> => {
           actions.addString({ ...args.input }),
         );
 
-        return doc.revision.global + 1;
+        return (doc.header.revision["global"] ?? 0) + 1;
       },
 
       ScalarTesting_removeString: async (_: any, args: any) => {
@@ -160,7 +162,7 @@ export const getResolvers = (subgraph: Subgraph): Record<string, any> => {
           actions.removeString({ ...args.input }),
         );
 
-        return doc.revision.global + 1;
+        return (doc.header.revision["global"] ?? 0) + 1;
       },
 
       ScalarTesting_addUrl: async (_: any, args: any) => {
@@ -174,7 +176,7 @@ export const getResolvers = (subgraph: Subgraph): Record<string, any> => {
           actions.addUrl({ ...args.input }),
         );
 
-        return doc.revision.global + 1;
+        return (doc.header.revision["global"] ?? 0) + 1;
       },
 
       ScalarTesting_removeUrl: async (_: any, args: any) => {
@@ -188,7 +190,7 @@ export const getResolvers = (subgraph: Subgraph): Record<string, any> => {
           actions.removeUrl({ ...args.input }),
         );
 
-        return doc.revision.global + 1;
+        return (doc.header.revision["global"] ?? 0) + 1;
       },
 
       ScalarTesting_addCountry: async (_: any, args: any) => {
@@ -202,7 +204,7 @@ export const getResolvers = (subgraph: Subgraph): Record<string, any> => {
           actions.addCountry({ ...args.input }),
         );
 
-        return doc.revision.global + 1;
+        return (doc.header.revision["global"] ?? 0) + 1;
       },
 
       ScalarTesting_addCountries: async (_: any, args: any) => {
@@ -216,7 +218,7 @@ export const getResolvers = (subgraph: Subgraph): Record<string, any> => {
           actions.addCountries({ ...args.input }),
         );
 
-        return doc.revision.global + 1;
+        return (doc.header.revision["global"] ?? 0) + 1;
       },
 
       ScalarTesting_removeCountry: async (_: any, args: any) => {
@@ -230,7 +232,7 @@ export const getResolvers = (subgraph: Subgraph): Record<string, any> => {
           actions.removeCountry({ ...args.input }),
         );
 
-        return doc.revision.global + 1;
+        return (doc.header.revision["global"] ?? 0) + 1;
       },
 
       ScalarTesting_addEnum: async (_: any, args: any) => {
@@ -244,7 +246,7 @@ export const getResolvers = (subgraph: Subgraph): Record<string, any> => {
           actions.addEnum({ ...args.input }),
         );
 
-        return doc.revision.global + 1;
+        return (doc.header.revision["global"] ?? 0) + 1;
       },
 
       ScalarTesting_removeEnum: async (_: any, args: any) => {
@@ -258,7 +260,7 @@ export const getResolvers = (subgraph: Subgraph): Record<string, any> => {
           actions.removeEnum({ ...args.input }),
         );
 
-        return doc.revision.global + 1;
+        return (doc.header.revision["global"] ?? 0) + 1;
       },
 
       ScalarTesting_addCurrency: async (_: any, args: any) => {
@@ -272,7 +274,7 @@ export const getResolvers = (subgraph: Subgraph): Record<string, any> => {
           actions.addCurrency({ ...args.input }),
         );
 
-        return doc.revision.global + 1;
+        return (doc.header.revision["global"] ?? 0) + 1;
       },
 
       ScalarTesting_removeCurrency: async (_: any, args: any) => {
@@ -286,7 +288,7 @@ export const getResolvers = (subgraph: Subgraph): Record<string, any> => {
           actions.removeCurrency({ ...args.input }),
         );
 
-        return doc.revision.global + 1;
+        return (doc.header.revision["global"] ?? 0) + 1;
       },
 
       ScalarTesting_addAmount: async (_: any, args: any) => {
@@ -300,7 +302,7 @@ export const getResolvers = (subgraph: Subgraph): Record<string, any> => {
           actions.addAmount({ ...args.input }),
         );
 
-        return doc.revision.global + 1;
+        return (doc.header.revision["global"] ?? 0) + 1;
       },
 
       ScalarTesting_addAmountPercentage: async (_: any, args: any) => {
@@ -314,7 +316,7 @@ export const getResolvers = (subgraph: Subgraph): Record<string, any> => {
           actions.addAmountPercentage({ ...args.input }),
         );
 
-        return doc.revision.global + 1;
+        return (doc.header.revision["global"] ?? 0) + 1;
       },
 
       ScalarTesting_removeAmount: async (_: any, args: any) => {
@@ -328,7 +330,7 @@ export const getResolvers = (subgraph: Subgraph): Record<string, any> => {
           actions.removeAmount({ ...args.input }),
         );
 
-        return doc.revision.global + 1;
+        return (doc.header.revision["global"] ?? 0) + 1;
       },
 
       ScalarTesting_removePercent: async (_: any, args: any) => {
@@ -342,7 +344,7 @@ export const getResolvers = (subgraph: Subgraph): Record<string, any> => {
           actions.removePercent({ ...args.input }),
         );
 
-        return doc.revision.global + 1;
+        return (doc.header.revision["global"] ?? 0) + 1;
       },
 
       ScalarTesting_addAmountFiat: async (_: any, args: any) => {
@@ -356,7 +358,7 @@ export const getResolvers = (subgraph: Subgraph): Record<string, any> => {
           actions.addAmountFiat({ ...args.input }),
         );
 
-        return doc.revision.global + 1;
+        return (doc.header.revision["global"] ?? 0) + 1;
       },
 
       ScalarTesting_removeAmountFiat: async (_: any, args: any) => {
@@ -370,7 +372,7 @@ export const getResolvers = (subgraph: Subgraph): Record<string, any> => {
           actions.removeAmountFiat({ ...args.input }),
         );
 
-        return doc.revision.global + 1;
+        return (doc.header.revision["global"] ?? 0) + 1;
       },
 
       ScalarTesting_addAmountCrypto: async (_: any, args: any) => {
@@ -384,7 +386,7 @@ export const getResolvers = (subgraph: Subgraph): Record<string, any> => {
           actions.addAmountCrypto({ ...args.input }),
         );
 
-        return doc.revision.global + 1;
+        return (doc.header.revision["global"] ?? 0) + 1;
       },
 
       ScalarTesting_removeAmountCrypto: async (_: any, args: any) => {
@@ -398,7 +400,7 @@ export const getResolvers = (subgraph: Subgraph): Record<string, any> => {
           actions.removeAmountCrypto({ ...args.input }),
         );
 
-        return doc.revision.global + 1;
+        return (doc.header.revision["global"] ?? 0) + 1;
       },
 
       ScalarTesting_addAmountCurrency: async (_: any, args: any) => {
@@ -412,7 +414,7 @@ export const getResolvers = (subgraph: Subgraph): Record<string, any> => {
           actions.addAmountCurrency({ ...args.input }),
         );
 
-        return doc.revision.global + 1;
+        return (doc.header.revision["global"] ?? 0) + 1;
       },
 
       ScalarTesting_removeAmountCurrency: async (_: any, args: any) => {
@@ -426,7 +428,7 @@ export const getResolvers = (subgraph: Subgraph): Record<string, any> => {
           actions.removeAmountCurrency({ ...args.input }),
         );
 
-        return doc.revision.global + 1;
+        return (doc.header.revision["global"] ?? 0) + 1;
       },
 
       ScalarTesting_addPhid: async (_: any, args: any) => {
@@ -440,7 +442,7 @@ export const getResolvers = (subgraph: Subgraph): Record<string, any> => {
           actions.addPhid({ ...args.input }),
         );
 
-        return doc.revision.global + 1;
+        return (doc.header.revision["global"] ?? 0) + 1;
       },
 
       ScalarTesting_removePhid: async (_: any, args: any) => {
@@ -454,7 +456,7 @@ export const getResolvers = (subgraph: Subgraph): Record<string, any> => {
           actions.removePhid({ ...args.input }),
         );
 
-        return doc.revision.global + 1;
+        return (doc.header.revision["global"] ?? 0) + 1;
       },
 
       ScalarTesting_addValueDropdown: async (_: any, args: any) => {
@@ -468,7 +470,7 @@ export const getResolvers = (subgraph: Subgraph): Record<string, any> => {
           actions.addValueDropdown({ ...args.input }),
         );
 
-        return doc.revision.global + 1;
+        return (doc.header.revision["global"] ?? 0) + 1;
       },
 
       ScalarTesting_addAid: async (_: any, args: any) => {
@@ -482,7 +484,7 @@ export const getResolvers = (subgraph: Subgraph): Record<string, any> => {
           actions.addAid({ ...args.input }),
         );
 
-        return doc.revision.global + 1;
+        return (doc.header.revision["global"] ?? 0) + 1;
       },
 
       ScalarTesting_removeAid: async (_: any, args: any) => {
@@ -496,7 +498,7 @@ export const getResolvers = (subgraph: Subgraph): Record<string, any> => {
           actions.removeAid({ ...args.input }),
         );
 
-        return doc.revision.global + 1;
+        return (doc.header.revision["global"] ?? 0) + 1;
       },
 
       ScalarTesting_addDate: async (_: any, args: any) => {
@@ -510,7 +512,7 @@ export const getResolvers = (subgraph: Subgraph): Record<string, any> => {
           actions.addDate({ ...args.input }),
         );
 
-        return doc.revision.global + 1;
+        return (doc.header.revision["global"] ?? 0) + 1;
       },
 
       ScalarTesting_removeDate: async (_: any, args: any) => {
@@ -524,7 +526,7 @@ export const getResolvers = (subgraph: Subgraph): Record<string, any> => {
           actions.removeDate({ ...args.input }),
         );
 
-        return doc.revision.global + 1;
+        return (doc.header.revision["global"] ?? 0) + 1;
       },
 
       ScalarTesting_addTime: async (_: any, args: any) => {
@@ -538,7 +540,7 @@ export const getResolvers = (subgraph: Subgraph): Record<string, any> => {
           actions.addTime({ ...args.input }),
         );
 
-        return doc.revision.global + 1;
+        return (doc.header.revision["global"] ?? 0) + 1;
       },
 
       ScalarTesting_removeTime: async (_: any, args: any) => {
@@ -552,7 +554,7 @@ export const getResolvers = (subgraph: Subgraph): Record<string, any> => {
           actions.removeTime({ ...args.input }),
         );
 
-        return doc.revision.global + 1;
+        return (doc.header.revision["global"] ?? 0) + 1;
       },
 
       ScalarTesting_addDateTime: async (_: any, args: any) => {
@@ -566,7 +568,7 @@ export const getResolvers = (subgraph: Subgraph): Record<string, any> => {
           actions.addDateTime({ ...args.input }),
         );
 
-        return doc.revision.global + 1;
+        return (doc.header.revision["global"] ?? 0) + 1;
       },
 
       ScalarTesting_removeDateTime: async (_: any, args: any) => {
@@ -580,7 +582,7 @@ export const getResolvers = (subgraph: Subgraph): Record<string, any> => {
           actions.removeDateTime({ ...args.input }),
         );
 
-        return doc.revision.global + 1;
+        return (doc.header.revision["global"] ?? 0) + 1;
       },
 
       ScalarTesting_addOid: async (_: any, args: any) => {
@@ -594,7 +596,7 @@ export const getResolvers = (subgraph: Subgraph): Record<string, any> => {
           actions.addOid({ ...args.input }),
         );
 
-        return doc.revision.global + 1;
+        return (doc.header.revision["global"] ?? 0) + 1;
       },
 
       ScalarTesting_removeOid: async (_: any, args: any) => {
@@ -608,7 +610,7 @@ export const getResolvers = (subgraph: Subgraph): Record<string, any> => {
           actions.removeOid({ ...args.input }),
         );
 
-        return doc.revision.global + 1;
+        return (doc.header.revision["global"] ?? 0) + 1;
       },
 
       ScalarTesting_addEmail: async (_: any, args: any) => {
@@ -622,7 +624,7 @@ export const getResolvers = (subgraph: Subgraph): Record<string, any> => {
           actions.addEmail({ ...args.input }),
         );
 
-        return doc.revision.global + 1;
+        return (doc.header.revision["global"] ?? 0) + 1;
       },
 
       ScalarTesting_removeEmail: async (_: any, args: any) => {
@@ -636,7 +638,35 @@ export const getResolvers = (subgraph: Subgraph): Record<string, any> => {
           actions.removeEmail({ ...args.input }),
         );
 
-        return doc.revision.global + 1;
+        return (doc.header.revision["global"] ?? 0) + 1;
+      },
+
+      ScalarTesting_addPassword: async (_: any, args: any) => {
+        const driveId: string = args.driveId || DEFAULT_DRIVE_ID;
+        const docId: string = args.docId || "";
+        const doc = await reactor.getDocument(driveId, docId);
+
+        await reactor.addAction(
+          driveId,
+          docId,
+          actions.addPassword({ ...args.input }),
+        );
+
+        return (doc.header.revision["global"] ?? 0) + 1;
+      },
+
+      ScalarTesting_removePassword: async (_: any, args: any) => {
+        const driveId: string = args.driveId || DEFAULT_DRIVE_ID;
+        const docId: string = args.docId || "";
+        const doc = await reactor.getDocument(driveId, docId);
+
+        await reactor.addAction(
+          driveId,
+          docId,
+          actions.removePassword({ ...args.input }),
+        );
+
+        return (doc.header.revision["global"] ?? 0) + 1;
       },
     },
   };

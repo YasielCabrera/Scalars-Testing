@@ -13,7 +13,7 @@ describe("Object Set Table Testing Document Model", () => {
     const document = utils.createDocument();
 
     expect(document).toBeDefined();
-    expect(document.documentType).toBe("dspot/object-set-table-testing");
+    expect(document.header.documentType).toBe("dspot/object-set-table-testing");
   });
 
   it("should create a new Object Set Table Testing document with a valid initial state", () => {

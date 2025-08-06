@@ -13,7 +13,7 @@ describe("Sidebar Testing Document Model", () => {
     const document = utils.createDocument();
 
     expect(document).toBeDefined();
-    expect(document.documentType).toBe("dspot/sidebar-testing");
+    expect(document.header.documentType).toBe("dspot/sidebar-testing");
   });
 
   it("should create a new Sidebar Testing document with a valid initial state", () => {

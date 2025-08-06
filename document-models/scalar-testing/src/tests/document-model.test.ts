@@ -13,7 +13,7 @@ describe("Scalar Testing Document Model", () => {
     const document = utils.createDocument();
 
     expect(document).toBeDefined();
-    expect(document.documentType).toBe("dspot/testing");
+    expect(document.header.documentType).toBe("dspot/testing");
   });
 
   it("should create a new Scalar Testing document with a valid initial state", () => {

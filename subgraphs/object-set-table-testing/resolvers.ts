@@ -4,7 +4,7 @@
 import { type Subgraph } from "@powerhousedao/reactor-api";
 import { addFile } from "document-drive";
 import { actions } from "../../document-models/object-set-table-testing/index.js";
-import { generateId, hashKey } from "document-model";
+import { generateId } from "document-model";
 
 const DEFAULT_DRIVE_ID = "powerhouse";
 
@@ -25,7 +25,7 @@ export const getResolvers = (subgraph: Subgraph): Record<string, any> => {
               ...doc,
               state: doc.state.global,
               stateJSON: doc.state.global,
-              revision: doc.revision.global,
+              revision: doc.header.revision.global,
             };
           },
           getDocuments: async (args: any) => {
@@ -40,13 +40,14 @@ export const getResolvers = (subgraph: Subgraph): Record<string, any> => {
                   ...doc,
                   state: doc.state.global,
                   stateJSON: doc.state.global,
-                  revision: doc.revision.global,
+                  revision: doc.header.revision.global,
                 };
               }),
             );
 
             return docs.filter(
-              (doc) => doc.documentType === "dspot/object-set-table-testing",
+              (doc) =>
+                doc.header.documentType === "dspot/object-set-table-testing",
             );
           },
         };
@@ -67,12 +68,12 @@ export const getResolvers = (subgraph: Subgraph): Record<string, any> => {
               {
                 branch: "main",
                 scope: "global",
-                syncId: hashKey(),
+                syncId: generateId(),
               },
               {
                 branch: "main",
                 scope: "local",
-                syncId: hashKey(),
+                syncId: generateId(),
               },
             ],
           }),
@@ -92,7 +93,7 @@ export const getResolvers = (subgraph: Subgraph): Record<string, any> => {
           actions.addAccount({ ...args.input }),
         );
 
-        return doc.revision.global + 1;
+        return doc.header.revision.global + 1;
       },
 
       ObjectSetTableTesting_removeAccount: async (_: any, args: any) => {
@@ -106,7 +107,7 @@ export const getResolvers = (subgraph: Subgraph): Record<string, any> => {
           actions.removeAccount({ ...args.input }),
         );
 
-        return doc.revision.global + 1;
+        return doc.header.revision.global + 1;
       },
 
       ObjectSetTableTesting_updateAccount: async (_: any, args: any) => {
@@ -120,7 +121,7 @@ export const getResolvers = (subgraph: Subgraph): Record<string, any> => {
           actions.updateAccount({ ...args.input }),
         );
 
-        return doc.revision.global + 1;
+        return doc.header.revision.global + 1;
       },
     },
   };
