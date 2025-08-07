@@ -92,11 +92,9 @@ export default function Editor(props: IProps) {
     []
   );
 
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const tableActions = useMemo<
     ObjectSetTableConfig<AccountEntry>["actions"]
   >(() => {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     return {
       primary: {
         label: "Print",
@@ -132,7 +130,6 @@ export default function Editor(props: IProps) {
           data={accounts}
           onAdd={onAddAccount}
           onDelete={onRemoveAccount}
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
           actions={tableActions}
         />
       </div>
