@@ -11,7 +11,7 @@ import {
   type ColumnDef,
   ObjectSetTable,
   type ObjectSetTableConfig,
-} from "@powerhousedao/document-engineering/ui";
+} from "@powerhousedao/document-engineering/table";
 
 export type IProps = EditorProps<ObjectSetTableTestingDocument>;
 
