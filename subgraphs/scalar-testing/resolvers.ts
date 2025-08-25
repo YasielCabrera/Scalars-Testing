@@ -668,6 +668,34 @@ export const getResolvers = (subgraph: Subgraph): Record<string, any> => {
 
         return (doc.header.revision["global"] ?? 0) + 1;
       },
+
+      ScalarTesting_addPhoneNumber: async (_: any, args: any) => {
+        const driveId: string = args.driveId || DEFAULT_DRIVE_ID;
+        const docId: string = args.docId || "";
+        const doc = await reactor.getDocument(driveId, docId);
+
+        await reactor.addAction(
+          driveId,
+          docId,
+          actions.addPhoneNumber({ ...args.input }),
+        );
+
+        return (doc.header.revision["global"] ?? 0) + 1;
+      },
+
+      ScalarTesting_removePhoneNumber: async (_: any, args: any) => {
+        const driveId: string = args.driveId || DEFAULT_DRIVE_ID;
+        const docId: string = args.docId || "";
+        const doc = await reactor.getDocument(driveId, docId);
+
+        await reactor.addAction(
+          driveId,
+          docId,
+          actions.removePhoneNumber({ ...args.input }),
+        );
+
+        return (doc.header.revision["global"] ?? 0) + 1;
+      },
     },
   };
 };

@@ -20,6 +20,7 @@ import type {
   AddAmountCurrencyInput,
   AddEmailInput,
   AddPasswordInput,
+  AddPhoneNumberInput,
 } from "../../document-models/scalar-testing/index.js";
 import { State } from "./components/state.js";
 import { BooleanForm } from "./components/forms/boolean-form.js";
@@ -55,6 +56,7 @@ import {
 } from "../../document-models/scalar-testing/index.js";
 import { EmailForm } from "./components/forms/email-form.js";
 import { PasswordForm } from "./components/forms/password-form.js";
+import { PhoneNumberForm } from "./components/forms/phone-number-form.js";
 
 export type IProps = EditorProps<ScalarTestingDocument>;
 
@@ -145,6 +147,10 @@ export default function Editor({ dispatch, document }: IProps) {
     dispatch(actions.addPassword(data));
   }, []);
 
+  const onAddPhoneNumber = useCallback((data: AddPhoneNumberInput) => {
+    dispatch(actions.addPhoneNumber(data));
+  }, []);
+
   return (
     <div className="overflow-auto" style={{ maxHeight: "calc(100vh - 50px)" }}>
       <State state={state} />
@@ -196,6 +202,7 @@ export default function Editor({ dispatch, document }: IProps) {
           />
           <EmailForm onAddEmail={onAddEmail} emailsState={state.emails} />
           <PasswordForm onAddPassword={onAddPassword} passwordsState={state.passwords} />
+          <PhoneNumberForm onAddPhoneNumber={onAddPhoneNumber} phoneNumbersState={state.phones} />
           <FormWrapper title="Add Value Dropdown">
             <Dropdown>
               <DropdownTrigger className="w-[284px]">

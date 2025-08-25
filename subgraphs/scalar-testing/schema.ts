@@ -27,6 +27,7 @@ export const schema: DocumentNode = gql`
     datetime: [DateTimeFieldType!]!
     emails: [EmailAddressFieldType!]!
     passwords: [PasswordFieldType!]!
+    phones: [PhoneNumberFieldType!]!
   }
 
   type BooleanFieldType {
@@ -130,6 +131,11 @@ export const schema: DocumentNode = gql`
   type PasswordFieldType {
     id: ID!
     password: String
+  }
+
+  type PhoneNumberFieldType {
+    id: ID!
+    phone: String
   }
 
   """
@@ -360,6 +366,16 @@ export const schema: DocumentNode = gql`
       docId: PHID
       input: ScalarTesting_RemovePasswordInput
     ): Int
+    ScalarTesting_addPhoneNumber(
+      driveId: String
+      docId: PHID
+      input: ScalarTesting_AddPhoneNumberInput
+    ): Int
+    ScalarTesting_removePhoneNumber(
+      driveId: String
+      docId: PHID
+      input: ScalarTesting_RemovePhoneNumberInput
+    ): Int
   }
 
   """
@@ -578,6 +594,17 @@ export const schema: DocumentNode = gql`
     password: String
   }
   input ScalarTesting_RemovePasswordInput {
+    id: ID!
+  }
+
+  """
+  Module: PhoneTesting
+  """
+  input ScalarTesting_AddPhoneNumberInput {
+    id: ID!
+    phone: String
+  }
+  input ScalarTesting_RemovePhoneNumberInput {
     id: ID!
   }
 `;
