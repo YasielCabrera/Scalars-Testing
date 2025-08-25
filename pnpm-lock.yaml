@@ -12,8 +12,8 @@ importers:
         specifier: 4.0.4
         version: 4.0.4(@tanstack/query-core@5.81.5)(@types/express@4.17.23)(@types/react-dom@19.1.5(@types/react@18.3.20))(@types/react@18.3.20)(bufferutil@4.0.9)(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.8.2)(utf-8-validate@5.0.10)
       '@powerhousedao/document-engineering':
-        specifier: 1.28.0
-        version: 1.28.0(@types/express@4.17.23)(@types/react-dom@19.1.5(@types/react@18.3.20))(@types/react@18.3.20)(bufferutil@4.0.9)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.8.2)(utf-8-validate@5.0.10)
+        specifier: 1.32.0
+        version: 1.32.0(@types/express@4.17.23)(@types/react-dom@19.1.5(@types/react@18.3.20))(@types/react@18.3.20)(bufferutil@4.0.9)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.8.2)(utf-8-validate@5.0.10)
       '@radix-ui/react-accordion':
         specifier: ^1.2.3
         version: 1.2.3(@types/react-dom@19.1.5(@types/react@18.3.20))(@types/react@18.3.20)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -47,7 +47,7 @@ importers:
         version: 4.0.4(@electric-sql/pglite@0.2.17)(@parcel/watcher@2.5.1)(@types/express@4.17.23)(@types/react-dom@19.1.5(@types/react@18.3.20))(@types/react@18.3.20)(bufferutil@4.0.9)(encoding@0.1.13)(graphql@16.10.0)(pg@8.16.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(tarn@3.0.2)(typescript@5.8.2)(utf-8-validate@5.0.10)(zod@3.24.2)
       '@powerhousedao/ph-cli':
         specifier: 4.0.4
-        version: 4.0.4(vbwifbl34nkgezm6xgodmspj5y)
+        version: 4.0.4(137161bc4b7fe4ae72b2f21bd13c9383)
       '@powerhousedao/reactor-api':
         specifier: ^4.0.4
         version: 4.0.4(@libsql/client@0.14.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(@opentelemetry/api@1.9.0)(@parcel/watcher@2.5.1)(@powerhousedao/analytics-engine-knex@0.6.0(@powerhousedao/analytics-engine-core@0.5.0)(sqlite3@5.1.7))(@prisma/client@5.17.0(prisma@5.17.0))(@types/express@4.17.23)(@types/node@22.13.13)(@types/pg@8.15.4)(@types/react-dom@19.1.5(@types/react@18.3.20))(@types/react@18.3.20)(bufferutil@4.0.9)(encoding@0.1.13)(prisma@5.17.0)(react-dom@18.3.1(react@18.3.1))(react-native@0.78.1(@babel/core@7.26.10)(@babel/preset-env@7.26.9(@babel/core@7.26.10))(@types/react@18.3.20)(bufferutil@4.0.9)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)(sqlite3@5.1.7)(tarn@3.0.2)(typescript@5.8.2)(utf-8-validate@5.0.10)
@@ -56,7 +56,7 @@ importers:
         version: 4.0.4(@parcel/watcher@2.5.1)(@types/express@4.17.23)(@types/node@22.13.13)(@types/react-dom@19.1.5(@types/react@18.3.20))(@types/react@18.3.20)(bufferutil@4.0.9)(encoding@0.1.13)(jotai@2.12.5(@types/react@18.3.20)(react@18.3.1))(pg@8.16.3)(react-dom@18.3.1(react@18.3.1))(react-native@0.78.1(@babel/core@7.26.10)(@babel/preset-env@7.26.9(@babel/core@7.26.10))(@types/react@18.3.20)(bufferutil@4.0.9)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)(sqlite3@5.1.7)(tarn@3.0.2)(typescript@5.8.2)(utf-8-validate@5.0.10)
       '@powerhousedao/reactor-local':
         specifier: 4.0.4
-        version: 4.0.4(4rgmli7otssfbflfmmtbmlvlxu)
+        version: 4.0.4(ddf6bf140fefb5a40492fb040cbc4af1)
       '@powerhousedao/scalars':
         specifier: 2.0.1
         version: 2.0.1(graphql@16.10.0)(zod@3.24.2)
@@ -3239,8 +3239,8 @@ packages:
       react: ^18.3.1
       react-dom: ^18.3.1
 
-  '@powerhousedao/document-engineering@1.28.0':
-    resolution: {integrity: sha512-lTNNHmrpn9V94L3LaUdmhjhJOkeAJUGNLkfNwqqoqrESpWJefDOkct76Z7TlrTPD/bPSh0cmorL+b4glrAKnLw==}
+  '@powerhousedao/document-engineering@1.32.0':
+    resolution: {integrity: sha512-DIgEKPCh8r81pEWsP2fnMNuKvBb4bSDtkefeN3jI1Lwg2MYjLUAr0BSbxoSPsnyZkQxBHhlkoevNJiezaQEYNw==}
     peerDependencies:
       react: ^18.3.1
       react-dom: ^18.3.1
@@ -8633,6 +8633,9 @@ packages:
 
   libp2p@2.8.12:
     resolution: {integrity: sha512-wWknf2YsfHwnNK0XyFxCkVVNrckCrY+lwCdp4bpHScb5ALcWmzpgWP8+h/b66sEJ3IUJjhgjMkN1W9sS53KTPQ==}
+
+  libphonenumber-js@1.12.13:
+    resolution: {integrity: sha512-QZXnR/OGiDcBjF4hGk0wwVrPcZvbSSyzlvkjXv5LFfktj7O2VZDrt4Xs8SgR/vOFco+qk1i8J43ikMXZoTrtPw==}
 
   libsql@0.4.7:
     resolution: {integrity: sha512-T9eIRCs6b0J1SHKYIvD8+KCJMcWZ900iZyxdnSCdqxN12Z1ijzT+jY5nrk72Jw4B0HGzms2NgpryArlJqvc3Lw==}
@@ -17211,7 +17214,7 @@ snapshots:
       - supports-color
       - tedious
 
-  '@powerhousedao/builder-tools@4.0.4(bbllrphzurqrgprq7qpmgo5kkq)':
+  '@powerhousedao/builder-tools@4.0.4(4141085b63daf42dda498fb491fcb537)':
     dependencies:
       '@codemirror/autocomplete': 6.18.6
       '@codemirror/commands': 6.8.1
@@ -17228,7 +17231,7 @@ snapshots:
       '@hookform/resolvers': 5.2.0(react-hook-form@7.59.0(react@18.3.1))
       '@powerhousedao/config': 4.0.4(@types/node@22.13.13)
       '@powerhousedao/design-system': 4.0.4(@tanstack/query-core@5.81.5)(@types/express@4.17.23)(@types/react-dom@19.1.5(@types/react@18.3.20))(@types/react@18.3.20)(bufferutil@4.0.9)(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.8.2)(utf-8-validate@5.0.10)
-      '@powerhousedao/document-engineering': 1.28.0(@types/express@4.17.23)(@types/react-dom@19.1.5(@types/react@18.3.20))(@types/react@18.3.20)(bufferutil@4.0.9)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.8.2)(utf-8-validate@5.0.10)
+      '@powerhousedao/document-engineering': 1.32.0(@types/express@4.17.23)(@types/react-dom@19.1.5(@types/react@18.3.20))(@types/react@18.3.20)(bufferutil@4.0.9)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.8.2)(utf-8-validate@5.0.10)
       '@powerhousedao/reactor-browser': 4.0.4(@parcel/watcher@2.5.1)(@types/express@4.17.23)(@types/node@22.13.13)(@types/react-dom@19.1.5(@types/react@18.3.20))(@types/react@18.3.20)(bufferutil@4.0.9)(encoding@0.1.13)(jotai@2.12.5(@types/react@18.3.20)(react@18.3.1))(pg@8.16.3)(react-dom@18.3.1(react@18.3.1))(react-native@0.78.1(@babel/core@7.26.10)(@babel/preset-env@7.26.9(@babel/core@7.26.10))(@types/react@18.3.20)(bufferutil@4.0.9)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)(sqlite3@5.1.7)(tarn@3.0.2)(typescript@5.8.2)(utf-8-validate@5.0.10)
       '@prettier/sync': 0.5.5(prettier@3.6.2)
       '@radix-ui/react-checkbox': 1.3.2(@types/react-dom@19.1.5(@types/react@18.3.20))(@types/react@18.3.20)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -17359,7 +17362,7 @@ snapshots:
       '@graphql-codegen/cli': 5.0.7(@parcel/watcher@2.5.1)(@types/node@22.16.0)(bufferutil@4.0.9)(encoding@0.1.13)(enquirer@2.4.1)(graphql@16.10.0)(typescript@5.8.2)(utf-8-validate@5.0.10)
       '@graphql-codegen/typescript': 4.1.6(encoding@0.1.13)(graphql@16.10.0)
       '@powerhousedao/config': 4.0.4(@types/node@22.16.0)
-      '@powerhousedao/document-engineering': 1.28.0(@types/express@4.17.23)(@types/react-dom@19.1.5(@types/react@18.3.20))(@types/react@18.3.20)(bufferutil@4.0.9)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.8.2)(utf-8-validate@5.0.10)
+      '@powerhousedao/document-engineering': 1.32.0(@types/express@4.17.23)(@types/react-dom@19.1.5(@types/react@18.3.20))(@types/react@18.3.20)(bufferutil@4.0.9)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.8.2)(utf-8-validate@5.0.10)
       '@types/node': 22.16.0
       arg: 5.0.2
       change-case: 4.1.2
@@ -17407,7 +17410,7 @@ snapshots:
       '@graphql-codegen/cli': 5.0.7(@parcel/watcher@2.5.1)(@types/node@22.16.0)(bufferutil@4.0.9)(encoding@0.1.13)(enquirer@2.4.1)(graphql@16.11.0)(typescript@5.8.2)(utf-8-validate@5.0.10)
       '@graphql-codegen/typescript': 4.1.6(encoding@0.1.13)(graphql@16.11.0)
       '@powerhousedao/config': 4.0.4(@types/node@22.16.0)
-      '@powerhousedao/document-engineering': 1.28.0(@types/express@4.17.23)(@types/react-dom@19.1.5(@types/react@18.3.20))(@types/react@18.3.20)(bufferutil@4.0.9)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.8.2)(utf-8-validate@5.0.10)
+      '@powerhousedao/document-engineering': 1.32.0(@types/express@4.17.23)(@types/react-dom@19.1.5(@types/react@18.3.20))(@types/react@18.3.20)(bufferutil@4.0.9)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.8.2)(utf-8-validate@5.0.10)
       '@types/node': 22.16.0
       arg: 5.0.2
       change-case: 4.1.2
@@ -17447,9 +17450,9 @@ snapshots:
       - utf-8-validate
       - zod
 
-  '@powerhousedao/common@4.0.4(lmnhjxzvlkg7f2j2qg4vvwwe2e)':
+  '@powerhousedao/common@4.0.4(069191fd6e67c344561106a57e870694)':
     dependencies:
-      '@powerhousedao/builder-tools': 4.0.4(bbllrphzurqrgprq7qpmgo5kkq)
+      '@powerhousedao/builder-tools': 4.0.4(4141085b63daf42dda498fb491fcb537)
       '@powerhousedao/design-system': 4.0.4(@tanstack/query-core@5.81.5)(@types/express@4.17.23)(@types/react-dom@19.1.5(@types/react@18.3.20))(@types/react@18.3.20)(bufferutil@4.0.9)(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.8.2)(utf-8-validate@5.0.10)
       '@powerhousedao/reactor-browser': 4.0.4(@parcel/watcher@2.5.1)(@types/express@4.17.23)(@types/node@22.13.13)(@types/react-dom@19.1.5(@types/react@18.3.20))(@types/react@18.3.20)(bufferutil@4.0.9)(encoding@0.1.13)(jotai@2.12.5(@types/react@18.3.20)(react@18.3.1))(pg@8.16.3)(react-dom@18.3.1(react@18.3.1))(react-native@0.78.1(@babel/core@7.26.10)(@babel/preset-env@7.26.9(@babel/core@7.26.10))(@types/react@18.3.20)(bufferutil@4.0.9)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)(sqlite3@5.1.7)(tarn@3.0.2)(typescript@5.8.2)(utf-8-validate@5.0.10)
       '@tanstack/react-virtual': 3.13.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -17559,7 +17562,7 @@ snapshots:
   '@powerhousedao/design-system@4.0.4(@tanstack/query-core@5.81.5)(@types/express@4.17.23)(@types/react-dom@19.1.5(@types/react@18.3.20))(@types/react@18.3.20)(bufferutil@4.0.9)(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.8.2)(utf-8-validate@5.0.10)':
     dependencies:
       '@internationalized/date': 3.8.2
-      '@powerhousedao/document-engineering': 1.28.0(@types/express@4.17.23)(@types/react-dom@19.1.5(@types/react@18.3.20))(@types/react@18.3.20)(bufferutil@4.0.9)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.8.2)(utf-8-validate@5.0.10)
+      '@powerhousedao/document-engineering': 1.32.0(@types/express@4.17.23)(@types/react-dom@19.1.5(@types/react@18.3.20))(@types/react@18.3.20)(bufferutil@4.0.9)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.8.2)(utf-8-validate@5.0.10)
       '@radix-ui/react-checkbox': 1.3.2(@types/react-dom@19.1.5(@types/react@18.3.20))(@types/react@18.3.20)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@radix-ui/react-dialog': 1.1.14(@types/react-dom@19.1.5(@types/react@18.3.20))(@types/react@18.3.20)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@radix-ui/react-dropdown-menu': 2.1.15(@types/react-dom@19.1.5(@types/react@18.3.20))(@types/react@18.3.20)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -17633,7 +17636,7 @@ snapshots:
       - uploadthing
       - utf-8-validate
 
-  '@powerhousedao/document-engineering@1.28.0(@types/express@4.17.23)(@types/react-dom@19.1.5(@types/react@18.3.20))(@types/react@18.3.20)(bufferutil@4.0.9)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.8.2)(utf-8-validate@5.0.10)':
+  '@powerhousedao/document-engineering@1.32.0(@types/express@4.17.23)(@types/react-dom@19.1.5(@types/react@18.3.20))(@types/react@18.3.20)(bufferutil@4.0.9)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.8.2)(utf-8-validate@5.0.10)':
     dependencies:
       '@internationalized/date': 3.8.2
       '@radix-ui/react-alert-dialog': 1.1.14(@types/react-dom@19.1.5(@types/react@18.3.20))(@types/react@18.3.20)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -17662,6 +17665,7 @@ snapshots:
       focus-trap-react: 11.0.4(@types/react-dom@19.1.5(@types/react@18.3.20))(@types/react@18.3.20)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       graphql: 16.11.0
       graphql-upload: 17.0.0(@types/express@4.17.23)(graphql@16.11.0)
+      libphonenumber-js: 1.12.13
       mime: 4.0.7
       nanoid: 5.1.5
       react: 18.3.1
@@ -17690,13 +17694,13 @@ snapshots:
       - typescript
       - utf-8-validate
 
-  '@powerhousedao/ph-cli@4.0.4(vbwifbl34nkgezm6xgodmspj5y)':
+  '@powerhousedao/ph-cli@4.0.4(137161bc4b7fe4ae72b2f21bd13c9383)':
     dependencies:
-      '@powerhousedao/builder-tools': 4.0.4(bbllrphzurqrgprq7qpmgo5kkq)
+      '@powerhousedao/builder-tools': 4.0.4(4141085b63daf42dda498fb491fcb537)
       '@powerhousedao/codegen': 4.0.4(@electric-sql/pglite@0.2.17)(@parcel/watcher@2.5.1)(@types/express@4.17.23)(@types/react-dom@19.1.5(@types/react@18.3.20))(@types/react@18.3.20)(bufferutil@4.0.9)(encoding@0.1.13)(graphql@16.10.0)(pg@8.16.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(tarn@3.0.2)(typescript@5.8.2)(utf-8-validate@5.0.10)(zod@3.24.2)
       '@powerhousedao/config': 4.0.4(@types/node@22.13.13)
       '@powerhousedao/connect': 4.0.4
-      '@powerhousedao/reactor-local': 4.0.4(4rgmli7otssfbflfmmtbmlvlxu)
+      '@powerhousedao/reactor-local': 4.0.4(ddf6bf140fefb5a40492fb040cbc4af1)
       '@powerhousedao/switchboard': 4.0.4(@electric-sql/pglite@0.2.17)(@libsql/client@0.14.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(@opentelemetry/api@1.9.0)(@parcel/watcher@2.5.1)(@prisma/client@5.17.0(prisma@5.17.0))(@types/express@4.17.23)(@types/node@22.13.13)(@types/pg@8.15.4)(@types/react-dom@19.1.5(@types/react@18.3.20))(@types/react@18.3.20)(bufferutil@4.0.9)(encoding@0.1.13)(pg@8.16.3)(prisma@5.17.0)(react-dom@18.3.1(react@18.3.1))(react-native@0.78.1(@babel/core@7.26.10)(@babel/preset-env@7.26.9(@babel/core@7.26.10))(@types/react@18.3.20)(bufferutil@4.0.9)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)(sqlite3@5.1.7)(tarn@3.0.2)(typescript@5.8.2)(utf-8-validate@5.0.10)
       colorette: 2.0.20
       commander: 12.1.0
@@ -17817,7 +17821,7 @@ snapshots:
       '@powerhousedao/analytics-engine-graphql': 0.4.0(@powerhousedao/analytics-engine-core@0.5.0)
       '@powerhousedao/analytics-engine-pg': 0.6.0(@powerhousedao/analytics-engine-core@0.5.0)(@powerhousedao/analytics-engine-knex@0.6.0(@powerhousedao/analytics-engine-core@0.5.0)(sqlite3@5.1.7))(sqlite3@5.1.7)
       '@powerhousedao/config': 4.0.4(@types/node@22.13.13)
-      '@powerhousedao/document-engineering': 1.28.0(@types/express@4.17.23)(@types/react-dom@19.1.5(@types/react@18.3.20))(@types/react@18.3.20)(bufferutil@4.0.9)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.8.2)(utf-8-validate@5.0.10)
+      '@powerhousedao/document-engineering': 1.32.0(@types/express@4.17.23)(@types/react-dom@19.1.5(@types/react@18.3.20))(@types/react@18.3.20)(bufferutil@4.0.9)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.8.2)(utf-8-validate@5.0.10)
       '@renown/sdk': 4.0.4(bufferutil@4.0.9)(document-model@4.0.4)(typescript@5.8.2)(utf-8-validate@5.0.10)(zod@3.24.4)
       body-parser: 1.20.3
       change-case: 5.4.4
@@ -17956,13 +17960,13 @@ snapshots:
       - uWebSockets.js
       - utf-8-validate
 
-  '@powerhousedao/reactor-local@4.0.4(4rgmli7otssfbflfmmtbmlvlxu)':
+  '@powerhousedao/reactor-local@4.0.4(ddf6bf140fefb5a40492fb040cbc4af1)':
     dependencies:
       '@apollo/subgraph': 2.11.2(graphql@16.11.0)
       '@electric-sql/pglite': 0.2.17
       '@libsql/client': 0.14.0(bufferutil@4.0.9)(utf-8-validate@5.0.10)
       '@originjs/vite-plugin-commonjs': 1.0.3
-      '@powerhousedao/common': 4.0.4(lmnhjxzvlkg7f2j2qg4vvwwe2e)
+      '@powerhousedao/common': 4.0.4(069191fd6e67c344561106a57e870694)
       '@powerhousedao/reactor-api': 4.0.4(@libsql/client@0.14.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(@opentelemetry/api@1.9.0)(@parcel/watcher@2.5.1)(@powerhousedao/analytics-engine-knex@0.6.0(@powerhousedao/analytics-engine-core@0.5.0)(sqlite3@5.1.7))(@prisma/client@5.17.0(prisma@5.17.0))(@types/express@4.17.23)(@types/node@22.13.13)(@types/pg@8.15.4)(@types/react-dom@19.1.5(@types/react@18.3.20))(@types/react@18.3.20)(bufferutil@4.0.9)(encoding@0.1.13)(prisma@5.17.0)(react-dom@18.3.1(react@18.3.1))(react-native@0.78.1(@babel/core@7.26.10)(@babel/preset-env@7.26.9(@babel/core@7.26.10))(@types/react@18.3.20)(bufferutil@4.0.9)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)(sqlite3@5.1.7)(tarn@3.0.2)(typescript@5.8.2)(utf-8-validate@5.0.10)
       change-case: 5.4.4
       commander: 12.1.0
@@ -25298,6 +25302,8 @@ snapshots:
       race-event: 1.3.0
       race-signal: 1.1.3
       uint8arrays: 5.1.0
+
+  libphonenumber-js@1.12.13: {}
 
   libsql@0.4.7:
     dependencies:

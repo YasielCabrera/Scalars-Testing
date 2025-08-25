@@ -14,6 +14,7 @@ scalar Amount_Fiat
 scalar Amount_Currency
 scalar Amount_Crypto
 scalar Amount
+scalar Upload
 type ScalarTestingState {
   booleans: [BooleanFieldType!]!
   numbers: [NumberFieldType!]!
@@ -36,6 +37,7 @@ type ScalarTestingState {
   datetime: [DateTimeFieldType!]!
   emails: [EmailAddressFieldType!]!
   passwords: [PasswordFieldType!]!
+  phones: [PhoneNumberFieldType!]!
 }
 
 type BooleanFieldType {
@@ -140,6 +142,11 @@ type EmailAddressFieldType{
 type PasswordFieldType{
   id: ID!
   password: String
+}
+
+type PhoneNumberFieldType {
+  id: ID!
+  phone: String
 }
 
 
@@ -370,5 +377,16 @@ input AddPasswordInput {
 }
 
 input RemovePasswordInput {
+  id: ID!
+}
+
+# phone_testing
+
+input AddPhoneNumberInput {
+  id: ID!
+  phone: String
+}
+
+input RemovePhoneNumberInput {
   id: ID!
 }
